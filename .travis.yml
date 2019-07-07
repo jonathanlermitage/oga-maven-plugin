@@ -1,0 +1,20 @@
+jdk:
+  - openjdk8
+#  - openjdk11
+
+language: java
+
+before_install:
+  - chmod +x mvnw
+  - rm -rf $HOME/.m2/repository/biz/lermitage/
+
+script:
+  - "./mvnw clean install -DskipTests"
+  - "./mvnw --show-version --errors --batch-mode verify"
+
+cache:
+  directories:
+    - $HOME/.m2
+
+git:
+  depth: 3

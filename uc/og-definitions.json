@@ -1,0 +1,66 @@
+{
+    "version": "1",
+    "date": "2019/07/05",
+    "migration": [
+        {
+            "old": "bouncycastle",
+            "new": "org.bouncycastle"
+        },
+        {
+            "old": "fulcrum",
+            "new": "org.apache.fulcrum"
+        },
+        {
+            "old": "geronimo",
+            "new": "org.apache.geronimo"
+        },
+        {
+            "old": "bcel:bcel",
+            "new": "org.apache.bcel:bcel"
+        },
+        {
+            "old": "com.graphql-java:graphiql-spring-boot-autoconfigure",
+            "new": "com.graphql-java-kickstart:graphiql-spring-boot-autoconfigure"
+        },
+        {
+            "old": "com.graphql-java:graphiql-spring-boot-starter",
+            "new": "com.graphql-java-kickstart:graphiql-spring-boot-starter"
+        },
+        {
+            "old": "com.graphql-java:graphql-java-servlet",
+            "new": "com.graphql-java-kickstart:graphql-java-servlet"
+        },
+        {
+            "old": "com.graphql-java:graphql-java-tools",
+            "new": "com.graphql-java-kickstart:graphql-java-tools"
+        },
+        {
+            "old": "com.graphql-java:graphql-spring-boot-autoconfigure",
+            "new": "com.graphql-java-kickstart:graphql-spring-boot-autoconfigure"
+        },
+        {
+            "old": "com.graphql-java:graphql-spring-boot-starter-test",
+            "new": "com.graphql-java-kickstart:graphql-spring-boot-starter-test"
+        },
+        {
+            "old": "com.graphql-java:graphql-spring-boot-starter",
+            "new": "com.graphql-java-kickstart:graphql-spring-boot-starter"
+        },
+        {
+            "old": "com.graphql-java:graphql-spring-boot-test",
+            "new": "com.graphql-java-kickstart:graphql-spring-boot-test"
+        },
+        {
+            "old": "com.graphql-java:graphql-spring-boot-test-autoconfigure",
+            "new": "com.graphql-java-kickstart:graphql-spring-boot-test-autoconfigure"
+        },
+        {
+            "old": "com.graphql-java:voyager-spring-boot-autoconfigure",
+            "new": "com.graphql-java-kickstart:voyager-spring-boot-autoconfigure"
+        },
+        {
+            "old": "com.graphql-java:voyager-spring-boot-starter",
+            "new": "com.graphql-java-kickstart:voyager-spring-boot-starter"
+        }
+    ]
+}

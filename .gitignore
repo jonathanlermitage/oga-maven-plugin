@@ -66,3 +66,6 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/intellij+iml
+
+/maven-index-search-suspect-coordinates/.idea/
+/maven-index-search-suspect-coordinates/target/

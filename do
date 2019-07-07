@@ -11,10 +11,10 @@ for ((cmd = 1; cmd <= $#; cmd++)) do
       echo ""
       echo  "Helper: (tip: you can chain parameters, e.g.: \"./do w 3.6.0 c t\")"
       echo  ""
-      echo  "t            test"
+      echo  "t            test plugin"
       echo  "b            compile"
       echo  "c            clean"
-      echo  "p            package"
+      echo  "i            install plugin's jar, sources and javadoc in local repository"
       echo  "w \$V         set or upgrade Maven wrapper to version \$V"
       echo  "cv           check plugins and dependencies versions"
       echo  "uv           update plugins and dependencies versions"
@@ -26,15 +26,15 @@ for ((cmd = 1; cmd <= $#; cmd++)) do
       ;;
 
     "b")
-      sh ./mvnw compile -DskipTests -T1
+      sh ./mvnw compile -DskipTests
       ;;
 
     "c")
       sh ./mvnw clean
       ;;
 
-    "p")
-      sh ./mvnw package -DskipTests -T1
+    "i")
+      sh ./mvnw install -DskipTests
       ;;
 
     "w")
