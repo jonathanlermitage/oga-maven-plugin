@@ -37,5 +37,5 @@ if [%1] == [dt] (
   mvnw dependency:tree
 )
 if [%1] == [pub] (
-  mvn clean verify release:prepare release:perform -U -P publish
+  mvn clean release:prepare release:perform
 )
