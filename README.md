@@ -46,7 +46,7 @@ Just call `./mvnw clean install` or `./do i` to build plugin and install into lo
 
 ### Code 
 
-Open an issue or a pull-request. Contributions must be tested at least on JDK7 and 8.  
+Open an issue or a pull-request. Contributions must be tested at least on JDK8.  
 Please reformat new code only: do not reformat the whole project or entire existing file (in other words, try do limit the amount of changes in order to speed up code review).
 
 ### Definitions file
