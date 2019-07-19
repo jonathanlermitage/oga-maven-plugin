@@ -12,6 +12,8 @@ A Maven plugin that checks for deprecated *groupId + artifactId* couples, in ord
 
 Works with Maven 3.3+ and JDK8+.
 
+*Looking for a Gradle plugin? Check [oga-gradle-plugin](https://github.com/jonathanlermitage/oga-gradle-plugin).*
+
 ## Author
 
 Jonathan Lermitage (<jonathan.lermitage@gmail.com>)  
