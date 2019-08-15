@@ -32,7 +32,7 @@ You may see something like `[ERROR] 'com.graphql-java:graphql-spring-boot-starte
 
 ### Maven coordinates
 
-Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-maven-plugin), [Ticket](https://issues.sonatype.org/browse/OSSRH-49767)):
+Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-maven-plugin)):
 
 ```xml
 <groupId>biz.lermitage.oga</groupId>
