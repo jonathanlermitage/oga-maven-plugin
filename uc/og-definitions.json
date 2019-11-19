@@ -1,6 +1,6 @@
 {
-    "version": "1",
-    "date": "2019/07/05",
+    "version": "2",
+    "date": "2019/11/19",
     "migration": [
         {
             "old": "bouncycastle",
@@ -61,6 +61,10 @@
         {
             "old": "com.graphql-java:voyager-spring-boot-starter",
             "new": "com.graphql-java-kickstart:voyager-spring-boot-starter"
+        },
+        {
+            "old": "com.mysema.querydsl",
+            "new": "com.querydsl"
         }
     ]
 }
