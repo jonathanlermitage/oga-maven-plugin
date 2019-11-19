@@ -69,3 +69,4 @@ fabric.properties
 
 /maven-index-search-suspect-coordinates/.idea/
 /maven-index-search-suspect-coordinates/target/
+target/
