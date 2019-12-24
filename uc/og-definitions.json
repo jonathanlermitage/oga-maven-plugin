@@ -1,6 +1,6 @@
 {
-    "version": "2",
-    "date": "2019/11/19",
+    "version": "3",
+    "date": "2019/12/24",
     "migration": [
         {
             "old": "bouncycastle",
@@ -65,6 +65,10 @@
         {
             "old": "com.mysema.querydsl",
             "new": "com.querydsl"
+        },
+        {
+            "old": "com.oracle.substratevm",
+            "new": "org.graalvm.nativeimage"
         }
     ]
 }
