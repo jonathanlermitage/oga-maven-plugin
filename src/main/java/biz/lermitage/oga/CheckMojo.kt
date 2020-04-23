@@ -7,6 +7,7 @@ import org.apache.maven.model.io.xpp3.MavenXpp3Reader
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugin.MojoExecutionException
 import org.apache.maven.plugins.annotations.Mojo
+import org.apache.maven.plugins.annotations.Parameter
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException
 import java.io.File
 import java.io.FileReader
@@ -22,6 +23,10 @@ import java.net.URL
 @Mojo(name = "check", requiresProject = true, requiresOnline = true, threadSafe = true)
 class CheckMojo : AbstractMojo() {
 
+    /** Alternative location for og-definitions.json config file. */
+    @Parameter(name = "ogDefinitionsUrl")
+    private val ogDefinitionsUrl: String? = null
+
     /**
      * Execute goal.
      */
@@ -30,7 +35,7 @@ class CheckMojo : AbstractMojo() {
         log.info("Old GroupId Alerter - $GITHUB_ISSUES_URL")
 
         try {
-            val definitions = URL(DEFINITIONS_URL).let { IOTools.readDefinitionsFromUrl(it) }
+            val definitions = URL(ogDefinitionsUrl ?: DEFINITIONS_URL).let { IOTools.readDefinitionsFromUrl(it) }
             log.debug("Loaded definitions file version: ${definitions.version}, ${definitions.date}")
 
             val model = readModel(File("pom.xml"))
