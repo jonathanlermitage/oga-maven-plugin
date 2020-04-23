@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://travis-ci.org/jonathanlermitage/oga-maven-plugin"><img src="https://travis-ci.org/jonathanlermitage/oga-maven-plugin.svg?branch=master"/></a>
     <a href="https://github.com/jonathanlermitage/oga-maven-plugin/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/jonathanlermitage/oga-maven-plugin.svg"/></a>
-    <a href="https://search.maven.org/artifact/biz.lermitage.oga/oga-maven-plugin/1.0.0/maven-plugin"><img src="https://img.shields.io/maven-central/v/biz.lermitage.oga/oga-maven-plugin.svg"/></a>
+    <a href="https://search.maven.org/artifact/biz.lermitage.oga/oga-maven-plugin"><img src="https://img.shields.io/maven-central/v/biz.lermitage.oga/oga-maven-plugin.svg"/></a>
 </p>
 
 A Maven plugin that checks for deprecated *groupId + artifactId* couples, in order to reduce usage of non-maintained 3rd-party code (e.g. did you know that artifact `graphql-spring-boot-starter` moved from `from com.graphql-java` to `com.graphql-java-kickstart`?).
