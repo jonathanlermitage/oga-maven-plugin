@@ -8,11 +8,13 @@ import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugin.MojoExecutionException
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
+import org.apache.maven.project.MavenProject
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException
 import java.io.File
 import java.io.FileReader
 import java.io.IOException
 import java.net.URL
+
 
 /**
  * Goal which checks that no dependency uses a deprecated groupId.
@@ -27,6 +29,9 @@ class CheckMojo : AbstractMojo() {
     @Parameter(name = "ogDefinitionsUrl")
     private val ogDefinitionsUrl: String? = null
 
+    @Parameter(property = "project", readonly = true)
+    var project: MavenProject? = null
+
     /**
      * Execute goal.
      */
@@ -38,8 +43,7 @@ class CheckMojo : AbstractMojo() {
             val definitions = URL(ogDefinitionsUrl ?: DEFINITIONS_URL).let { IOTools.readDefinitionsFromUrl(it) }
             log.debug("Loaded definitions file version: ${definitions.version}, ${definitions.date}")
 
-            val model = readModel(File("pom.xml"))
-            val dependencies = listDependencies(model)//.filter { dep -> !definitions.whitelist!!.contains("${dep.groupId}:${dep.artifactId}") }
+            val dependencies = project?.dependencies!!.filterNotNull()
             val deprecatedDependencies: HashSet<String> = HashSet()
             log.info("Checking dependencies...")
 
@@ -85,22 +89,6 @@ class CheckMojo : AbstractMojo() {
         } catch (e: XmlPullParserException) {
             throw MojoExecutionException("Plugin failure, please report it to $GITHUB_ISSUES_URL", e)
         }
-    }
-
-    @Throws(IOException::class, XmlPullParserException::class)
-    private fun readModel(pomFile: File?): Model {
-        // parse pom.xml, see https://stackoverflow.com/questions/4838591/is-there-a-library-for-reading-maven2-3-pom-xml-files
-        return MavenXpp3Reader().read(FileReader(pomFile!!))
-    }
-
-    private fun listDependencies(model: Model): List<Dependency> {
-        log.debug("Listing dependencies:")
-        val dependencies = model.dependencies
-        dependencies.sortWith(Comparator { o1, o2 -> ("${o1.groupId}:${o1.artifactId}").compareTo("${o2.groupId}:${o2.artifactId}") })
-        for (dep in dependencies) {
-            log.debug("  ${dep.groupId}:${dep.artifactId}")
-        }
-        return dependencies
     }
 
     /*private fun isDeprecatedOnMavencentral(groupId: String, artifactId: String): Boolean {
