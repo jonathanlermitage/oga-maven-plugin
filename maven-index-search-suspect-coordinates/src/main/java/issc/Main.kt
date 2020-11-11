@@ -55,7 +55,7 @@ object Main {
 
         // Create context for central repository index
         val centralContext = indexer.createIndexingContext("central-context", "central", centralLocalCache, centralIndexDir,
-            "http://repo1.maven.org/maven2", null, true, true, indexers)
+            "https://repo.maven.apache.org/maven2/", null, true, true, indexers)
 
         println("Updating Index...")
         println("This might take a while on first run, so please be patient!")
