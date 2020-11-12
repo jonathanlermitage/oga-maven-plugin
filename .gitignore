@@ -63,6 +63,7 @@ fabric.properties
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
 *.ipr
+*.iml
 
 
 # End of https://www.gitignore.io/api/intellij+iml
