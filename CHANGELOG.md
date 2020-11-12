@@ -1,9 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
-### TODO, ideas, ideal for contribution
-* improve tests.
-* make plugin configurable.
-* see [plugin issues](https://github.com/jonathanlermitage/oga-maven-plugin/issues).
+### 1.2.0 (WIP)
+* update Central repository URL to use HTTPS. Thx [froque](https://github.com/froque).
+* make the plugin compatible with project with multiples modules. Thx [froque](https://github.com/froque).
 
 ### 1.1.0 (2020/04/23)
 * fix #2 make the `og-definitions.json` configurable.
