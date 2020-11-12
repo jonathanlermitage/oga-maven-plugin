@@ -42,11 +42,11 @@ for ((cmd = 1; cmd <= $#; cmd++)) do
       ;;
 
     "cv")
-      sh ./mvnw versions:display-property-updates -U -P coverage,jib,mig,spotbugs
+      sh ./mvnw versions:display-property-updates
       ;;
 
     "uv")
-      sh ./mvnw versions:update-properties -U -P coverage,jib,mig,spotbugs
+      sh ./mvnw versions:update-properties
       ;;
 
     "dt")

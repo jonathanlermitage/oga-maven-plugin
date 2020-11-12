@@ -28,10 +28,10 @@ if [%1] == [w] (
   mvn -N io.takari:maven:wrapper -Dmaven=%2
 )
 if [%1] == [cv] (
-  mvnw versions:display-property-updates -U
+  mvnw versions:display-property-updates
 )
 if [%1] == [uv] (
-  mvnw versions:update-properties -U -P
+  mvnw versions:update-properties
 )
 if [%1] == [dt] (
   mvnw dependency:tree
