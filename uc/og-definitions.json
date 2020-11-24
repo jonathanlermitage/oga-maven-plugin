@@ -1134,46 +1134,6 @@
             "new": "org.flowable:flowable-spring-boot-starter-process-rest"
         },
         {
-            "old": "org.hibernate:hibernate-agroal",
-            "new": "org.hibernate.orm:hibernate-agroal"
-        },
-        {
-            "old": "org.hibernate:hibernate-c3p0",
-            "new": "org.hibernate.orm:hibernate-c3p0"
-        },
-        {
-            "old": "org.hibernate:hibernate-core",
-            "new": "org.hibernate.orm:hibernate-core"
-        },
-        {
-            "old": "org.hibernate:hibernate-ehcache",
-            "new": "org.hibernate.orm:hibernate-ehcache"
-        },
-        {
-            "old": "org.hibernate:hibernate-enhance-maven-plugin",
-            "new": "org.hibernate.orm:hibernate-enhance-maven-plugin"
-        },
-        {
-            "old": "org.hibernate:hibernate-entitymanager",
-            "new": "org.hibernate.orm:hibernate-entitymanager"
-        },
-        {
-            "old": "org.hibernate:hibernate-envers",
-            "new": "org.hibernate.orm:hibernate-envers"
-        },
-        {
-            "old": "org.hibernate:hibernate-graalvm",
-            "new": "org.hibernate.orm:hibernate-graalvm"
-        },
-        {
-            "old": "org.hibernate:hibernate-gradle-plugin",
-            "new": "org.hibernate.orm:hibernate-gradle-plugin"
-        },
-        {
-            "old": "org.hibernate:hibernate-hikaricp",
-            "new": "org.hibernate.orm:hibernate-hikaricp"
-        },
-        {
             "old": "org.hibernate:hibernate-infinispan",
             "new": "org.infinispan:infinispan-hibernate-cache"
         },
@@ -1182,40 +1142,12 @@
             "new": "org.infinispan:infinispan-hibernate-cache-v53"
         },
         {
-            "old": "org.hibernate:hibernate-java8",
-            "new": "org.hibernate.orm:hibernate-java8"
-        },
-        {
-            "old": "org.hibernate:hibernate-jcache",
-            "new": "org.hibernate.orm:hibernate-jcache"
-        },
-        {
-            "old": "org.hibernate:hibernate-jipijapa",
-            "new": "org.hibernate.orm:hibernate-jipijapa"
-        },
-        {
-            "old": "org.hibernate:hibernate-jpamodelgen",
-            "new": "org.hibernate.orm:hibernate-jpamodelgen"
-        },
-        {
-            "old": "org.hibernate:hibernate-osgi",
-            "new": "org.hibernate.orm:hibernate-osgi"
-        },
-        {
-            "old": "org.hibernate:hibernate-proxool",
-            "new": "org.hibernate.orm:hibernate-proxool"
-        },
-        {
             "old": "org.hibernate:hibernate-search-infinispan",
             "new": "org.infinispan:infinispan-directory-provider"
         },
         {
             "old": "org.hibernate:hibernate-search",
             "new": "org.hibernate:hibernate-search-orm"
-        },
-        {
-            "old": "org.hibernate:hibernate-testing",
-            "new": "org.hibernate.orm:hibernate-testing"
         },
         {
             "old": "org.hibernate:hibernate-validator-annotation-processor",
@@ -1232,10 +1164,6 @@
         {
             "old": "org.hibernate:hibernate-validator-osgi-karaf-features",
             "new": "org.hibernate.validator:hibernate-validator-osgi-karaf-features"
-        },
-        {
-            "old": "org.hibernate:hibernate-vibur",
-            "new": "org.hibernate.orm:hibernate-vibur"
         },
         {
             "old": "org.hibernate.javax.persistence:hibernate-jpa-2.2-api",
