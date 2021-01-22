@@ -1166,6 +1166,14 @@
             "new": "org.hibernate.validator:hibernate-validator-osgi-karaf-features"
         },
         {
+            "old": "org.hibernate.javax.persistence:hibernate-jpa-2.0-api",
+            "new": "org.hibernate.javax.persistence:hibernate-jpa-2.1-api"
+        },
+        {
+            "old": "org.hibernate.javax.persistence:hibernate-jpa-2.1-api",
+            "new": "org.hibernate.javax.persistence:hibernate-jpa-2.2-api"
+        },
+        {
             "old": "org.hibernate.javax.persistence:hibernate-jpa-2.2-api",
             "new": "javax.persistence:javax.persistence-api"
         },
