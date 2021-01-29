@@ -39,6 +39,10 @@
             "new": "org.beanshell:bsh"
         },
         {
+            "old": "c3p0:c3p0",
+            "new": "com.mchange:c3p0"
+        },
+        {
             "old": "cactus:cactus-ant",
             "new": "cactus:cactus-ant-13"
         },
