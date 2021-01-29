@@ -382,6 +382,10 @@
             "new": "org.apache.commons:commons-collections4"
         },
         {
+            "old": "commons-compress:commons-compress",
+            "new": "org.apache.commons:commons-compress"
+        },
+        {
             "old": "commons-email:commons-email",
             "new": "org.apache.commons:commons-email"
         },
