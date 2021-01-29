@@ -802,6 +802,14 @@
             "new": "org.javassist:javassist"
         },
         {
+            "old": "javax.persistence:javax.persistence-api",
+            "new": "jakarta.persistence:jakarta.persistence-api"
+        },
+        {
+            "old": "javax.persistence:persistence-api",
+            "new": "javax.persistence:javax.persistence-api"
+        },
+        {
             "old": "javax.xml:jaxb-api",
             "new": "javax.xml.bind:jaxb-api"
         },
