@@ -199,6 +199,10 @@
             "new": "com.google.apis:google-api-services-sqladmin"
         },
         {
+            "old": "com.googlecode.flyway:flyway-core",
+            "new": "org.flywaydb:flyway-core"
+        },
+        {
             "old": "com.googlecode.jmockit:jmockit",
             "new": "org.jmockit:jmockit"
         },
