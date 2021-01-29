@@ -1270,6 +1270,10 @@
             "new": "org.mapstruct:mapstruct"
         },
         {
+            "old": "org.mortbay.jetty",
+            "new": "org.eclipse.jetty"
+        },
+        {
             "old": "org.mortbay.jetty:maven-jetty-plugin",
             "new": "org.mortbay.jetty:jetty-maven-plugin"
         },
