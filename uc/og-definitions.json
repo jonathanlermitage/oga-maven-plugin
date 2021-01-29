@@ -199,6 +199,10 @@
             "new": "com.google.apis:google-api-services-sqladmin"
         },
         {
+            "old": "com.googlecode.jmockit:jmockit",
+            "new": "org.jmockit:jmockit"
+        },
+        {
             "old": "com.googlecode.openpojo:openpojo",
             "new": "com.openpojo:openpojo"
         },
