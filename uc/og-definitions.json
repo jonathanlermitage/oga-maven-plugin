@@ -1086,6 +1086,10 @@
             "new": "org.apache.sling:org.apache.sling.testing.sling-mock.junit4"
         },
         {
+            "old": "org.apache.velocity:velocity",
+            "new": "org.apache.velocity:velocity-engine-core"
+        },
+        {
             "old": "org.codehaus.mojo:sonar-maven-plugin",
             "new": "org.sonarsource.scanner.maven:sonar-maven-plugin"
         },
@@ -1444,6 +1448,10 @@
         {
             "old": "uk.org.retep.microkernel:core",
             "new": "uk.org.retep.microkernel:spring"
+        },
+        {
+            "old": "velocity",
+            "new": "org.apache.velocity"
         },
         {
             "old": "webtest:webtest",
