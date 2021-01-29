@@ -538,6 +538,10 @@
             "new": "org.docbook:docbook-xsl"
         },
         {
+            "old": "dom4j:dom4j",
+            "new": "org.dom4j:dom4j"
+        },
+        {
             "old": "easymock:easymockclassextension",
             "new": "org.easymock:easymockclassextension"
         },
