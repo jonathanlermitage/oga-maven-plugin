@@ -386,6 +386,10 @@
             "new": "org.apache.commons:commons-email"
         },
         {
+            "old": "commons-lang:commons-lang",
+            "new": "org.apache.commons:commons-lang3"
+        },
+        {
             "old": "com.mtvi.plateng.maven:maven-hudson-plugin",
             "new": "org.jvnet.hudson.tools:maven-hudson-plugin"
         },
