@@ -810,6 +810,14 @@
             "new": "javax.persistence:javax.persistence-api"
         },
         {
+            "old": "javax.servlet:javax.servlet-api",
+            "new": "jakarta.servlet:jakarta.servlet-api"
+        },
+        {
+            "old": "javax.servlet:servlet-api",
+            "new": "javax.servlet:javax.servlet-api"
+        },
+        {
             "old": "javax.xml:jaxb-api",
             "new": "javax.xml.bind:jaxb-api"
         },
