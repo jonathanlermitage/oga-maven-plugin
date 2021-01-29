@@ -378,6 +378,10 @@
             "new": "com.microsoft.azure:azure-storage"
         },
         {
+            "old": "commons-collections:commons-collections",
+            "new": "org.apache.commons:commons-collections4"
+        },
+        {
             "old": "commons-email:commons-email",
             "new": "org.apache.commons:commons-email"
         },
