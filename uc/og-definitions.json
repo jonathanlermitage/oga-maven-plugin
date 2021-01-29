@@ -799,7 +799,7 @@
         },
         {
             "old": "javassist:javassist",
-            "new": "jboss:javassist"
+            "new": "org.javassist:javassist"
         },
         {
             "old": "javax.xml:jaxb-api",
@@ -819,7 +819,7 @@
         },
         {
             "old": "jboss:javassist",
-            "new": "javassist:javassist"
+            "new": "org.javassist:javassist"
         },
         {
             "old": "jca:jca",
@@ -1184,6 +1184,10 @@
         {
             "old": "org.hibernate.orm:hibernate-infinispan",
             "new": "org.infinispan:infinispan-hibernate-cache-v53"
+        },
+        {
+            "old": "org.jboss:javassist",
+            "new": "org.javassist:javassist"
         },
         {
             "old": "org.jboss.arquillian.container:arquillian-wlp-managed-8.5",
