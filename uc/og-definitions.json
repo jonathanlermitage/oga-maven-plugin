@@ -1242,6 +1242,14 @@
             "new": "org.infinispan:infinispan-hibernate-cache-v53"
         },
         {
+            "old": "org.codehaus.jackson:jackson-core-asl",
+            "new": "com.fasterxml.jackson.core:jackson-core"
+        },
+        {
+            "old": "org.codehaus.jackson:jackson-mapper-asl",
+            "new": "com.fasterxml.jackson.core:jackson-databind"
+        },
+        {
             "old": "org.jboss:javassist",
             "new": "org.javassist:javassist"
         },
