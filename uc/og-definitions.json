@@ -850,6 +850,10 @@
             "new": "javax.servlet:javax.servlet-api"
         },
         {
+            "old": "javax.validation:validation-api",
+            "new": "jakarta.validation:jakarta.validation-api"
+        },
+        {
             "old": "javax.ws.rs:javax.ws.rs-api",
             "new": "jakarta.ws.rs:jakarta.ws.rs-api"
         },
