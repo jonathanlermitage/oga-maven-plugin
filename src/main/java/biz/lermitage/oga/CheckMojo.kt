@@ -40,8 +40,11 @@ class CheckMojo : AbstractMojo() {
         log.info("Old GroupId Alerter - $GITHUB_ISSUES_URL")
 
         try {
-            val definitions = URL(ogDefinitionsUrl ?: DEFINITIONS_URL).let { IOTools.readDefinitionsFromUrl(it) }
-            log.debug("Loaded definitions file version: ${definitions.version}, ${definitions.date}")
+            val definitionsUrlInUse = ogDefinitionsUrl ?: DEFINITIONS_URL
+            log.info("Loading definitions from $definitionsUrlInUse")
+            val definitions = URL(definitionsUrlInUse).let { IOTools.readDefinitionsFromUrl(it) }
+            val nbDefinitions = definitions.migration?.size
+            log.info("Loaded $nbDefinitions definitions")
 
             val dependencies = project?.dependencies!!.filterNotNull()
             val deprecatedDependencies: HashSet<String> = HashSet()
