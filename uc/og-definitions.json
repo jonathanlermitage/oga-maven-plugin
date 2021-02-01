@@ -1306,6 +1306,10 @@
             "new": "org.jdtaus.core.monitor:jdtaus-core-task-monitor"
         },
         {
+            "old": "org.jooby",
+            "new": "io.jooby"
+        },
+        {
             "old": "org.jszip.jruby:sass-gems",
             "new": "org.jszip.gems:sass-lang"
         },
