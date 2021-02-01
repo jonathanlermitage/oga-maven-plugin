@@ -3,7 +3,6 @@
 </h1>
 
 <p align="center">
-    <a href="https://travis-ci.org/jonathanlermitage/oga-maven-plugin"><img src="https://travis-ci.org/jonathanlermitage/oga-maven-plugin.svg?branch=master"/></a>
     <a href="https://github.com/jonathanlermitage/oga-maven-plugin/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/jonathanlermitage/oga-maven-plugin.svg"/></a>
     <a href="https://search.maven.org/artifact/biz.lermitage.oga/oga-maven-plugin"><img src="https://img.shields.io/maven-central/v/biz.lermitage.oga/oga-maven-plugin.svg"/></a>
 </p>
