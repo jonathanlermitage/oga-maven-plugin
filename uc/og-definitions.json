@@ -878,6 +878,10 @@
             "new": "javax.xml.ws:jaxws-api"
         },
         {
+            "old": "javax.xml.bind:jaxb-api",
+            "new": "jakarta.xml.bind:jakarta.xml.bind-api"
+        },
+        {
             "old": "javax.xml.soap:saaj-impl",
             "new": "com.sun.xml.messaging.saaj:saaj-impl"
         },
