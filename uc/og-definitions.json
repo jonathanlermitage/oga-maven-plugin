@@ -834,6 +834,10 @@
             "new": "org.javassist:javassist"
         },
         {
+            "old": "javax.annotation:javax.annotation-api",
+            "new": "jakarta.annotation:jakarta.annotation-api"
+        },
+        {
             "old": "javax.el:el-api",
             "new": "javax.el:javax.el-api"
         },
