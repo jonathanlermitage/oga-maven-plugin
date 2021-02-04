@@ -6,7 +6,6 @@ import junit.framework.TestCase
 import org.apache.commons.io.FileUtils
 import java.io.File
 import java.util.*
-import java.util.function.Consumer
 
 class OgDefinitionsValidityTest : TestCase() {
 
@@ -21,14 +20,16 @@ class OgDefinitionsValidityTest : TestCase() {
                     mig1.oldGroupId + ":" + mig1.oldArtifactId + " <-> " + mig1.newerGroupId + ":" + mig1.newerArtifactId
                 val newer =
                     mig2.newerGroupId + ":" + mig2.newerArtifactId + " <-> " + mig2.oldGroupId + ":" + mig2.oldArtifactId
-                if (old == newer) {
+                val revert =
+                    mig1.newerGroupId + ":" + mig1.newerArtifactId + " <-> " + mig1.oldGroupId + ":" + mig1.oldArtifactId
+                if (old == newer && !errors.contains(revert)) {
                     errors.add(old)
                 }
             }
         }
         if (errors.isNotEmpty()) {
             println("Found mutually exclusive definitions:")
-            errors.forEach(Consumer { println(it) })
+            errors.forEach { error -> println(" - $error") }
             fail("Should not contain mutually exclusive definitions")
         }
     }
