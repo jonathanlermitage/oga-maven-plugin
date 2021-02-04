@@ -834,6 +834,14 @@
             "new": "org.javassist:javassist"
         },
         {
+            "old": "javax.activation:activation",
+            "new": "javax.activation:javax.activation-api"
+        },
+        {
+            "old": "javax.activation:javax.activation-api",
+            "new": "jakarta.activation:jakarta.activation-api"
+        },
+        {
             "old": "javax.annotation:javax.annotation-api",
             "new": "jakarta.annotation:jakarta.annotation-api"
         },
@@ -880,6 +888,10 @@
         {
             "old": "javax.xml:jaxws-api",
             "new": "javax.xml.ws:jaxws-api"
+        },
+        {
+            "old": "javax.xml.bind:jaxb-api",
+            "new": "jakarta.xml.bind:jakarta.xml.bind-api"
         },
         {
             "old": "javax.xml.soap:saaj-impl",
