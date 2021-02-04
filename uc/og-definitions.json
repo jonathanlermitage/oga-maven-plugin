@@ -834,6 +834,14 @@
             "new": "org.javassist:javassist"
         },
         {
+            "old": "javax.activation:activation",
+            "new": "javax.activation:javax.activation-api"
+        },
+        {
+            "old": "javax.activation:javax.activation-api",
+            "new": "jakarta.activation:jakarta.activation-api"
+        },
+        {
             "old": "javax.el:el-api",
             "new": "javax.el:javax.el-api"
         },
