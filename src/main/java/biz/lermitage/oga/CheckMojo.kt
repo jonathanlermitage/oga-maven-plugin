@@ -1,20 +1,14 @@
 package biz.lermitage.oga
 
 import biz.lermitage.oga.util.IOTools
-import org.apache.maven.model.Dependency
-import org.apache.maven.model.Model
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugin.MojoExecutionException
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
 import org.apache.maven.project.MavenProject
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException
-import java.io.File
-import java.io.FileReader
 import java.io.IOException
 import java.net.URL
-
 
 /**
  * Goal which checks that no dependency uses a deprecated groupId.
