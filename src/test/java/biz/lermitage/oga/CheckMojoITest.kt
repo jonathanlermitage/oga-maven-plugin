@@ -11,9 +11,8 @@ class CheckMojoITest : TestCase() {
     fun testProjectWithoutOldDependencies() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok")
 
-        val verifier: Verifier
+        val verifier = Verifier(testDir.absolutePath)
 
-        verifier = Verifier(testDir.absolutePath)
         verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
 
         verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
@@ -28,9 +27,8 @@ class CheckMojoITest : TestCase() {
     fun testProjectWithOldDependencies() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko")
 
-        val verifier: Verifier
+        val verifier = Verifier(testDir.absolutePath)
 
-        verifier = Verifier(testDir.absolutePath)
         verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
 
         try {
