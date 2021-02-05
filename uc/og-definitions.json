@@ -1190,14 +1190,6 @@
             "new": "org.firebirdsql.jdbc:jaybird"
         },
         {
-            "old": "org.firebirdsql.jdbc:jaybird",
-            "new": "org.firebirdsql.jdbc:jaybird-jdk17"
-        },
-        {
-            "old": "org.firebirdsql.jdbc:jaybird",
-            "new": "org.firebirdsql.jdbc:jaybird-jdk18"
-        },
-        {
             "old": "org.flowable:flowable-spring-boot-starter-basic",
             "new": "org.flowable:flowable-spring-boot-starter-process"
         },
