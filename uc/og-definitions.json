@@ -514,10 +514,6 @@
             "new": "de.cwkr:cwkr-util"
         },
         {
-            "old": "de.cwkr.validation:validation-util",
-            "new": "de.cwkr:tracerr"
-        },
-        {
             "old": "de.stklcode.jvault:connector",
             "new": "de.stklcode.jvault:jvault-connector"
         },
