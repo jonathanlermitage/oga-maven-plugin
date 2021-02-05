@@ -159,10 +159,6 @@
             "new": "com.github.oshi:oshi-parent"
         },
         {
-            "old": "com.github.derjust:spring-data-dynamodb",
-            "new": "com.github.spring-data-dynamodb:spring-data-dynamodb"
-        },
-        {
             "old": "com.github.s4u:jfatek",
             "new": "org.simplify4u:jfatek"
         },
@@ -518,20 +514,12 @@
             "new": "de.cwkr:cwkr-util"
         },
         {
-            "old": "de.cwkr.validation:validation-util",
-            "new": "de.cwkr:tracerr"
-        },
-        {
             "old": "de.stklcode.jvault:connector",
             "new": "de.stklcode.jvault:jvault-connector"
         },
         {
             "old": "de.thksystems:tkscommons-crypto",
             "new": "de.thksystems:tkscommons"
-        },
-        {
-            "old": "de.thksystems:tkscommons",
-            "new": "de.thksystems:tkscommons-lang"
         },
         {
             "old": "de.thksystems:tkscommons-lang",
@@ -1200,14 +1188,6 @@
         {
             "old": "org.firebirdsql.jdbc:jaybird-jdk18",
             "new": "org.firebirdsql.jdbc:jaybird"
-        },
-        {
-            "old": "org.firebirdsql.jdbc:jaybird",
-            "new": "org.firebirdsql.jdbc:jaybird-jdk17"
-        },
-        {
-            "old": "org.firebirdsql.jdbc:jaybird",
-            "new": "org.firebirdsql.jdbc:jaybird-jdk18"
         },
         {
             "old": "org.flowable:flowable-spring-boot-starter-basic",
