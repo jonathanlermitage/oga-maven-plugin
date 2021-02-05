@@ -438,6 +438,10 @@
             "new": "com.semanticcms:semanticcms-core-view-content"
         },
         {
+            "old": "com.sun.mail:javax.mail",
+            "new": "com.sun.mail:jakarta.mail"
+        },
+        {
             "old": "com.sun.xml:saaj-impl",
             "new": "com.sun.xml.messaging.saaj:saaj-impl"
         },
@@ -840,6 +844,14 @@
         {
             "old": "javax.el:javax.el-api",
             "new": "jakarta.el:jakarta.el-api"
+        },
+        {
+            "old": "javax.mail:javax.mail-api",
+            "new": "jakarta.mail:jakarta.mail-api"
+        },
+        {
+            "old": "javax.mail:mail",
+            "new": "javax.mail:javax.mail-api"
         },
         {
             "old": "javax.inject:javax.inject",
