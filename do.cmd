@@ -13,7 +13,7 @@ if [%1] == [help] (
 )
 
 if [%1] == [t] (
-  mvnw clean verify
+  mvnw --no-transfer-progress --show-version clean verify
 )
 if [%1] == [b] (
   mvnw clean compile -DskipTests
@@ -37,5 +37,5 @@ if [%1] == [dt] (
   mvnw dependency:tree
 )
 if [%1] == [pub] (
-  mvn clean release:prepare release:perform
+  mvn clean release:prepare release:perform -P ossrh
 )
