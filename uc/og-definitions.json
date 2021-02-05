@@ -159,10 +159,6 @@
             "new": "com.github.oshi:oshi-parent"
         },
         {
-            "old": "com.github.derjust:spring-data-dynamodb",
-            "new": "com.github.spring-data-dynamodb:spring-data-dynamodb"
-        },
-        {
             "old": "com.github.s4u:jfatek",
             "new": "org.simplify4u:jfatek"
         },
