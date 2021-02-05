@@ -522,10 +522,6 @@
             "new": "de.thksystems:tkscommons"
         },
         {
-            "old": "de.thksystems:tkscommons",
-            "new": "de.thksystems:tkscommons-lang"
-        },
-        {
             "old": "de.thksystems:tkscommons-lang",
             "new": "de.thksystems:tkscommons"
         },
