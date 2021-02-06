@@ -1,6 +1,6 @@
 {
-    "version": "5",
-    "date": "2020/11/24",
+    "version": "6",
+    "date": "2021/02/06",
     "migration": [
         {
             "old": "acegisecurity",
