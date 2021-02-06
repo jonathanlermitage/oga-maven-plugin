@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.3.0 (WIP)
+* show the number of definitions loaded.
+
 ### 1.2.0 (2020/11/15)
 * maven-index-search-suspect-coordinates: update Central repository URL to use HTTPS. Thx [froque](https://github.com/froque).
 * make the plugin compatible with project with multiples modules. Thx [froque](https://github.com/froque).
