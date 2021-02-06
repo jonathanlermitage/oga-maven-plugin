@@ -38,7 +38,7 @@ class CheckMojo : AbstractMojo() {
             log.info("Loading definitions from $definitionsUrlInUse")
             val definitions = URL(definitionsUrlInUse).let { IOTools.readDefinitionsFromUrl(it) }
             val nbDefinitions = definitions.migration?.size
-            log.info("Loaded $nbDefinitions definitions")
+            log.info("Loaded $nbDefinitions definitions, lastly updated on ${definitions.date}")
 
             val dependencies = project?.dependencies!!.filterNotNull()
             val deprecatedDependencies: HashSet<String> = HashSet()
