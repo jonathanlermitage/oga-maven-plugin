@@ -62,7 +62,7 @@
         <maven-verifier.version>1.7.2</maven-verifier.version>
 
         <!-- plugins -->
-        <dokka-maven-plugin-version>1.4.20</dokka-maven-plugin-version>
+        <!--dokka-maven-plugin-version>1.4.20</dokka-maven-plugin-version-->
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-invoker-plugin.version>3.2.1</maven-invoker-plugin.version>
         <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
@@ -228,7 +228,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.jetbrains.dokka</groupId>
                 <artifactId>dokka-maven-plugin</artifactId>
                 <version>${dokka-maven-plugin-version}</version>
@@ -240,7 +240,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
 
         </plugins>
     </build>
