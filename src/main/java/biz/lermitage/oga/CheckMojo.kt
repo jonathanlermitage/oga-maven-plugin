@@ -16,6 +16,7 @@ import java.net.URL
  * @author Jonathan Lermitage
  * @version 1
  */
+@Suppress("unused")
 @Mojo(name = "check", requiresProject = true, requiresOnline = true, threadSafe = true)
 class CheckMojo : AbstractMojo() {
 
@@ -38,7 +39,11 @@ class CheckMojo : AbstractMojo() {
             log.info("Loading definitions from $definitionsUrlInUse")
             val definitions = URL(definitionsUrlInUse).let { IOTools.readDefinitionsFromUrl(it) }
             val nbDefinitions = definitions.migration?.size
-            log.info("Loaded $nbDefinitions definitions, lastly updated on ${definitions.date}")
+            var welcomeMsg = "Loaded $nbDefinitions definitions"
+            if (definitions.date != null) {
+                welcomeMsg += ", updated on ${definitions.date}"
+            }
+            log.info(welcomeMsg)
 
             val dependencies = project?.dependencies!!.filterNotNull()
             val deprecatedDependencies: HashSet<String> = HashSet()
@@ -49,7 +54,10 @@ class CheckMojo : AbstractMojo() {
                 if (mig.isGroupIdOnly) {
                     dependencies.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId) {
-                            val msg = "'${dep.groupId}' groupId should be replaced by '${mig.newerGroupId}'"
+                            var msg = "'${dep.groupId}' groupId should be replaced by '${mig.newerGroupId}'"
+                            if (mig.context != null && mig.context.isNotEmpty()) {
+                                msg += " (context: ${mig.context})"
+                            }
                             log.error(msg)
                             deprecatedDependencies.add("${dep.groupId}:${dep.artifactId}")
                         }
@@ -57,7 +65,10 @@ class CheckMojo : AbstractMojo() {
                 } else {
                     dependencies.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId && dep.artifactId == mig.oldArtifactId) {
-                            val msg = "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}'"
+                            var msg = "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}'"
+                            if (mig.context != null && mig.context.isNotEmpty()) {
+                                msg += " (context: ${mig.context})"
+                            }
                             log.error(msg)
                             deprecatedDependencies.add("${dep.groupId}:${dep.artifactId}")
                         }

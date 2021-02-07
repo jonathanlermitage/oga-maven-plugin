@@ -3,6 +3,7 @@
 ### 1.3.0 (WIP)
 * show the number of definitions loaded.
 * show the definitions file update date.
+* add some context in definitions. Example: indicates if suggested change reflects Java EE migration to Jakarta EE. 
 
 ### 1.2.0 (2020/11/15)
 * maven-index-search-suspect-coordinates: update Central repository URL to use HTTPS. Thx [froque](https://github.com/froque).

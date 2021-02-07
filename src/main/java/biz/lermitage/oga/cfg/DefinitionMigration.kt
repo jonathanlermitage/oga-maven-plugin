@@ -29,4 +29,6 @@ class DefinitionMigration {
 
     val isGroupIdOnly: Boolean
         get() = !old!!.contains(":")
+
+    val context: String? = null
 }
