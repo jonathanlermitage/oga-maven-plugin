@@ -895,7 +895,8 @@
         },
         {
             "old": "javax.xml.bind:jaxb-api",
-            "new": "jakarta.xml.bind:jakarta.xml.bind-api"
+            "new": "jakarta.xml.bind:jakarta.xml.bind-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.xml.soap:saaj-impl",
