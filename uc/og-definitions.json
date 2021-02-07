@@ -831,11 +831,13 @@
         },
         {
             "old": "javax.activation:javax.activation-api",
-            "new": "jakarta.activation:jakarta.activation-api"
+            "new": "jakarta.activation:jakarta.activation-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.annotation:javax.annotation-api",
-            "new": "jakarta.annotation:jakarta.annotation-api"
+            "new": "jakarta.annotation:jakarta.annotation-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.el:el-api",
@@ -843,7 +845,8 @@
         },
         {
             "old": "javax.el:javax.el-api",
-            "new": "jakarta.el:jakarta.el-api"
+            "new": "jakarta.el:jakarta.el-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.mail:javax.mail-api",
@@ -858,8 +861,134 @@
             "new": "jakarta.inject:jakarta.inject-api"
         },
         {
+            "old": "javax.json:javax.json-api",
+            "new": "jakarta.json:jakarta.json-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.security.jacc:javax.security.jacc-api",
+            "new": "jakarta.security.jacc:jakarta.security.jacc-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.security.auth.message:javax.security.auth.message-api",
+            "new": "jakarta.security.auth.message:jakarta.security.auth.message-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.mail:javax.mail-api",
+            "new": "jakarta.mail:jakarta.mail-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.xml.ws:jaxws-api",
+            "new": "jakarta.xml.ws:jakarta.xml.ws-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.jws:javax.jws-api",
+            "new": "jakarta.jws:jakarta.jws-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.xml.soap:javax.xml.soap-api",
+            "new": "jakarta.xml.soap:jakarta.xml.soap-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.xml.bind:javax.xml.soap-api",
+            "new": "jakarta.xml.soap:jakarta.xml.soap-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.resource:javax.resource-api",
+            "new": "jakarta.resource:jakarta.resource-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.jms:javax.jms-api",
+            "new": "jakarta.jms:jakarta.jms-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.json.bind:javax.json.bind-api",
+            "new": "jakarta.json.bind:jakarta.json.bind-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.servlet.jsp:javax.servlet.jsp-api",
+            "new": "jakarta.servlet.jsp:jakarta.servlet.jsp-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api",
+            "new": "jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.transaction:javax.transaction-api",
+            "new": "jakarta.transaction:jakarta.transaction-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.management.j2ee:javax.management.j2ee-api",
+            "new": "jakarta.management.j2ee:jakarta.management.j2ee-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.enterprise.deploy:javax.enterprise.deploy-api",
+            "new": "jakarta.enterprise.deploy:jakarta.enterprise.deploy-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.xml.rpc:javax.xml.rpc-api",
+            "new": "jakarta.xml.rpc:jakarta.xml.rpc-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.xml.registry:javax.xml.registry-api",
+            "new": "jakarta.xml.registry:jakarta.xml.registry-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.websocket:javax.websocket-all",
+            "new": "jakarta.websocket:jakarta.websocket-all",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.websocket-api:javax.websocket-client-api",
+            "new": "jakarta.websocket-api:jakarta.websocket-client-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.enterprise.concurrent:javax.enterprise.concurrent-api",
+            "new": "jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.ejb:javax.ejb-api",
+            "new": "jakarta.ejb:jakarta.ejb-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.security.enterprise:javax.security.enterprise-api",
+            "new": "jakarta.security.enterprise:jakarta.security.enterprise-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.interceptor:javax.interceptor-api",
+            "new": "jakarta.interceptor:jakarta.interceptor-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
+            "old": "javax.faces:javax.faces-api",
+            "new": "jakarta.faces:jakarta.faces-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
+        },
+        {
             "old": "javax.persistence:javax.persistence-api",
-            "new": "jakarta.persistence:jakarta.persistence-api"
+            "new": "jakarta.persistence:jakarta.persistence-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.persistence:persistence-api",
@@ -867,7 +996,8 @@
         },
         {
             "old": "javax.servlet:javax.servlet-api",
-            "new": "jakarta.servlet:jakarta.servlet-api"
+            "new": "jakarta.servlet:jakarta.servlet-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.servlet:servlet-api",
@@ -875,11 +1005,13 @@
         },
         {
             "old": "javax.validation:validation-api",
-            "new": "jakarta.validation:jakarta.validation-api"
+            "new": "jakarta.validation:jakarta.validation-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.ws.rs:javax.ws.rs-api",
-            "new": "jakarta.ws.rs:jakarta.ws.rs-api"
+            "new": "jakarta.ws.rs:jakarta.ws.rs-api",
+            "context": "Java EE new home is Jakarta EE, see https://wiki.eclipse.org/Jakarta_EE_Maven_Coordinates"
         },
         {
             "old": "javax.xml:jaxb-api",
