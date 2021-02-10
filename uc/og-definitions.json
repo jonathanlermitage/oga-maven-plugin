@@ -1347,6 +1347,10 @@
             "new": "org.flowable:flowable-spring-boot-starter-process-rest"
         },
         {
+            "old": "org.glassfish:javax.el",
+            "new": "org.glassfish:jakarta.el"
+        },
+        {
             "old": "org.hibernate:hibernate-infinispan",
             "new": "org.infinispan:infinispan-hibernate-cache"
         },
