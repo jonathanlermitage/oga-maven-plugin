@@ -36,7 +36,7 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 ```xml
 <groupId>biz.lermitage.oga</groupId>
 <artifactId>oga-maven-plugin</artifactId>
-<version>1.2.0</version>
+<version>1.3.0</version>
 ```
 
 ### Configuration
