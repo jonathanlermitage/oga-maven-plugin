@@ -44,4 +44,25 @@ class CheckMojoITest : TestCase() {
 
         verifier.resetStreams()
     }
+
+    @Throws(Exception::class)
+    fun testProjectWithOldDependenciesDutDontFail() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_dont_fail")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        try {
+            verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
+        } catch (e: VerificationException) {
+            fail("invocation should fail")
+        }
+
+        verifier.verifyTextInLog("[ERROR] 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
+        verifier.verifyTextInLog("[ERROR] 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
+        //verifier.verifyTextInLog("[ERROR] 'org.apache.commons:commons-io' has a migration notice on https://mvnrepository.com/artifact/org.apache.commons/commons-io")
+
+        verifier.resetStreams()
+    }
 }

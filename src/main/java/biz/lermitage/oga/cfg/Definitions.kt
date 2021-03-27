@@ -4,7 +4,6 @@ package biz.lermitage.oga.cfg
  * List of definitions.
  *
  * @author Jonathan Lermitage
- * @version 1
  */
 class Definitions {
 

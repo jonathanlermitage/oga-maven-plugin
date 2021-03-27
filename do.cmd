@@ -36,6 +36,9 @@ if [%1] == [uv] (
 if [%1] == [dt] (
   mvnw dependency:tree
 )
+if [%1] == [prepare] (
+  mvn clean release:prepare
+)
 if [%1] == [pub] (
-  mvn clean release:prepare release:perform -P ossrh
+  mvn release:perform -P ossrh
 )

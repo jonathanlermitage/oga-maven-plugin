@@ -12,7 +12,6 @@ import java.net.URL
  * IO tools.
  *
  * @author Jonathan Lermitage
- * @version 1
  */
 object IOTools {
 

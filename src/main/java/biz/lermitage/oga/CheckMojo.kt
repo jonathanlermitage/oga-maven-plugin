@@ -14,7 +14,6 @@ import java.net.URL
  * Goal which checks that no dependency uses a deprecated groupId.
  *
  * @author Jonathan Lermitage
- * @version 1
  */
 @Suppress("unused")
 @Mojo(name = "check", requiresProject = true, requiresOnline = true, threadSafe = true)
@@ -23,6 +22,10 @@ class CheckMojo : AbstractMojo() {
     /** Alternative location for og-definitions.json config file. */
     @Parameter(name = "ogDefinitionsUrl")
     private val ogDefinitionsUrl: String? = null
+
+    /** Fail on error, otherwise display an error message only. */
+    @Parameter(name = "failOnError")
+    private val failOnError: Boolean = true
 
     @Parameter(property = "project", readonly = true)
     var project: MavenProject? = null
@@ -89,7 +92,11 @@ class CheckMojo : AbstractMojo() {
                     }
                 }*/
             if (deprecatedDependencies.isNotEmpty()) {
-                throw MojoExecutionException("Project has old dependencies; see warning/error messages")
+                if (failOnError) {
+                    throw MojoExecutionException("Project has old dependencies; see warning/error messages")
+                } else {
+                    log.error("Project has old dependencies; see warning/error messages")
+                }
             }
             log.info("No problem detected. Good job! :-)")
         } catch (e: IOException) {

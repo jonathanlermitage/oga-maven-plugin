@@ -6,7 +6,6 @@ import com.google.gson.annotations.SerializedName
  * Definition migration.
  *
  * @author Jonathan Lermitage
- * @version 1
  */
 class DefinitionMigration {
 
