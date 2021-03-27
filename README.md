@@ -41,7 +41,7 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 
 ### Configuration
 
-You can use an alternate [definitions file](https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json) by using the `ogDefinitionsUrl` property:
+You can use an alternate [definitions file](https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json) by using the `ogDefinitionsUrl` property. You can also choose to not fail the build if deprecated dependencies are found with the `failOnError` property (defaults to true):
 ```xml
 <build>
     <plugins>
@@ -51,7 +51,7 @@ You can use an alternate [definitions file](https://raw.githubusercontent.com/jo
             <version>1.3.0</version>
             <configuration>
                 <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
-                <failOnError>true</failOnError>
+                <failOnError>false</failOnError>
             </configuration>
         </plugin>
     </plugins>
