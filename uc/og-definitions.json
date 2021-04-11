@@ -1,6 +1,6 @@
 {
-    "version": "6",
-    "date": "2021/02/07",
+    "version": "7",
+    "date": "2021/04/11",
     "migration": [
         {
             "old": "acegisecurity",
@@ -197,6 +197,11 @@
         {
             "old": "com.google.apis:google-api-services-sql",
             "new": "com.google.apis:google-api-services-sqladmin"
+        },
+        {
+            "old": "com.google.inject.extensions:guice-multibindings",
+            "new": "com.google.inject:guice",
+            "context": "Since Guice 4.2, multibindings support has moved to Guice core, see https://github.com/google/guice/wiki/Multibindings"
         },
         {
             "old": "com.googlecode.flyway:flyway-core",
