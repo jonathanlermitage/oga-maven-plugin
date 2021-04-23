@@ -1,6 +1,6 @@
 {
-    "version": "7",
-    "date": "2021/04/11",
+    "version": "8",
+    "date": "2021/04/23",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1590,6 +1590,11 @@
         {
             "old": "org.truth0:truth-parent",
             "new": "com.google.truth:truth-parent"
+        },
+        {
+            "old": "org.koin",
+            "new": "io.insert-koin",
+            "context": "migration from jcenter to maven central, see https://github.com/InsertKoinIO/koin#maven-central"
         },
         {
             "old": "poi:poi-2.5-final",
