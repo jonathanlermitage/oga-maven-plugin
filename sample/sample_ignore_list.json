@@ -1,0 +1,13 @@
+{
+    "ignoreList": [
+        {
+            "item": "com.graphql-java:graphql-spring-boot-starter"
+        },
+        {
+            "item": "org.apache.commons"
+        },
+        {
+            "item": "bouncycastle"
+        }
+    ]
+}

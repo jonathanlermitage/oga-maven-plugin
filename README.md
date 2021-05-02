@@ -36,7 +36,7 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 ```xml
 <groupId>biz.lermitage.oga</groupId>
 <artifactId>oga-maven-plugin</artifactId>
-<version>1.3.0</version>
+<version>1.4.0</version>
 ```
 
 ### Configuration
@@ -48,7 +48,7 @@ You can use an alternate [definitions file](https://raw.githubusercontent.com/jo
         <plugin>
             <groupId>biz.lermitage.oga</groupId>
             <artifactId>oga-maven-plugin</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
             <configuration>
                 <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
                 <failOnError>false</failOnError>
@@ -57,6 +57,16 @@ You can use an alternate [definitions file](https://raw.githubusercontent.com/jo
     </plugins>
 </build>
 ```
+
+You can also provide a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*:
+```xml
+            <configuration>
+                <ignoreListFile>local-ignore-list.json</ignoreListFile>
+                <!-- or -->
+                <ignoreListUrl>https://website.com/remote-ignore-list.json</ignoreListUrl>
+            </configuration>
+```
+Please see the sample [ignore-list file](sample/sample_ignore_list.json). For each of your dependencies or proposed migrations, the plugin will ignore it if it finds its coordinates in the ignore-list. So, by ignoring "foo:bar" (or "foo"), you will ignore this coordinate from your project dependencies and from the definitions file.
 
 ## Build
 
