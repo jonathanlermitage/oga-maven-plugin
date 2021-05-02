@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.4.0 (2021/05/02)
+* ignore-list support.
+
 ### 1.3.0 (2021/03/27)
 * show the number of definitions loaded.
 * show the definitions file update date.
