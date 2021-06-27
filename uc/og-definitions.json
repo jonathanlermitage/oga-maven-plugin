@@ -1,6 +1,6 @@
 {
-    "version": "9",
-    "date": "2021/05/27",
+    "version": "10",
+    "date": "2021/06/27",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1354,6 +1354,10 @@
         {
             "old": "org.glassfish:javax.el",
             "new": "org.glassfish:jakarta.el"
+        },
+        {
+            "old": "org.glassfish:javax.json",
+            "new": "org.glassfish:jakarta.json"
         },
         {
             "old": "org.hamcrest:hamcrest-all",
