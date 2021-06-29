@@ -23,19 +23,19 @@ import java.util.*
 class CheckMojo : AbstractMojo() {
 
     /** Alternative location for og-definitions.json config file. */
-    @Parameter(name = "ogDefinitionsUrl")
+    @Parameter(name = "ogDefinitionsUrl", property = "ogDefinitionsUrl")
     private val ogDefinitionsUrl: String? = null
 
     /** Location ignore list local file. */
-    @Parameter(name = "ignoreListFile")
+    @Parameter(name = "ignoreListFile", property = "ignoreListFile")
     private val ignoreListFile: String? = null
 
     /** Location ignore list remote url. */
-    @Parameter(name = "ignoreListUrl")
+    @Parameter(name = "ignoreListUrl", property = "ignoreListUrl")
     private val ignoreListUrl: String? = null
 
     /** Fail on error, otherwise display an error message only. */
-    @Parameter(name = "failOnError")
+    @Parameter(name = "failOnError", property = "failOnError")
     private val failOnError: Boolean = true
 
     @Parameter(property = "project", readonly = true)
