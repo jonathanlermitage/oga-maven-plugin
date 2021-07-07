@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.5.0 (2021/05/02)
+* configure plugin with properties.
+
 ### 1.4.0 (2021/05/02)
 * ignore-list support.
 
