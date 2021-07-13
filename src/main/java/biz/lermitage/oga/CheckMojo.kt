@@ -69,9 +69,21 @@ class CheckMojo : AbstractMojo() {
             }
             log.info(welcomeMsg)
 
-            val dependencies = project?.dependencies!!.filterNotNull()
+            val libs = project?.dependencies!!.filterNotNull().map { dependency ->
+                Dependency(
+                    dependency.groupId,
+                    dependency.artifactId
+                )
+            }
+            val plugins = project?.pluginArtifacts!!.filterNotNull().map { dependency ->
+                Dependency(
+                    dependency.groupId,
+                    dependency.artifactId
+                )
+            }
+            val dependencies = libs.plus(plugins)
             val deprecatedDependencies: HashSet<String> = HashSet()
-            log.info("Checking dependencies...")
+            log.info("Checking dependencies and plugins...")
 
             // compare project dependencies to integrated black-list
             definitions.migration!!.forEach { mig ->
