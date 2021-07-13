@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.5.4 (WIP)
+* fix #26 hide success message if found errors but `failOnError` is set to false.
+
 ### 1.5.3 (2021/07/08)
 * configure plugin with properties.
 
