@@ -2,6 +2,7 @@
 
 ### 1.6.0 (WIP)
 * fix #26 hide success message if found errors but `failOnError` is set to false.
+* Maven plugins are now analysed in addition to dependencies.
 
 ### 1.5.3 (2021/07/08)
 * configure plugin with properties.
