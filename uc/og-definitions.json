@@ -1,6 +1,6 @@
 {
-    "version": "10",
-    "date": "2021/06/27",
+    "version": "11",
+    "date": "2021/07/14",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1730,6 +1730,11 @@
         {
             "old": "xstream:xstream",
             "new": "com.thoughtworks.xstream:xstream"
+        },
+        {
+            "old": "pl.project13.maven:git-commit-id-plugin",
+            "new": "io.github.git-commit-id:git-commit-id-maven-plugin",
+            "context": "version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project"
         }
     ]
 }
