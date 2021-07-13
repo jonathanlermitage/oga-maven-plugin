@@ -143,8 +143,9 @@ class CheckMojo : AbstractMojo() {
                 } else {
                     log.error("Project has old dependencies; see warning/error messages")
                 }
+            } else {
+                log.info("No problem detected. Good job! :-)")
             }
-            log.info("No problem detected. Good job! :-)")
         } catch (e: IOException) {
             throw MojoExecutionException("Plugin failure, please report it to $GITHUB_ISSUES_URL", e)
         } catch (e: XmlPullParserException) {
