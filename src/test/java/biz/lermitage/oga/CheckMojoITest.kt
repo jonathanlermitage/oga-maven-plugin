@@ -40,7 +40,7 @@ class CheckMojoITest : TestCase() {
 
         verifier.verifyTextInLog("[ERROR] 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
         verifier.verifyTextInLog("[ERROR] 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
-        //verifier.verifyTextInLog("[ERROR] 'org.apache.commons:commons-io' has a migration notice on https://mvnrepository.com/artifact/org.apache.commons/commons-io")
+        verifier.verifyTextInLog("[ERROR] 'pl.project13.maven:git-commit-id-plugin' should be replaced by 'io.github.git-commit-id:git-commit-id-maven-plugin' (context: version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project)")
 
         verifier.resetStreams()
     }
@@ -61,7 +61,6 @@ class CheckMojoITest : TestCase() {
 
         verifier.verifyTextInLog("[ERROR] 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
         verifier.verifyTextInLog("[ERROR] 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
-        //verifier.verifyTextInLog("[ERROR] 'org.apache.commons:commons-io' has a migration notice on https://mvnrepository.com/artifact/org.apache.commons/commons-io")
 
         verifier.resetStreams()
     }
