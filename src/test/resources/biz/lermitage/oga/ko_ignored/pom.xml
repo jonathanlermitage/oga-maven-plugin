@@ -40,7 +40,7 @@
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
                 <artifactId>oga-maven-plugin</artifactId>
-                <version>1.5.4-SNAPSHOT</version>
+                <version>1.6.0-SNAPSHOT</version>
                 <configuration>
                     <ignoreListFile>oga-ignore.json</ignoreListFile>
                 </configuration>
