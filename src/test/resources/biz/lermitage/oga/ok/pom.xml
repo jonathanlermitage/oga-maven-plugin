@@ -2,11 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>biz.lermitage.oga</groupId>
     <artifactId>project-to-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Test CheckMojo</name>
+
+    <parent>
+        <groupId>biz.lermitage.oga</groupId>
+        <artifactId>parent-pom</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <dependencies>
 
@@ -17,14 +23,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>biz.lermitage.oga</groupId>
-                <artifactId>oga-maven-plugin</artifactId>
-                <version>1.6.0-SNAPSHOT</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>
