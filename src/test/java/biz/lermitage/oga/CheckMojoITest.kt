@@ -38,9 +38,9 @@ class CheckMojoITest : TestCase() {
             // plugin should fail here. Assert message log later
         }
 
-        verifier.verifyTextInLog("[ERROR] 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
-        verifier.verifyTextInLog("[ERROR] 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
-        verifier.verifyTextInLog("[ERROR] 'pl.project13.maven:git-commit-id-plugin' should be replaced by 'io.github.git-commit-id:git-commit-id-maven-plugin' (context: version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project)")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
+        verifier.verifyTextInLog("[ERROR] (plugin) 'pl.project13.maven:git-commit-id-plugin' should be replaced by 'io.github.git-commit-id:git-commit-id-maven-plugin' (context: version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project)")
 
         verifier.resetStreams()
     }
@@ -59,8 +59,8 @@ class CheckMojoITest : TestCase() {
             fail("invocation should not fail")
         }
 
-        verifier.verifyTextInLog("[ERROR] 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
-        verifier.verifyTextInLog("[ERROR] 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
 
         verifier.resetStreams()
     }
@@ -79,8 +79,8 @@ class CheckMojoITest : TestCase() {
             fail("invocation should not fail")
         }
 
-        verifier.verifyTextInLog("[INFO] 'com.graphql-java:graphql-spring-boot-starter' could be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter' but it's excluded by ignore list")
-        verifier.verifyTextInLog("[INFO] 'bouncycastle' groupId could be replaced by 'org.bouncycastle' but it's excluded by ignore list")
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.graphql-java:graphql-spring-boot-starter' could be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter' but it's excluded by ignore list")
+        verifier.verifyTextInLog("[INFO] (dependency) 'bouncycastle' groupId could be replaced by 'org.bouncycastle' but it's excluded by ignore list")
 
         verifier.resetStreams()
     }

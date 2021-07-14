@@ -72,17 +72,19 @@ class CheckMojo : AbstractMojo() {
             val libs = project?.dependencies!!.filterNotNull().map { dependency ->
                 Dependency(
                     dependency.groupId,
-                    dependency.artifactId
+                    dependency.artifactId,
+                    DependencyType.DEPENDENCY
                 )
             }
             val plugins = project?.pluginArtifacts!!.filterNotNull().map { dependency ->
                 Dependency(
                     dependency.groupId,
-                    dependency.artifactId
+                    dependency.artifactId,
+                    DependencyType.PLUGIN
                 )
             }
             val dependencies = libs.plus(plugins)
-            val deprecatedDependencies: HashSet<String> = HashSet()
+            var deprecatedDependenciesFound = false
             log.info("Checking dependencies and plugins...")
 
             // compare project dependencies to integrated black-list
@@ -96,14 +98,14 @@ class CheckMojo : AbstractMojo() {
                                 val msg =
                                     "'${dep.groupId}' groupId could be replaced by '${mig.newerGroupId}' " +
                                         "but it's excluded by ignore list"
-                                log.info(msg)
+                                log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg = "'${dep.groupId}' groupId should be replaced by '${mig.newerGroupId}'"
                                 if (mig.context != null && mig.context.isNotEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }
-                                log.error(msg)
-                                deprecatedDependencies.add("${dep.groupId}:${dep.artifactId}")
+                                log.error("(${dep.type.label}) $msg")
+                                deprecatedDependenciesFound = true
                             }
                         }
                     }
@@ -122,34 +124,22 @@ class CheckMojo : AbstractMojo() {
                                 val msg =
                                     "'${dep.groupId}:${dep.artifactId}' could be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}' " +
                                         "but it's excluded by ignore list"
-                                log.info(msg)
+                                log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg =
                                     "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}'"
                                 if (mig.context != null && mig.context.isNotEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }
-                                log.error(msg)
-                                deprecatedDependencies.add("${dep.groupId}:${dep.artifactId}")
+                                log.error("(${dep.type.label}) $msg")
+                                deprecatedDependenciesFound = true
                             }
                         }
                     }
                 }
             }
 
-            //// code commented: mvnrepository.com bans IP too quickly (10 req every 500ms)
-            // for every safe dependency, look for deprecation on mvnrepository.com
-            /*dependencies
-                .filter { dep -> !deprecatedDependencies.contains("${dep.groupId}:${dep.artifactId}") }
-                .forEach { dep ->
-                    if (isDeprecatedOnMavencentral(dep.groupId, dep.artifactId)) {
-                        val msg = "'${dep.groupId}:${dep.artifactId}' has a migration notice " +
-                            "on https://mvnrepository.com/artifact/${dep.groupId}/${dep.artifactId}"
-                        log.error(msg)
-                        deprecatedDependencies.add("${dep.groupId}:${dep.artifactId}")
-                    }
-                }*/
-            if (deprecatedDependencies.isNotEmpty()) {
+            if (deprecatedDependenciesFound) {
                 if (failOnError) {
                     throw MojoExecutionException("Project has old dependencies; see warning/error messages")
                 } else {
