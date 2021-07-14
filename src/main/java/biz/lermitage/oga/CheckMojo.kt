@@ -69,7 +69,7 @@ class CheckMojo : AbstractMojo() {
             }
             log.info(welcomeMsg)
 
-            val libs = project?.dependencies!!.filterNotNull().map { dependency ->
+            val dependencies = project?.dependencies!!.filterNotNull().map { dependency ->
                 Dependency(
                     dependency.groupId,
                     dependency.artifactId,
@@ -83,14 +83,14 @@ class CheckMojo : AbstractMojo() {
                     DependencyType.PLUGIN
                 )
             }
-            val dependencies = libs.plus(plugins)
+            val projectLibs = dependencies.plus(plugins)
             var deprecatedDependenciesFound = false
             log.info("Checking dependencies and plugins...")
 
             // compare project dependencies to integrated black-list
             definitions.migration!!.forEach { mig ->
                 if (mig.isGroupIdOnly) {
-                    dependencies.forEach { dep ->
+                    projectLibs.forEach { dep ->
 
                         if (dep.groupId == mig.oldGroupId) {
 
@@ -110,7 +110,7 @@ class CheckMojo : AbstractMojo() {
                         }
                     }
                 } else {
-                    dependencies.forEach { dep ->
+                    projectLibs.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId && dep.artifactId == mig.oldArtifactId) {
 
                             if (shouldIgnoreArtifactId(
