@@ -1,6 +1,6 @@
 {
-    "version": "11",
-    "date": "2021/07/14",
+    "version": "12",
+    "date": "2021/07/15",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1735,6 +1735,11 @@
             "old": "pl.project13.maven:git-commit-id-plugin",
             "new": "io.github.git-commit-id:git-commit-id-maven-plugin",
             "context": "version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project"
+        },
+        {
+            "old": "org.codehaus.mojo:dependency-maven-plugin",
+            "new": "org.apache.maven.plugins:maven-dependency-plugin",
+            "context": "relocated from Mojo to Apache, see https://maven.apache.org/plugins/maven-dependency-plugin/faq.html#plugin_name"
         }
     ]
 }
