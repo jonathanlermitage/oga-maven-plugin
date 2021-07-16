@@ -36,7 +36,7 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 ```xml
 <groupId>biz.lermitage.oga</groupId>
 <artifactId>oga-maven-plugin</artifactId>
-<version>1.5.3</version>
+<version>1.6.0</version>
 ```
 
 ### Configuration
@@ -48,7 +48,7 @@ You can use an alternate [definitions file](https://raw.githubusercontent.com/jo
         <plugin>
             <groupId>biz.lermitage.oga</groupId>
             <artifactId>oga-maven-plugin</artifactId>
-            <version>1.5.3</version>
+            <version>1.6.0</version>
             <configuration>
                 <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
                 <failOnError>false</failOnError>
