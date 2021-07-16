@@ -1,6 +1,6 @@
 ## Old GroupIds Alerter - Change Log
 
-### 1.6.0 (WIP)
+### 1.6.0 (2021/07/17)
 * fix #26 hide success message if found errors but `failOnError` is set to false.
 * Maven plugins are now analysed in addition to dependencies.
 
