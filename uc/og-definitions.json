@@ -1,6 +1,6 @@
 {
-    "version": "12",
-    "date": "2021/07/15",
+    "version": "13",
+    "date": "2021/07/29",
     "migration": [
         {
             "old": "acegisecurity",
@@ -17,6 +17,11 @@
         {
             "old": "antlr:antlr",
             "new": "org.antlr:antlr"
+        },
+        {
+            "old": "asm",
+            "new": "org.ow2.asm",
+            "context": "The group id of ASM 4.0 is \"org.ow2.asm\", which is changed \nfrom 3.X. See https://gitlab.ow2.org/asm/asm/-/issues/316288"
         },
         {
             "old": "aspectj",
