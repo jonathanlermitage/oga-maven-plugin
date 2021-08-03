@@ -1,6 +1,6 @@
 {
-    "version": "13",
-    "date": "2021/07/29",
+    "version": "14",
+    "date": "2021/08/03",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1538,6 +1538,26 @@
         {
             "old": "org.opendaylight.yangtools:features-test",
             "new": "org.opendaylight.odlparent:features-test"
+        },
+        {
+            "old": "org.osgi:core",
+            "new": "org.osgi:org.osgi.core"
+        },
+        {
+            "old": "org.osgi:org.osgi.annotation",
+            "new": "org.osgi:osgi.annotation"
+        },
+        {
+            "old": "org.osgi:org.osgi.compendium",
+            "new": "org.osgi:osgi.cmpn"
+        },
+        {
+            "old": "org.osgi:org.osgi.core",
+            "new": "org.osgi:osgi.core"
+        },
+        {
+            "old": "org.osgi:org.osgi.enterprise",
+            "new": "org.osgi:osgi.enterprise"
         },
         {
             "old": "org.scalatest:scalatest",
