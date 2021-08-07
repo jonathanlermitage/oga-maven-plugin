@@ -1,6 +1,6 @@
 {
-    "version": "14",
-    "date": "2021/08/03",
+    "version": "15",
+    "date": "2021/08/05",
     "migration": [
         {
             "old": "acegisecurity",
@@ -446,6 +446,16 @@
         {
             "old": "com.semanticcms:semanticcms-view-content",
             "new": "com.semanticcms:semanticcms-core-view-content"
+        },
+        {
+            "old": "com.squareup.okhttp",
+            "new": "com.squareup.okhttp3",
+            "context": "The Maven group ID is now com.squareup.okhttp3, see https://square.github.io/okhttp/changelog_3x/#version-300-rc1"
+        },
+        {
+            "old": "com.squareup.retrofit",
+            "new": "com.squareup.retrofit2",
+            "context": "The Maven group ID is now com.squareup.retrofit2, see https://github.com/square/retrofit/blob/master/CHANGELOG.md"
         },
         {
             "old": "com.sun.mail:javax.mail",
