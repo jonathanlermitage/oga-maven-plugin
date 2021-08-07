@@ -420,6 +420,10 @@
             "new": "org.jvnet.hudson.tools:maven-hudson-plugin"
         },
         {
+            "old": "com.mysema.maven:maven-apt-plugin",
+            "new": "com.mysema.maven:apt-maven-plugin"
+        },
+        {
             "old": "com.mysema.querydsl",
             "new": "com.querydsl"
         },
