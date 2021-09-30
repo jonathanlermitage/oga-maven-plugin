@@ -1,6 +1,6 @@
 {
-    "version": "15",
-    "date": "2021/08/05",
+    "version": "16",
+    "date": "2021/09/30",
     "migration": [
         {
             "old": "acegisecurity",
@@ -410,6 +410,11 @@
         {
             "old": "commons-email:commons-email",
             "new": "org.apache.commons:commons-email"
+        },
+        {
+            "old": "commons-httpclient:commons-httpclient",
+            "new": "org.apache.httpcomponents:httpclient",
+            "context": "HttpComponents Client is a successor of and replacement for Commons HttpClient 3.x. Users of Commons HttpClient are strongly encouraged to upgrade."
         },
         {
             "old": "commons-lang:commons-lang",
@@ -1277,6 +1282,11 @@
         {
             "old": "org.apache.commons:commons-io",
             "new": "commons-io:commons-io"
+        },
+        {
+            "old": "org.apache.httpcomponents:httpclient",
+            "new": "org.apache.httpcomponents.client5:httpclient5",
+            "context": "Maven group id changed to ‘org.apache.httpcomponents.client5’."
         },
         {
             "old": "org.apache.maven.its:maven-core-it-support-old-location",
