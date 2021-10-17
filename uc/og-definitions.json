@@ -1,6 +1,6 @@
 {
-    "version": "16",
-    "date": "2021/09/30",
+    "version": "17",
+    "date": "2021/10/17",
     "migration": [
         {
             "old": "acegisecurity",
@@ -621,6 +621,10 @@
         {
             "old": "fish.payara.arquillian:payara-container-4-common",
             "new": "fish.payara.arquillian:payara-container-common"
+        },
+        {
+            "old": "fop:fop",
+            "new": "org.apache.xmlgraphics:fop"
         },
         {
             "old": "freemarker:freemarker",
