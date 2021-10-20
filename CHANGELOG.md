@@ -1,6 +1,6 @@
 ## Old GroupIds Alerter - Change Log
 
-### 1.7.0 (2021/10/20)
+### 1.7.0 (WIP)
 * add a property to skip check.
 
 ### 1.6.0 (2021/07/17)
