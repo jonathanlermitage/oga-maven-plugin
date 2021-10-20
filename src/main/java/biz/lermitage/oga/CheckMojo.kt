@@ -39,7 +39,7 @@ class CheckMojo : AbstractMojo() {
     private val failOnError: Boolean = true
 
     /** Skip Check, for use in multi branch pipeline or command line override. */
-    @Parameter(name = "oga.maven.skip", property = "skip")
+    @Parameter(name = "skip", property = "oga.maven.skip")
     private val skip: Boolean = false
 
     @Parameter(property = "project", readonly = true)
@@ -54,7 +54,7 @@ class CheckMojo : AbstractMojo() {
 
         if (skip) {
             log.info("Skipping Check")
-            return;
+            return
         }
 
         try {
