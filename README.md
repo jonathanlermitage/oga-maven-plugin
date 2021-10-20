@@ -68,7 +68,7 @@ You can also provide a JSON ignore-list in order to exclude some *groupIds* or *
 ```
 Please see the sample [ignore-list file](sample/sample_ignore_list.json). For each of your dependencies or proposed migrations, the plugin will ignore it if it finds its coordinates in the ignore-list. So, by ignoring "foo:bar" (or "foo"), you will ignore this coordinate from your project dependencies and from the definitions file.
 
-Finally, you can also set configuration in command line with `-DogDefinitionsUrl`, `-DignoreListFile`, `-DignoreListUrl`, `-DfailOnError` properties.
+Finally, you can also set configuration in command line with `-DogDefinitionsUrl`, `-DignoreListFile`, `-DignoreListUrl`, `-DfailOnError`, `-Doga.maven.skip` properties.
 
 ## Build
 

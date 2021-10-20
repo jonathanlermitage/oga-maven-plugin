@@ -1,5 +1,6 @@
 <ruleset comparisonMethod="maven">
     <ignoreVersions>
-        <ignoreVersion type="regex">.*[-_\.](alpha|Alpha|ALPHA|b|beta|Beta|BETA|build|BUILD|rc|RC|EA|m|M|pr|atlassian)[-_\.]?[0-9]*</ignoreVersion>
+        <ignoreVersion type="regex">.*[-_\.](alpha|Alpha|ALPHA|b|beta|Beta|BETA|build|BUILD|rc|RC|CR|EA|m|M|pr|atlassian)[-_\.]?[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">.*\.jre[0-9]{1}</ignoreVersion>
     </ignoreVersions>
 </ruleset>

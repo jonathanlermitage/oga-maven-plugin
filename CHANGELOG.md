@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.7.0 (2021/10/20)
+* add a property to skip check.
+
 ### 1.6.0 (2021/07/17)
 * fix #26 hide success message if found errors but `failOnError` is set to false.
 * Maven plugins are now analysed in addition to dependencies.

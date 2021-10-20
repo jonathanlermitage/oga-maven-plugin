@@ -38,6 +38,10 @@ class CheckMojo : AbstractMojo() {
     @Parameter(name = "failOnError", property = "failOnError")
     private val failOnError: Boolean = true
 
+    /** Skip Check, for use in multi branch pipeline or command line override. */
+    @Parameter(name = "oga.maven.skip", property = "skip")
+    private val skip: Boolean = false
+
     @Parameter(property = "project", readonly = true)
     var project: MavenProject? = null
 
@@ -47,6 +51,11 @@ class CheckMojo : AbstractMojo() {
     @Throws(MojoExecutionException::class)
     override fun execute() {
         log.info("Old GroupId Alerter - $GITHUB_ISSUES_URL")
+
+        if (skip) {
+            log.info("Skipping Check")
+            return;
+        }
 
         try {
             val definitionsUrlInUse = ogDefinitionsUrl ?: DEFINITIONS_URL
