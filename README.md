@@ -36,7 +36,7 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 ```xml
 <groupId>biz.lermitage.oga</groupId>
 <artifactId>oga-maven-plugin</artifactId>
-<version>1.6.0</version>
+<version>1.7.0</version>
 ```
 
 ### Configuration
@@ -48,7 +48,7 @@ You can use an alternate [definitions file](https://raw.githubusercontent.com/jo
         <plugin>
             <groupId>biz.lermitage.oga</groupId>
             <artifactId>oga-maven-plugin</artifactId>
-            <version>1.6.0</version>
+            <version>1.7.0</version>
             <configuration>
                 <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
                 <failOnError>false</failOnError>
@@ -67,6 +67,8 @@ You can also provide a JSON ignore-list in order to exclude some *groupIds* or *
             </configuration>
 ```
 Please see the sample [ignore-list file](sample/sample_ignore_list.json). For each of your dependencies or proposed migrations, the plugin will ignore it if it finds its coordinates in the ignore-list. So, by ignoring "foo:bar" (or "foo"), you will ignore this coordinate from your project dependencies and from the definitions file.
+
+You can skip check (useful in multi-branch pipeline) by using the `oga.maven.skip` property.
 
 Finally, you can also set configuration in command line with `-DogDefinitionsUrl`, `-DignoreListFile`, `-DignoreListUrl`, `-DfailOnError`, `-Doga.maven.skip` properties.
 
