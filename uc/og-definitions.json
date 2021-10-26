@@ -1,6 +1,6 @@
 {
-    "version": "17",
-    "date": "2021/10/17",
+    "version": "18",
+    "date": "2021/10/26",
     "migration": [
         {
             "old": "acegisecurity",
@@ -406,6 +406,10 @@
         {
             "old": "commons-compress:commons-compress",
             "new": "org.apache.commons:commons-compress"
+        },
+        {
+            "old": "commons-configuration:commons-configuration",
+            "new": "org.apache.commons:commons-configuration2"
         },
         {
             "old": "commons-email:commons-email",
