@@ -1,6 +1,6 @@
 {
-    "version": "18",
-    "date": "2021/10/26",
+    "version": "19",
+    "date": "2021/11/03",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1363,6 +1363,26 @@
         {
             "old": "org.docbook:docbook-xsl",
             "new": "net.sf.docbook:docbook-xsl"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-api",
+            "new": "org.eclipse.jetty.websocket:websocket-jetty-api"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-server",
+            "new": "org.eclipse.jetty.websocket:websocket-jetty-server"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-client",
+            "new": "org.eclipse.jetty.websocket:websocket-jetty-client"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:javax-websocket-server-impl",
+            "new": "org.eclipse.jetty.websocket:websocket-javax-server"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:javax-websocket-client-impl",
+            "new": "org.eclipse.jetty.websocket:websocket-javax-client"
         },
         {
             "old": "org.eu.acolyte:acolyte-core",
