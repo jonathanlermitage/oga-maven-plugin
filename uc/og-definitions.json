@@ -1,6 +1,6 @@
 {
-    "version": "19",
-    "date": "2021/11/03",
+    "version": "20",
+    "date": "2021/11/08",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1430,6 +1430,11 @@
             "old": "org.hamcrest:hamcrest-core",
             "new": "org.hamcrest:hamcrest",
             "context": "This was the core API to be used by third-party framework providers. This includes a foundation set of matcher implementations for common operations. This library was used as a dependency for many third-party libraries, including JUnit 4.x. From Hamcrest version 2.x, all the classes in hamcrest-core.jar were moved into hamcrest.jar. See http://hamcrest.org/JavaHamcrest/distributables#previous-versions-of-hamcrest"
+        },
+        {
+            "old": "org.hibernate:hibernate-entitymanager",
+            "new": "org.hibernate:hibernate-core",
+            "context": "Hibernate's JPA support has been merged into the hibernate-core module, making this hibernate-entitymanager module obsolete. See https://hibernate.atlassian.net/browse/HHH-10823"
         },
         {
             "old": "org.hibernate:hibernate-infinispan",
