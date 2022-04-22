@@ -1333,6 +1333,10 @@
             "new": "org.apache.velocity:velocity-engine-core"
         },
         {
+            "old": "org.codehaus.groovy",
+            "new": "org.apache.groovy"
+        },
+        {
             "old": "org.codehaus.mojo:sonar-maven-plugin",
             "new": "org.sonarsource.scanner.maven:sonar-maven-plugin"
         },
