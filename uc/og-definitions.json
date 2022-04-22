@@ -425,6 +425,11 @@
             "new": "org.apache.commons:commons-lang3"
         },
         {
+            "old": "commons-math:commons-math",
+            "new": "org.apache.commons:commons-math",
+            "context": "Check https://issues.apache.org/jira/browse/MATH-339 for more details"
+        },
+        {
             "old": "com.mtvi.plateng.maven:maven-hudson-plugin",
             "new": "org.jvnet.hudson.tools:maven-hudson-plugin"
         },
@@ -1290,6 +1295,11 @@
         {
             "old": "org.apache.commons:commons-io",
             "new": "commons-io:commons-io"
+        },
+        {
+            "old": "org.apache.commons:commons-math",
+            "new": "org.apache.commons:commons-math3",
+            "context": "Check https://issues.apache.org/jira/browse/MATH-444 for more details"
         },
         {
             "old": "org.apache.httpcomponents:httpclient",
