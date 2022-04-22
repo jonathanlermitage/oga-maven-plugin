@@ -1446,9 +1446,41 @@
             "context": "This was the core API to be used by third-party framework providers. This includes a foundation set of matcher implementations for common operations. This library was used as a dependency for many third-party libraries, including JUnit 4.x. From Hamcrest version 2.x, all the classes in hamcrest-core.jar were moved into hamcrest.jar. See http://hamcrest.org/JavaHamcrest/distributables#previous-versions-of-hamcrest"
         },
         {
+            "old": "org.hibernate:hibernate-agroal",
+            "new": "org.hibernate.orm:hibernate-agroal"
+        },
+        {
+            "old": "org.hibernate:hibernate-ant",
+            "new": "org.hibernate.orm:hibernate-ant"
+        },
+        {
+            "old": "org.hibernate:hibernate-c3p0",
+            "new": "org.hibernate.orm:hibernate-c3p0"
+        },
+        {
+            "old": "org.hibernate:hibernate-community-dialects",
+            "new": "org.hibernate.orm:hibernate-community-dialects"
+        },
+        {
+            "old": "org.hibernate:hibernate-core",
+            "new": "org.hibernate.orm:hibernate-core"
+        },
+        {
             "old": "org.hibernate:hibernate-entitymanager",
             "new": "org.hibernate:hibernate-core",
             "context": "Hibernate's JPA support has been merged into the hibernate-core module, making this hibernate-entitymanager module obsolete. See https://hibernate.atlassian.net/browse/HHH-10823"
+        },
+        {
+            "old": "org.hibernate:hibernate-envers",
+            "new": "org.hibernate.orm:hibernate-envers"
+        },
+        {
+            "old": "org.hibernate:hibernate-graalvm",
+            "new": "org.hibernate.orm:hibernate-graalvm"
+        },
+        {
+            "old": "org.hibernate:hibernate-hikaricp",
+            "new": "org.hibernate.orm:hibernate-hikaricp"
         },
         {
             "old": "org.hibernate:hibernate-infinispan",
@@ -1459,12 +1491,36 @@
             "new": "org.infinispan:infinispan-hibernate-cache-v53"
         },
         {
+            "old": "org.hibernate:hibernate-jcache",
+            "new": "org.hibernate.orm:hibernate-jcache"
+        },
+        {
+            "old": "org.hibernate:hibernate-jpamodelgen",
+            "new": "org.hibernate.orm:hibernate-jpamodelgen"
+        },
+        {
+            "old": "org.hibernate:hibernate-micrometer",
+            "new": "org.hibernate.orm:hibernate-micrometer"
+        },
+        {
+            "old": "org.hibernate:hibernate-proxool",
+            "new": "org.hibernate.orm:hibernate-proxool"
+        },
+        {
             "old": "org.hibernate:hibernate-search-infinispan",
             "new": "org.infinispan:infinispan-directory-provider"
         },
         {
             "old": "org.hibernate:hibernate-search",
             "new": "org.hibernate:hibernate-search-orm"
+        },
+        {
+            "old": "org.hibernate:hibernate-spatial",
+            "new": "org.hibernate.orm:hibernate-spatial"
+        },
+        {
+            "old": "org.hibernate:hibernate-testing",
+            "new": "org.hibernate.orm:hibernate-testing"
         },
         {
             "old": "org.hibernate:hibernate-validator-annotation-processor",
@@ -1481,6 +1537,10 @@
         {
             "old": "org.hibernate:hibernate-validator-osgi-karaf-features",
             "new": "org.hibernate.validator:hibernate-validator-osgi-karaf-features"
+        },
+        {
+            "old": "org.hibernate:hibernate-vibur",
+            "new": "org.hibernate.orm:hibernate-vibur"
         },
         {
             "old": "org.hibernate.javax.persistence:hibernate-jpa-2.0-api",
