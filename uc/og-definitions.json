@@ -1229,6 +1229,10 @@
             "new": "net.kieker-monitoring:kieker"
         },
         {
+            "old": "net.rakugakibox.spring.boot:logback-access-spring-boot-starter",
+            "new": "dev.akkinoc.spring.boot:logback-access-spring-boot-starter"
+        },
+        {
             "old": "net.simonvt:android-menudrawer",
             "new": "net.simonvt.menudrawer:menudrawer"
         },
