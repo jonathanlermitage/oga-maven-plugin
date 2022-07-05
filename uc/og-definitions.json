@@ -692,6 +692,10 @@
             "new": "io.cucumber"
         },
         {
+            "old": "io.github.benas:random-beans",
+            "new": "org.jeasy:easy-random-core"
+        },
+        {
             "old": "io.github.animatedledstrip:animatedledstrip-kotlin-pi",
             "new": "io.github.animatedledstrip:animatedledstrip-pi"
         },
