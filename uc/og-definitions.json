@@ -1,6 +1,6 @@
 {
-    "version": "21",
-    "date": "2022/04/22",
+    "version": "22",
+    "date": "2022/07/07",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1770,6 +1770,10 @@
             "old": "org.koin",
             "new": "io.insert-koin",
             "context": "migration from jcenter to maven central, see https://github.com/InsertKoinIO/koin#maven-central"
+        },
+        {
+            "old": "pdfbox",
+            "new": "org.apache.pdfbox"
         },
         {
             "old": "poi:poi-2.5-final",
