@@ -46,7 +46,7 @@
     </prerequisites>
 
     <properties>
-        <kotlin.version>1.5.31</kotlin.version>
+        <kotlin.version>1.7.10</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -63,11 +63,12 @@
 
         <!-- plugins -->
         <!--dokka-maven-plugin-version>1.4.20</dokka-maven-plugin-version-->
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
         <maven-plugin-plugin.version>3.6.1</maven-plugin-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -227,6 +228,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+                <version>${maven-compiler-plugin.version}</version>
             </plugin>
             <!--plugin>
                 <groupId>org.jetbrains.dokka</groupId>
