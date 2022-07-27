@@ -2,14 +2,15 @@ package biz.lermitage.oga
 
 import biz.lermitage.oga.cfg.Definitions
 import com.google.gson.GsonBuilder
-import junit.framework.TestCase
 import org.apache.commons.io.FileUtils
+import org.junit.Assert.fail
+import org.junit.Test
 import java.io.File
-import java.util.*
 
-class OgDefinitionsValidityTest : TestCase() {
+class OgDefinitionsValidityTest {
 
     @Throws(Exception::class)
+    @Test
     fun testFindMutuallyExclusiveDefinitions() {
         val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"))
         val ogDefs = GsonBuilder().create().fromJson(definitionsAsString, Definitions::class.java).migration

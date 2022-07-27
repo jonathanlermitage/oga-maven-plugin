@@ -1,0 +1,10 @@
+{
+    "version": "2",
+    "date": "2021/02/03",
+    "migration": [
+        {
+            "old": "org.mock-server",
+            "new": "com.example.do.no.use.this.dependency"
+        }
+    ]
+}
