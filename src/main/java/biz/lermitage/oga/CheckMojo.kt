@@ -11,7 +11,7 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException
 import java.io.File
 import java.io.IOException
 import java.net.URL
-import java.util.*
+import java.util.Optional
 
 /**
  * Goal which checks that no dependency uses a deprecated groupId.
@@ -60,7 +60,7 @@ class CheckMojo : AbstractMojo() {
         try {
             val definitionsUrlInUse = ogDefinitionsUrl ?: DEFINITIONS_URL
             log.info("Loading definitions from $definitionsUrlInUse")
-            val definitions = URL(definitionsUrlInUse).let { IOTools.readDefinitions(it) }
+            val definitions = IOTools.readDefinitions(definitionsUrlInUse)
 
             var ignoreList = Optional.empty<IgnoreList>()
             if (!ignoreListFile.isNullOrEmpty()) {
