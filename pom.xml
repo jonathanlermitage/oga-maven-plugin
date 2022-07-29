@@ -58,6 +58,7 @@
 
         <!-- test dependencies -->
         <junit.version>4.13.2</junit.version>
+        <mockserver.version>5.13.2</mockserver.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <maven-verifier.version>1.7.2</maven-verifier.version>
 
@@ -127,6 +128,12 @@
             <groupId>org.apache.maven.shared</groupId>
             <artifactId>maven-verifier</artifactId>
             <version>${maven-verifier.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mock-server</groupId>
+            <artifactId>mockserver-junit-rule-no-dependencies</artifactId>
+            <version>${mockserver.version}</version>
             <scope>test</scope>
         </dependency>
 

@@ -1,5 +1,7 @@
 package biz.lermitage.oga
 
+import biz.lermitage.oga.cfg.DefinitionMigration
+import biz.lermitage.oga.cfg.Definitions
 import biz.lermitage.oga.cfg.IgnoreList
 import biz.lermitage.oga.util.IOTools
 import org.apache.maven.plugin.AbstractMojo
@@ -11,7 +13,7 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException
 import java.io.File
 import java.io.IOException
 import java.net.URL
-import java.util.*
+import java.util.Optional
 
 /**
  * Goal which checks that no dependency uses a deprecated groupId.
@@ -25,6 +27,10 @@ class CheckMojo : AbstractMojo() {
     /** Alternative location for og-definitions.json config file. */
     @Parameter(name = "ogDefinitionsUrl", property = "ogDefinitionsUrl")
     private val ogDefinitionsUrl: String? = null
+
+    /** Location for additional og-definitions.json config file which are evaluated in addition to the ogDefinitionsUrl file. */
+    @Parameter(name = "additionalDefinitionFiles", property = "additionalDefinitionFiles")
+    private val additionalDefinitionFiles: Array<String>? = null
 
     /** Location ignore list local file. */
     @Parameter(name = "ignoreListFile", property = "ignoreListFile")
@@ -58,9 +64,10 @@ class CheckMojo : AbstractMojo() {
         }
 
         try {
-            val definitionsUrlInUse = ogDefinitionsUrl ?: DEFINITIONS_URL
-            log.info("Loading definitions from $definitionsUrlInUse")
-            val definitions = URL(definitionsUrlInUse).let { IOTools.readDefinitions(it) }
+            val allDefinitions = mutableListOf(loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL))
+
+            // Load additional definitions if defined
+            additionalDefinitionFiles!!.forEach { allDefinitions += loadDefinitionsFromUrl(it) }
 
             var ignoreList = Optional.empty<IgnoreList>()
             if (!ignoreListFile.isNullOrEmpty()) {
@@ -70,13 +77,6 @@ class CheckMojo : AbstractMojo() {
                 log.info("Loading ignore list from url $ignoreListUrl")
                 ignoreList = Optional.of(IOTools.readIgnoreList(URL(ignoreListUrl)))
             }
-
-            val nbDefinitions = definitions.migration?.size
-            var welcomeMsg = "Loaded $nbDefinitions definitions"
-            if (definitions.date != null) {
-                welcomeMsg += ", updated on ${definitions.date}"
-            }
-            log.info(welcomeMsg)
 
             val dependencies = project?.dependencies!!.filterNotNull().map { dependency ->
                 Dependency(
@@ -96,8 +96,12 @@ class CheckMojo : AbstractMojo() {
             var deprecatedDependenciesFound = false
             log.info("Checking dependencies and plugins...")
 
-            // compare project dependencies to integrated black-list
-            definitions.migration!!.forEach { mig ->
+            // Gather all our migrations together
+            val migrations = mutableListOf<DefinitionMigration>()
+            allDefinitions.forEach { migrations.addAll(it.migration!!) }
+
+            // compare project dependencies to definitions
+            migrations.forEach { mig ->
                 if (mig.isGroupIdOnly) {
                     projectLibs.forEach { dep ->
 
@@ -162,6 +166,20 @@ class CheckMojo : AbstractMojo() {
         } catch (e: XmlPullParserException) {
             throw MojoExecutionException("Plugin failure, please report it to $GITHUB_ISSUES_URL", e)
         }
+    }
+
+    private fun loadDefinitionsFromUrl(url: String): Definitions {
+        log.info("Loading definitions from $url")
+        val definitions = IOTools.readDefinitions(url)
+
+        val nbDefinitions = definitions.migration?.size
+        var welcomeMsg = "Loaded $nbDefinitions definitions from '$url'"
+        if (definitions.date != null) {
+            welcomeMsg += ", updated on ${definitions.date}"
+        }
+        log.info(welcomeMsg)
+
+        return definitions
     }
 
     private fun shouldIgnoreGroupId(

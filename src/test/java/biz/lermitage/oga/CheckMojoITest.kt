@@ -1,13 +1,63 @@
 package biz.lermitage.oga
 
-import junit.framework.TestCase
 import org.apache.maven.it.VerificationException
 import org.apache.maven.it.Verifier
 import org.apache.maven.it.util.ResourceExtractor
+import org.junit.Assert.assertThrows
+import org.junit.Rule
+import org.junit.Test
+import org.mockserver.junit.MockServerRule
+import org.mockserver.model.HttpRequest.request
+import org.mockserver.model.HttpResponse.response
 
-class CheckMojoITest : TestCase() {
+class CheckMojoITest {
+
+    @Rule
+    @JvmField
+    var mockServerRule: MockServerRule = MockServerRule(this)
 
     @Throws(Exception::class)
+    @Test
+    fun testProjectWithAdditionalDefinitionFiles() {
+        val responseContent = """{"version": "1", "date": "2020/01/02", "migration": [{ "old": "junit", "new": "org.junit" }]}"""
+        mockServerRule.client.`when`(request().withPath("/remote-og-definitions.json")).respond(response().withBody(responseContent))
+
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_additional_definitions")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.setSystemProperty("mockserver.host", "localhost:" + mockServerRule.port)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        assertThrows(VerificationException::class.java) { verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check") }
+
+        verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'junit' groupId should be replaced by 'org.junit'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'org.mock-server' groupId should be replaced by 'com.example.do.no.use.this.dependency'")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithDefinitionOverride() {
+        val responseContent = """{"version": "1", "date": "2020/01/02", "migration": [{ "old": "junit", "new": "org.junit" }]}"""
+        mockServerRule.client.`when`(request().withPath("/remote-og-definitions.json")).respond(response().withBody(responseContent))
+
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_definition_url")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.setSystemProperty("mockserver.host", "localhost:" + mockServerRule.port)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        assertThrows(VerificationException::class.java) { verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check") }
+
+        verifier.verifyTextInLog("[ERROR] (dependency) 'junit' groupId should be replaced by 'org.junit'")
+    }
+
+    @Throws(Exception::class)
+    @Test
     fun testProjectWithoutOldDependencies() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok")
 
@@ -19,11 +69,10 @@ class CheckMojoITest : TestCase() {
 
         verifier.verifyErrorFreeLog()
         verifier.verifyTextInLog("No problem detected. Good job! :-)")
-
-        verifier.resetStreams()
     }
 
     @Throws(Exception::class)
+    @Test
     fun testProjectWithOldDependencies() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko")
 
@@ -31,21 +80,15 @@ class CheckMojoITest : TestCase() {
 
         verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
 
-        try {
-            verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
-            fail("invocation should fail")
-        } catch (e: VerificationException) {
-            // plugin should fail here. Assert message log later
-        }
+        assertThrows(VerificationException::class.java) { verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check") }
 
         verifier.verifyTextInLog("[ERROR] (dependency) 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
         verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
         verifier.verifyTextInLog("[ERROR] (plugin) 'pl.project13.maven:git-commit-id-plugin' should be replaced by 'io.github.git-commit-id:git-commit-id-maven-plugin' (context: version 5 relocated, see https://github.com/git-commit-id/git-commit-id-maven-plugin#relocation-of-the-project)")
-
-        verifier.resetStreams()
     }
 
     @Throws(Exception::class)
+    @Test
     fun testProjectWithOldDependenciesButDontFail() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_dont_fail")
 
@@ -53,19 +96,14 @@ class CheckMojoITest : TestCase() {
 
         verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
 
-        try {
-            verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
-        } catch (e: VerificationException) {
-            fail("invocation should not fail")
-        }
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
 
         verifier.verifyTextInLog("[ERROR] (dependency) 'com.graphql-java:graphql-spring-boot-starter' should be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter'")
         verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
-
-        verifier.resetStreams()
     }
 
     @Throws(Exception::class)
+    @Test
     fun testProjectWithOldDependenciesButIgnored() {
         val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_ignored")
 
@@ -73,15 +111,9 @@ class CheckMojoITest : TestCase() {
 
         verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
 
-        try {
-            verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
-        } catch (e: VerificationException) {
-            fail("invocation should not fail")
-        }
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
 
         verifier.verifyTextInLog("[INFO] (dependency) 'com.graphql-java:graphql-spring-boot-starter' could be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter' but it's excluded by ignore list")
         verifier.verifyTextInLog("[INFO] (dependency) 'bouncycastle' groupId could be replaced by 'org.bouncycastle' but it's excluded by ignore list")
-
-        verifier.resetStreams()
     }
 }

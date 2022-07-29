@@ -41,30 +41,77 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 
 ### Configuration
 
-You can use an alternate [definitions file](https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json) by using the `ogDefinitionsUrl` property. You can also choose to not fail the build if deprecated dependencies are found with the `failOnError` property (defaults to true):
+The following properties can be set on the `oga-maven-plugin` plugin.
+
+| Maven Configuration Property | Command Line Property (if different) | Description                                                                                                                                                                                                                  | Default Value                                                                                      |
+|:-----------------------------|:-------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
+| ogDefinitionsUrl             |                                      | Alternative location for og-definitions.json config file.<br/>The configuration value can be a local file path, or a URL.                                                                                                    | https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json |
+| additionalDefinitionFiles    |                                      | A list of locations for additional og-definitions.json config files which are processed in addition to those in the definitions <br/>at `ogDefinitionsUrl`.<br/>The configuration values can be a local file path, or a URL. |                                                                                                    |
+| ignoreListFile               |                                      | Local file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*.                                                                                                                    |                                                                                                    |
+| ignoreListUrl                |                                      | Remote file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds* (ignored if `ignoreListFile` is defined).                                                                          |                                                                                                    |
+| failOnError                  |                                      | Fail on error, otherwise display an error message only.                                                                                                                                                                      | `true`                                                                                             |
+| skip                         | oga.maven.skip                       | Skip Check, for use in multi branch pipeline or command line override.                                                                                                                                                       | `false`                                                                                            |
+
+
+#### Failing the build
+
+By default, your build will fail if you use this plugin, if you would like to receive a warning instead you can set the `failOnError` property like so:
 ```xml
-<build>
-    <plugins>
-        <plugin>
-            <groupId>biz.lermitage.oga</groupId>
-            <artifactId>oga-maven-plugin</artifactId>
-            <version>1.7.0</version>
-            <configuration>
-                <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
-                <failOnError>false</failOnError>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <configuration>
+        <failOnError>false</failOnError>
+    </configuration>
+</plugin>
 ```
+
+#### Changing the definitions
+
+By default, this plugin is configured to use the [community maintained definitions file](https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json) in 
+this repository.
+
+If you would like to use **only** your own definitions you can override the location of the file:
+```xml
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <configuration>
+        <ogDefinitionsUrl>https://your-custom-location/your-og-definitions.json</ogDefinitionsUrl>
+    </configuration>
+</plugin>
+```
+
+However, if you would like to get the benefit of the community maintained definitions **and** maintain your own definitions you can define additional files:
+```xml
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <configuration>
+        <additionalDefinitionFiles>
+            <!-- A Remote Location -->
+            <additionalDefinitionFile>https://your-custom-location/your-og-definitions.json</additionalDefinitionFile>
+            <!-- A local file -->
+            <additionalDefinitionFile>./your-og-definitions.json</additionalDefinitionFile>
+            <!-- Multiple entries supported -->
+        </additionalDefinitionFiles>
+    </configuration>
+</plugin>
+```
+
+#### Ignoring definitions
 
 You can also provide a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*:
 ```xml
-            <configuration>
-                <ignoreListFile>local-ignore-list.json</ignoreListFile>
-                <!-- or -->
-                <ignoreListUrl>https://website.com/remote-ignore-list.json</ignoreListUrl>
-            </configuration>
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <configuration>
+        <ignoreListFile>local-ignore-list.json</ignoreListFile>
+        <!-- or -->
+        <ignoreListUrl>https://website.com/remote-ignore-list.json</ignoreListUrl>
+    </configuration>
+</plugin>
 ```
 Please see the sample [ignore-list file](sample/sample_ignore_list.json). For each of your dependencies or proposed migrations, the plugin will ignore it if it finds its coordinates in the ignore-list. So, by ignoring "foo:bar" (or "foo"), you will ignore this coordinate from your project dependencies and from the definitions file.
 
