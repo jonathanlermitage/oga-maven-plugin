@@ -1,0 +1,12 @@
+{
+    "version": "1",
+    "date": "2022/07/30",
+    "migration": [
+        {
+            "old": "acegisecurity",
+            "proposal": [
+                "org.acegisecurity"
+            ]
+        }
+    ]
+}
