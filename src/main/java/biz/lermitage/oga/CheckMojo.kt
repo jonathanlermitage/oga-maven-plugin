@@ -16,7 +16,7 @@ import java.net.URL
 import java.util.Optional
 
 /**
- * Goal which checks that no dependency uses a deprecated groupId.
+ * Goal which checks no dependency uses deprecated Maven coordinates.
  *
  * @author Jonathan Lermitage
  */
@@ -32,6 +32,14 @@ class CheckMojo : AbstractMojo() {
     @Parameter(name = "additionalDefinitionFiles", property = "additionalDefinitionFiles")
     private val additionalDefinitionFiles: Array<String>? = null
 
+    /** Alternative location for og-unofficial-definitions.json config file. */
+    @Parameter(name = "ogUnofficialDefinitionsUrl", property = "ogUnofficialDefinitionsUrl")
+    private val ogUnofficialDefinitionsUrl: String? = null
+
+    /** Ignore unofficial migration rules. */
+    @Parameter(name = "ignoreUnofficialMigrations", property = "ignoreUnofficialMigrations")
+    private val ignoreUnofficialMigrations: Boolean = false
+
     /** Location ignore list local file. */
     @Parameter(name = "ignoreListFile", property = "ignoreListFile")
     private val ignoreListFile: String? = null
@@ -44,7 +52,7 @@ class CheckMojo : AbstractMojo() {
     @Parameter(name = "failOnError", property = "failOnError")
     private val failOnError: Boolean = true
 
-    /** Skip Check, for use in multi branch pipeline or command line override. */
+    /** Skip Check, for use in multi-branch pipeline or command line override. */
     @Parameter(name = "skip", property = "oga.maven.skip")
     private val skip: Boolean = false
 
@@ -65,6 +73,9 @@ class CheckMojo : AbstractMojo() {
 
         try {
             val allDefinitions = mutableListOf(loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL))
+            if (!ignoreUnofficialMigrations) {
+                allDefinitions += loadDefinitionsFromUrl(ogUnofficialDefinitionsUrl ?: UNOFFICIAL_DEFINITIONS_URL)
+            }
 
             // Load additional definitions if defined
             additionalDefinitionFiles!!.forEach { allDefinitions += loadDefinitionsFromUrl(it) }
@@ -104,17 +115,16 @@ class CheckMojo : AbstractMojo() {
             migrations.forEach { mig ->
                 if (mig.isGroupIdOnly) {
                     projectLibs.forEach { dep ->
-
                         if (dep.groupId == mig.oldGroupId) {
 
-                            if (shouldIgnoreGroupId(ignoreList, dep.groupId, mig.newerGroupId)) {
+                            if (shouldIgnoreGroupId(ignoreList, dep, mig)) {
                                 val msg =
-                                    "'${dep.groupId}' groupId could be replaced by '${mig.newerGroupId}' " +
+                                    "'${dep.groupId}' groupId could be replaced by '${mig.proposedMigrationToString()}' " +
                                         "but it's excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
-                                var msg = "'${dep.groupId}' groupId should be replaced by '${mig.newerGroupId}'"
-                                if (mig.context != null && mig.context.isNotEmpty()) {
+                                var msg = "'${dep.groupId}' groupId should be replaced by '${mig.proposedMigrationToString()}'"
+                                if (!mig.context.isNullOrEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }
                                 log.error("(${dep.type.label}) $msg")
@@ -126,22 +136,15 @@ class CheckMojo : AbstractMojo() {
                     projectLibs.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId && dep.artifactId == mig.oldArtifactId) {
 
-                            if (shouldIgnoreArtifactId(
-                                    ignoreList,
-                                    dep.groupId,
-                                    dep.artifactId,
-                                    mig.newerGroupId,
-                                    mig.newerArtifactId
-                                )
-                            ) {
+                            if (shouldIgnoreArtifactId(ignoreList, dep, mig)) {
                                 val msg =
-                                    "'${dep.groupId}:${dep.artifactId}' could be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}' " +
+                                    "'${dep.groupId}:${dep.artifactId}' could be replaced by '${mig.proposedMigrationToString()}' " +
                                         "but it's excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg =
-                                    "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.newerGroupId}:${mig.newerArtifactId}'"
-                                if (mig.context != null && mig.context.isNotEmpty()) {
+                                    "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.proposedMigrationToString()}'"
+                                if (!mig.context.isNullOrEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }
                                 log.error("(${dep.type.label}) $msg")
@@ -184,36 +187,48 @@ class CheckMojo : AbstractMojo() {
 
     private fun shouldIgnoreGroupId(
         ignoreList: Optional<IgnoreList>,
-        oldGroupId: String?,
-        newGroupId: String?
+        oldDep: Dependency,
+        newDep: DefinitionMigration
     ): Boolean {
         if (ignoreList.isPresent) {
-            return ignoreList.get().ignoreList?.any { ignoreItem ->
-                ignoreItem.isGroupIdOnly
-                    && (ignoreItem.groupId == oldGroupId || ignoreItem.groupId == newGroupId)
-            } == true
-
+            if (newDep.state == DependencyState.MIGRATED) {
+                return ignoreList.get().ignoreList?.any { ignoreItem ->
+                    ignoreItem.isGroupIdOnly && (ignoreItem.groupId == oldDep.groupId || ignoreItem.groupId == newDep.newerGroupId)
+                } == true
+            } else {
+                return ignoreList.get().ignoreList?.any { ignoreItem ->
+                    ignoreItem.isGroupIdOnly && (ignoreItem.groupId == oldDep.groupId /*|| newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)*/) // TODO apply ignoreList to candidates
+                } == true
+            }
         }
         return false
     }
 
     private fun shouldIgnoreArtifactId(
         ignoreList: Optional<IgnoreList>,
-        oldGroupId: String?,
-        oldArtifactId: String?,
-        newGroupId: String?,
-        newArtifactId: String?
+        oldDep: Dependency,
+        newDep: DefinitionMigration
     ): Boolean {
         if (ignoreList.isPresent) {
-            return ignoreList.get().ignoreList?.any { ignoreItem ->
-                if (ignoreItem.isGroupIdOnly) {
-                    ignoreItem.groupId == oldGroupId || ignoreItem.groupId == newGroupId
-                } else {
-                    (ignoreItem.groupId == oldGroupId && ignoreItem.artifactId == oldArtifactId
-                        || ignoreItem.groupId == newGroupId && ignoreItem.artifactId == newArtifactId)
-                }
-            } == true
-
+            if (newDep.state == DependencyState.MIGRATED) {
+                return ignoreList.get().ignoreList?.any { ignoreItem ->
+                    if (ignoreItem.isGroupIdOnly) {
+                        ignoreItem.groupId == oldDep.groupId || ignoreItem.groupId == newDep.newerGroupId
+                    } else {
+                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
+                            || ignoreItem.groupId == newDep.newerGroupId && ignoreItem.artifactId == newDep.newerArtifactId)
+                    }
+                } == true
+            } else {
+                return ignoreList.get().ignoreList?.any { ignoreItem ->
+                    if (ignoreItem.isGroupIdOnly) {
+                        ignoreItem.groupId == oldDep.groupId || newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)
+                    } else {
+                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
+                            /*|| newDep.unofficialGroupIdArtifactIdCandidates.contains(ignoreItem.item)*/) // TODO apply ignoreList to candidates
+                    }
+                } == true
+            }
         }
         return false
     }
@@ -232,9 +247,9 @@ class CheckMojo : AbstractMojo() {
     }*/
 
     companion object {
-
-        private const val DEFINITIONS_URL =
-            "https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json"
+        private const val GITHUB_PRJ_RAW_URL = "https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/"
+        private const val DEFINITIONS_URL = GITHUB_PRJ_RAW_URL + "uc/og-definitions.json"
+        private const val UNOFFICIAL_DEFINITIONS_URL = GITHUB_PRJ_RAW_URL + "uc/og-unofficial-definitions.json"
         private const val GITHUB_ISSUES_URL = "github.com/jonathanlermitage/oga-maven-plugin"
     }
 }
