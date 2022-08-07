@@ -1,9 +1,10 @@
 package biz.lermitage.oga
 
 import biz.lermitage.oga.cfg.DefinitionMigration
-import biz.lermitage.oga.cfg.Definitions
 import biz.lermitage.oga.cfg.IgnoreList
+import biz.lermitage.oga.util.DefinitionsTools
 import biz.lermitage.oga.util.IOTools
+import biz.lermitage.oga.util.IgnoreListTools
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugin.MojoExecutionException
 import org.apache.maven.plugins.annotations.Mojo
@@ -72,13 +73,13 @@ class CheckMojo : AbstractMojo() {
         }
 
         try {
-            val allDefinitions = mutableListOf(loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL))
+            val allDefinitions = mutableListOf(DefinitionsTools.loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL, log))
             if (!ignoreUnofficialMigrations) {
-                allDefinitions += loadDefinitionsFromUrl(ogUnofficialDefinitionsUrl ?: UNOFFICIAL_DEFINITIONS_URL)
+                allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(ogUnofficialDefinitionsUrl ?: UNOFFICIAL_DEFINITIONS_URL, log)
             }
 
             // Load additional definitions if defined
-            additionalDefinitionFiles!!.forEach { allDefinitions += loadDefinitionsFromUrl(it) }
+            additionalDefinitionFiles!!.forEach { allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(it, log) }
 
             var ignoreList = Optional.empty<IgnoreList>()
             if (!ignoreListFile.isNullOrEmpty()) {
@@ -89,21 +90,10 @@ class CheckMojo : AbstractMojo() {
                 ignoreList = Optional.of(IOTools.readIgnoreList(URL(ignoreListUrl)))
             }
 
-            val dependencies = project?.dependencies!!.filterNotNull().map { dependency ->
-                Dependency(
-                    dependency.groupId,
-                    dependency.artifactId,
-                    DependencyType.DEPENDENCY
-                )
-            }
-            val plugins = project?.pluginArtifacts!!.filterNotNull().map { dependency ->
-                Dependency(
-                    dependency.groupId,
-                    dependency.artifactId,
-                    DependencyType.PLUGIN
-                )
-            }
+            val dependencies = DefinitionsTools.mapDependenciesToOgaDependencies(project!!.dependencies!!)
+            val plugins = DefinitionsTools.mapPluginsToOgaDependencies(project!!.pluginArtifacts!!)
             val projectLibs = dependencies.plus(plugins)
+
             var deprecatedDependenciesFound = false
             log.info("Checking dependencies and plugins...")
 
@@ -117,7 +107,7 @@ class CheckMojo : AbstractMojo() {
                     projectLibs.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId) {
 
-                            if (shouldIgnoreGroupId(ignoreList, dep, mig)) {
+                            if (IgnoreListTools.shouldIgnoreGroupId(ignoreList, dep, mig)) {
                                 val msg =
                                     "'${dep.groupId}' groupId could be replaced by '${mig.proposedMigrationToString()}' " +
                                         "but it's excluded by ignore list"
@@ -136,7 +126,7 @@ class CheckMojo : AbstractMojo() {
                     projectLibs.forEach { dep ->
                         if (dep.groupId == mig.oldGroupId && dep.artifactId == mig.oldArtifactId) {
 
-                            if (shouldIgnoreArtifactId(ignoreList, dep, mig)) {
+                            if (IgnoreListTools.shouldIgnoreArtifactId(ignoreList, dep, mig)) {
                                 val msg =
                                     "'${dep.groupId}:${dep.artifactId}' could be replaced by '${mig.proposedMigrationToString()}' " +
                                         "but it's excluded by ignore list"
@@ -156,10 +146,11 @@ class CheckMojo : AbstractMojo() {
             }
 
             if (deprecatedDependenciesFound) {
+                val errMsg = "Project has old dependencies; see warning/error messages"
                 if (failOnError) {
-                    throw MojoExecutionException("Project has old dependencies; see warning/error messages")
+                    throw MojoExecutionException(errMsg)
                 } else {
-                    log.error("Project has old dependencies; see warning/error messages")
+                    log.error(errMsg)
                 }
             } else {
                 log.info("No problem detected. Good job! :-)")
@@ -170,81 +161,6 @@ class CheckMojo : AbstractMojo() {
             throw MojoExecutionException("Plugin failure, please report it to $GITHUB_ISSUES_URL", e)
         }
     }
-
-    private fun loadDefinitionsFromUrl(url: String): Definitions {
-        log.info("Loading definitions from $url")
-        val definitions = IOTools.readDefinitions(url)
-
-        val nbDefinitions = definitions.migration?.size
-        var welcomeMsg = "Loaded $nbDefinitions definitions from '$url'"
-        if (definitions.date != null) {
-            welcomeMsg += ", updated on ${definitions.date}"
-        }
-        log.info(welcomeMsg)
-
-        return definitions
-    }
-
-    private fun shouldIgnoreGroupId(
-        ignoreList: Optional<IgnoreList>,
-        oldDep: Dependency,
-        newDep: DefinitionMigration
-    ): Boolean {
-        if (ignoreList.isPresent) {
-            if (newDep.state == DependencyState.MIGRATED) {
-                return ignoreList.get().ignoreList?.any { ignoreItem ->
-                    ignoreItem.isGroupIdOnly && (ignoreItem.groupId == oldDep.groupId || ignoreItem.groupId == newDep.newerGroupId)
-                } == true
-            } else {
-                return ignoreList.get().ignoreList?.any { ignoreItem ->
-                    ignoreItem.isGroupIdOnly && (ignoreItem.groupId == oldDep.groupId /*|| newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)*/) // TODO apply ignoreList to candidates
-                } == true
-            }
-        }
-        return false
-    }
-
-    private fun shouldIgnoreArtifactId(
-        ignoreList: Optional<IgnoreList>,
-        oldDep: Dependency,
-        newDep: DefinitionMigration
-    ): Boolean {
-        if (ignoreList.isPresent) {
-            if (newDep.state == DependencyState.MIGRATED) {
-                return ignoreList.get().ignoreList?.any { ignoreItem ->
-                    if (ignoreItem.isGroupIdOnly) {
-                        ignoreItem.groupId == oldDep.groupId || ignoreItem.groupId == newDep.newerGroupId
-                    } else {
-                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
-                            || ignoreItem.groupId == newDep.newerGroupId && ignoreItem.artifactId == newDep.newerArtifactId)
-                    }
-                } == true
-            } else {
-                return ignoreList.get().ignoreList?.any { ignoreItem ->
-                    if (ignoreItem.isGroupIdOnly) {
-                        ignoreItem.groupId == oldDep.groupId || newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)
-                    } else {
-                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
-                            /*|| newDep.unofficialGroupIdArtifactIdCandidates.contains(ignoreItem.item)*/) // TODO apply ignoreList to candidates
-                    }
-                } == true
-            }
-        }
-        return false
-    }
-
-    /*private fun isDeprecatedOnMavencentral(groupId: String, artifactId: String): Boolean {
-        return try {
-            val url = "https://mvnrepository.com/artifact/$groupId/$artifactId"
-            log.info("Checking $url")
-            Thread.sleep(500) // calling many urls aggressively may lead to IP blacklisting
-            val doc = Jsoup.connect(url).execute().parse()
-            doc.text().contains("Note: This artifact was moved to:")
-        } catch (e: Exception) {
-            log.debug(e)
-            false
-        }
-    }*/
 
     companion object {
         private const val GITHUB_PRJ_RAW_URL = "https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/"
