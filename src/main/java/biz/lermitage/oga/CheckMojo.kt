@@ -109,11 +109,11 @@ class CheckMojo : AbstractMojo() {
 
                             if (IgnoreListTools.shouldIgnoreGroupId(ignoreList, dep, mig)) {
                                 val msg =
-                                    "'${dep.groupId}' groupId could be replaced by '${mig.proposedMigrationToString()}' " +
+                                    "'${dep.groupId}' groupId could be replaced by ${mig.proposedMigrationToString()} " +
                                         "but it's excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
-                                var msg = "'${dep.groupId}' groupId should be replaced by '${mig.proposedMigrationToString()}'"
+                                var msg = "'${dep.groupId}' groupId should be replaced by ${mig.proposedMigrationToString()}"
                                 if (!mig.context.isNullOrEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }
@@ -128,12 +128,12 @@ class CheckMojo : AbstractMojo() {
 
                             if (IgnoreListTools.shouldIgnoreArtifactId(ignoreList, dep, mig)) {
                                 val msg =
-                                    "'${dep.groupId}:${dep.artifactId}' could be replaced by '${mig.proposedMigrationToString()}' " +
+                                    "'${dep.groupId}:${dep.artifactId}' could be replaced by ${mig.proposedMigrationToString()} " +
                                         "but it's excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg =
-                                    "'${dep.groupId}:${dep.artifactId}' should be replaced by '${mig.proposedMigrationToString()}'"
+                                    "'${dep.groupId}:${dep.artifactId}' should be replaced by ${mig.proposedMigrationToString()}"
                                 if (!mig.context.isNullOrEmpty()) {
                                     msg += " (context: ${mig.context})"
                                 }

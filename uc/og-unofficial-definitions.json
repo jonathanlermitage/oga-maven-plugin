@@ -3,10 +3,11 @@
     "date": "2022/07/30",
     "migration": [
         {
-            "old": "acegisecurity",
+            "old": "com.jcraft:jsch",
             "proposal": [
-                "org.acegisecurity"
-            ]
+                "com.github.mwiede:jsch"
+            ],
+            "context": "See https://www.matez.de/index.php/2020/06/22/the-future-of-jsch-without-ssh-rsa/"
         }
     ]
 }

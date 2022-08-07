@@ -32,24 +32,24 @@ class DefinitionMigration {
 
     val context: String? = null
 
-    val unofficialCandidates: List<String>? = null
+    val proposal: List<String>? = null
 
-    val unofficialGroupIdCandidates: List<String>
-        get() = unofficialCandidates!!.filter { s -> !s.contains(":") }.toList()
+    val proposedGroupIds: List<String>
+        get() = proposal!!.filter { s -> !s.contains(":") }.toList()
 
-    val unofficialGroupIdArtifactIdCandidates: List<String>
-        get() = unofficialCandidates!!.filter { s -> s.contains(":") }.toList()
+    val proposedGroupIdArtifactIds: List<String>
+        get() = proposal!!.filter { s -> s.contains(":") }.toList()
 
     val state: DependencyState
-        get() = if (unofficialCandidates == null) DependencyState.MIGRATED else DependencyState.ABANDONED
+        get() = if (proposal == null) DependencyState.MIGRATED else DependencyState.ABANDONED
 
     fun proposedMigrationToString(): String {
         return if (state == DependencyState.MIGRATED) {
-            newer!!
+            "'$newer'"
         } else {
             val buffer = StringBuilder()
-            unofficialCandidates!!.forEach { s -> buffer.append("$s (unofficial) or ") }
-            buffer.toString().removeSuffix(" or ")
+            proposal!!.forEach { s -> buffer.append("'$s' or ") }
+            buffer.toString().removeSuffix(" or ") + " (unofficial migration" + (if (proposal.size > 1) "s" else "") + ")"
         }
     }
 }

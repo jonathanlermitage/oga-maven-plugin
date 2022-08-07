@@ -50,7 +50,7 @@ object IgnoreListTools {
             } else {
                 return ignoreList.get().ignoreList?.any { ignoreItem ->
                     if (ignoreItem.isGroupIdOnly) {
-                        ignoreItem.groupId == oldDep.groupId || newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)
+                        ignoreItem.groupId == oldDep.groupId || newDep.proposedGroupIds.contains(ignoreItem.groupId)
                     } else {
                         (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
                             /*|| newDep.unofficialGroupIdArtifactIdCandidates.contains(ignoreItem.item)*/) // TODO apply ignoreList to candidates
