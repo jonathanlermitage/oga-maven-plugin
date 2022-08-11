@@ -43,14 +43,16 @@ Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-mave
 
 The following properties can be set on the `oga-maven-plugin` plugin.
 
-| Maven Configuration Property | Command Line Property (if different) | Description                                                                                                                                                                                                                  | Default Value                                                                                      |
-|:-----------------------------|:-------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
-| ogDefinitionsUrl             |                                      | Alternative location for og-definitions.json config file.<br/>The configuration value can be a local file path, or a URL.                                                                                                    | https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json |
-| additionalDefinitionFiles    |                                      | A list of locations for additional og-definitions.json config files which are processed in addition to those in the definitions <br/>at `ogDefinitionsUrl`.<br/>The configuration values can be a local file path, or a URL. |                                                                                                    |
-| ignoreListFile               |                                      | Local file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*.                                                                                                                    |                                                                                                    |
-| ignoreListUrl                |                                      | Remote file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds* (ignored if `ignoreListFile` is defined).                                                                          |                                                                                                    |
-| failOnError                  |                                      | Fail on error, otherwise display an error message only.                                                                                                                                                                      | `true`                                                                                             |
-| skip                         | oga.maven.skip                       | Skip Check, for use in multi branch pipeline or command line override.                                                                                                                                                       | `false`                                                                                            |
+| Maven Configuration Property | Command Line Property (if different) | Description                                                                                                                                                                                                                               | Default Value                                                                                                 |
+|:-----------------------------|:-------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+| ogDefinitionsUrl             |                                      | Alternative location for og-definitions.json config file.<br/>The configuration value can be a local file path, or a URL.                                                                                                                 | https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json            |
+| ogUnofficialDefinitionsUrl   |                                      | Alternative location for og-unofficial-definitions.json config file.<br/>The configuration value can be a local file path, or a URL.                                                                                                      | https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-unofficial-definitions.json |
+| additionalDefinitionFiles    |                                      | A list of locations for additional json config files which are processed in addition to those in the definitions at `ogDefinitionsUrl` and `ogUnofficialDefinitionsUrl`.<br/>The configuration values can be a local file path, or a URL. |                                                                                                               |
+| ignoreListFile               |                                      | Local file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*.                                                                                                                                 |                                                                                                               |
+| ignoreListUrl                |                                      | Remote file location of a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds* (ignored if `ignoreListFile` is defined).                                                                                       |                                                                                                               |
+| ignoreUnofficialMigrations   |                                      | Ignore unofficial definitions.                                                                                                                                                                                                            | `false`                                                                                                       |
+| failOnError                  |                                      | Fail on error, otherwise display an error message only.                                                                                                                                                                                   | `true`                                                                                                        |
+| skip                         | oga.maven.skip                       | Skip Check, for use in multi branch pipeline or command line override.                                                                                                                                                                    | `false`                                                                                                       |
 
 
 #### Failing the build
@@ -68,8 +70,8 @@ By default, your build will fail if you use this plugin, if you would like to re
 
 #### Changing the definitions
 
-By default, this plugin is configured to use the [community maintained definitions file](https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json) in 
-this repository.
+By default, this plugin is configured to use the [community maintained definitions files](https://github.com/jonathanlermitage/oga-maven-plugin/tree/master/uc) in 
+this repository. `og-definitions.json` defines official migration plans. `og-unofficial-definitions.json` defines unofficial migration plans for abandoned dependencies with no official successors (active forks are proposed instead).
 
 If you would like to use **only** your own definitions you can override the location of the file:
 ```xml
@@ -81,6 +83,8 @@ If you would like to use **only** your own definitions you can override the loca
     </configuration>
 </plugin>
 ```
+
+Your custom definitions file can mix official and unofficial migrations. See the structure of `og-definitions.json` and `og-unofficial-definitions.json` files for details.
 
 However, if you would like to get the benefit of the community maintained definitions **and** maintain your own definitions you can define additional files:
 ```xml
