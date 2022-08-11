@@ -1,0 +1,7 @@
+{
+    "ignoreList": [
+        {
+            "item": "com.github.mwiede:jsch"
+        }
+    ]
+}

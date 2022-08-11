@@ -1,7 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
-### Unreleased
-* Support addition of definitions with the new `additionalDefinitionFiles` property.
+### 1.8.0 (WIP)
+* support addition of definitions with the new `additionalDefinitionFiles` property.
+* have a separate json for abandoned projects.
 
 ### 1.7.0 (2021/10/20)
 * add a property to skip check.

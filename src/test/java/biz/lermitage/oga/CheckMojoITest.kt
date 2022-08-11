@@ -113,7 +113,83 @@ class CheckMojoITest {
 
         verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
 
-        verifier.verifyTextInLog("[INFO] (dependency) 'com.graphql-java:graphql-spring-boot-starter' could be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter' but it's excluded by ignore list")
-        verifier.verifyTextInLog("[INFO] (dependency) 'bouncycastle' groupId could be replaced by 'org.bouncycastle' but it's excluded by ignore list")
+        verifier.verifyErrorFreeLog()
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.graphql-java:graphql-spring-boot-starter' could be replaced by 'com.graphql-java-kickstart:graphql-spring-boot-starter' but this migration is excluded by ignore list")
+        verifier.verifyTextInLog("[INFO] (dependency) 'bouncycastle' groupId could be replaced by 'org.bouncycastle' but this migration is excluded by ignore list")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithAbandonedDependencies() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_abandoned")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        assertThrows(VerificationException::class.java) { verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check") }
+
+        verifier.verifyTextInLog("[ERROR] (dependency) 'bouncycastle' groupId should be replaced by 'org.bouncycastle'")
+        verifier.verifyTextInLog("[ERROR] (dependency) 'com.jcraft:jsch' should be replaced by 'com.github.mwiede:jsch' (unofficial migration) (context: See https://www.matez.de/index.php/2020/06/22/the-future-of-jsch-without-ssh-rsa/)")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithAbandonedDependenciesButGroupIdIgnored() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok_abandoned_but_groupid_ignored")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
+
+        verifier.verifyErrorFreeLog()
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.jcraft:jsch' could be replaced by 'com.github.mwiede:jsch' (unofficial migration) but this migration is excluded by ignore list")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithAbandonedDependenciesButArtifactIdIgnored() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok_abandoned_but_artifactid_ignored")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
+
+        verifier.verifyErrorFreeLog()
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.jcraft:jsch' could be replaced by 'com.github.mwiede:jsch' (unofficial migration) but this migration is excluded by ignore list")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithAbandonedDependenciesButProposedGroupIdIgnored() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok_abandoned_but_proposed_groupid_ignored")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
+
+        verifier.verifyErrorFreeLog()
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.jcraft:jsch' could be replaced by 'com.github.mwiede:jsch' (unofficial migration) but this migration is excluded by ignore list")
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun testProjectWithAbandonedDependenciesButProposedArtifactIdIgnored() {
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ok_abandoned_but_proposed_artifactid_ignored")
+
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check")
+
+        verifier.verifyErrorFreeLog()
+        verifier.verifyTextInLog("[INFO] (dependency) 'com.jcraft:jsch' could be replaced by 'com.github.mwiede:jsch' (unofficial migration) but this migration is excluded by ignore list")
     }
 }

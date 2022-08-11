@@ -110,7 +110,7 @@ class CheckMojo : AbstractMojo() {
                             if (IgnoreListTools.shouldIgnoreGroupId(ignoreList, dep, mig)) {
                                 val msg =
                                     "'${dep.groupId}' groupId could be replaced by ${mig.proposedMigrationToString()} " +
-                                        "but it's excluded by ignore list"
+                                        "but this migration is excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg = "'${dep.groupId}' groupId should be replaced by ${mig.proposedMigrationToString()}"
@@ -129,7 +129,7 @@ class CheckMojo : AbstractMojo() {
                             if (IgnoreListTools.shouldIgnoreArtifactId(ignoreList, dep, mig)) {
                                 val msg =
                                     "'${dep.groupId}:${dep.artifactId}' could be replaced by ${mig.proposedMigrationToString()} " +
-                                        "but it's excluded by ignore list"
+                                        "but this migration is excluded by ignore list"
                                 log.info("(${dep.type.label}) $msg")
                             } else {
                                 var msg =

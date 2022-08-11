@@ -15,12 +15,6 @@
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>bouncycastle</groupId>
-            <artifactId>bcprov-jdk15</artifactId>
-            <version>140</version>
-        </dependency>
-
         <dependency> <!-- abandoned -->
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
@@ -34,4 +28,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>biz.lermitage.oga</groupId>
+                <artifactId>oga-maven-plugin</artifactId>
+                <configuration>
+                    <ignoreListFile>oga-ignore.json</ignoreListFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

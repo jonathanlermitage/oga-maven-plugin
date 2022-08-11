@@ -25,7 +25,7 @@ object IgnoreListTools {
                 } == true
             } else {
                 return ignoreList.get().ignoreList?.any { ignoreItem ->
-                    ignoreItem.isGroupIdOnly && (ignoreItem.groupId == oldDep.groupId /*|| newDep.unofficialGroupIdCandidates.contains(ignoreItem.groupId)*/) // TODO apply ignoreList to candidates
+                    (ignoreItem.isGroupIdOnly && ignoreItem.groupId == oldDep.groupId) || shouldIgnoreProposal(ignoreList, newDep)
                 } == true
             }
         }
@@ -43,8 +43,8 @@ object IgnoreListTools {
                     if (ignoreItem.isGroupIdOnly) {
                         ignoreItem.groupId == oldDep.groupId || ignoreItem.groupId == newDep.newerGroupId
                     } else {
-                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
-                            || ignoreItem.groupId == newDep.newerGroupId && ignoreItem.artifactId == newDep.newerArtifactId)
+                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId)
+                            || (ignoreItem.groupId == newDep.newerGroupId && ignoreItem.artifactId == newDep.newerArtifactId)
                     }
                 } == true
             } else {
@@ -52,10 +52,19 @@ object IgnoreListTools {
                     if (ignoreItem.isGroupIdOnly) {
                         ignoreItem.groupId == oldDep.groupId || newDep.proposedGroupIds.contains(ignoreItem.groupId)
                     } else {
-                        (ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId
-                            /*|| newDep.unofficialGroupIdArtifactIdCandidates.contains(ignoreItem.item)*/) // TODO apply ignoreList to candidates
+                        ((ignoreItem.groupId == oldDep.groupId && ignoreItem.artifactId == oldDep.artifactId) || shouldIgnoreProposal(ignoreList, newDep))
                     }
                 } == true
+            }
+        }
+        return false
+    }
+
+    private fun shouldIgnoreProposal(ignoreList: Optional<IgnoreList>, newDep: DefinitionMigration): Boolean {
+        if (ignoreList.isPresent) {
+            val ignoredDeps = ignoreList.get().ignoreList?.map { ignoreItem -> ignoreItem.item }?.toList()
+            if (ignoredDeps?.containsAll(newDep.proposal!!) == true) {
+                return true
             }
         }
         return false

@@ -60,6 +60,9 @@
         <junit.version>4.13.2</junit.version>
         <mockserver.version>5.13.2</mockserver.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
+        <!-- FIXME maven-verifier 1.8.0 breaks some unit tests: can't find local files beside the pom.xml.
+              Per example, testProjectWithAdditionalDefinitionFiles can't find local-og-definitions.json.
+              Maybe it's a bug in maven-verifier. -->
         <maven-verifier.version>1.7.2</maven-verifier.version>
 
         <!-- plugins -->
@@ -219,9 +222,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>${maven-install-plugin.version}</version>
-                <configuration>
+                <!--configuration>
                     <createChecksum>false</createChecksum>
-                </configuration>
+                </configuration-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
