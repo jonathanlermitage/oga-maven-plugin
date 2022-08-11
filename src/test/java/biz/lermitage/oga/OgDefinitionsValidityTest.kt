@@ -11,7 +11,7 @@ class OgDefinitionsValidityTest {
 
     @Throws(Exception::class)
     @Test
-    fun testFindMutuallyExclusiveDefinitions() {
+    fun migrations_should_not_be_mutually_exclusive() {
         val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"))
         val ogDefs = GsonBuilder().create().fromJson(definitionsAsString, Definitions::class.java).migration
         val errors = ArrayList<String>()
@@ -29,9 +29,29 @@ class OgDefinitionsValidityTest {
             }
         }
         if (errors.isNotEmpty()) {
-            println("Found mutually exclusive definitions:")
-            errors.forEach { error -> println(" - $error") }
-            fail("Should not contain mutually exclusive definitions")
+            fail("Should not contain mutually exclusive definitions: $errors")
+        }
+    }
+
+    @Throws(Exception::class)
+    @Test
+    fun migrations_should_not_be_official_and_unofficial_simultaneously() {
+        val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"))
+        val unofficialDefinitionsAsString = FileUtils.readFileToString(File("uc/og-unofficial-definitions.json"))
+        val ogDefs = GsonBuilder().create()
+            .fromJson(definitionsAsString, Definitions::class.java)
+            .migration!!.map { definitionMigration -> definitionMigration.old }.toList()
+        val ogUnofficialDefs = GsonBuilder().create()
+            .fromJson(unofficialDefinitionsAsString, Definitions::class.java)
+            .migration!!.map { definitionMigration -> definitionMigration.old }.toList()
+        val errors = ArrayList<String>()
+        ogUnofficialDefs.forEach { unofficialDef ->
+            if (ogDefs.contains(unofficialDef)) {
+                errors.add(unofficialDef)
+            }
+        }
+        if (errors.isNotEmpty()) {
+            fail("Should not contain definitions declared as official and unofficial: $errors")
         }
     }
 }
