@@ -1,6 +1,6 @@
 {
-    "version": "22",
-    "date": "2022/07/07",
+    "version": "23",
+    "date": "2022/08/29",
     "migration": [
         {
             "old": "acegisecurity",
@@ -162,6 +162,42 @@
         {
             "old": "com.github.dblock:oshi-parent",
             "new": "com.github.oshi:oshi-parent"
+        },
+        {
+            "old": "com.github.fge:btf",
+            "new": "com.github.java-json-tools:btf"
+        },
+        {
+            "old": "com.github.fge:jackson-coreutils",
+            "new": "com.github.java-json-tools:jackson-coreutils"
+        },
+        {
+            "old": "com.github.fge:json-patch",
+            "new": "com.github.java-json-tools:json-patch"
+        },
+        {
+            "old": "com.github.fge:json-schema-avro",
+            "new": "com.github.java-json-tools:json-schema-avro"
+        },
+        {
+            "old": "com.github.fge:json-schema-core",
+            "new": "com.github.java-json-tools:json-schema-core"
+        },
+        {
+            "old": "com.github.fge:json-schema-processor-examples",
+            "new": "com.github.java-json-tools:json-schema-processor-examples"
+        },
+        {
+            "old": "com.github.fge:json-schema-validator",
+            "new": "com.github.java-json-tools:json-schema-validator"
+        },
+        {
+            "old": "com.github.fge:msg-simple",
+            "new": "com.github.java-json-tools:msg-simple"
+        },
+        {
+            "old": "com.github.fge:uri-template",
+            "new": "com.github.java-json-tools:uri-template"
         },
         {
             "old": "com.github.s4u:jfatek",
