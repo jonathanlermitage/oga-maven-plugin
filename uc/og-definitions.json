@@ -1659,6 +1659,10 @@
             "new": "org.jboss.forge:java-parser-impl"
         },
         {
+            "old": "org.jdom:jdom",
+            "new": "org.jdom:jdom2"
+        },
+        {
             "old": "org.jdtaus.core.monitor:jdtaus-core-client-monitoring",
             "new": "org.jdtaus.core.monitor:jdtaus-core-task-monitor"
         },
