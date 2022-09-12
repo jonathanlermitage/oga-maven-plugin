@@ -1337,6 +1337,10 @@
             "new": "com.wolt:parallelpbf"
         },
         {
+            "old": "org.apache.axis:axis",
+            "new": "org.apache.axis2:axis2"
+        },
+        {
             "old": "org.apache.commons:commons-io",
             "new": "commons-io:commons-io"
         },
