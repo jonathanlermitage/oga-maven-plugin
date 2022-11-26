@@ -1,6 +1,6 @@
 {
-    "version": "1",
-    "date": "2022/07/30",
+    "version": "2",
+    "date": "2022/11/26",
     "migration": [
         {
             "old": "com.jcraft:jsch",
@@ -8,6 +8,13 @@
                 "com.github.mwiede:jsch"
             ],
             "context": "See https://www.matez.de/index.php/2020/06/22/the-future-of-jsch-without-ssh-rsa/"
+        },
+        {
+            "old": "com.github.javafaker:javafaker",
+            "proposal": [
+                "net.datafaker:datafaker"
+            ],
+            "context": "This library is a modern fork of java-faker, built on Java 8, with up to date libraries and several newly added Fake Generators. See https://github.com/datafaker-net/datafaker/"
         }
     ]
 }
