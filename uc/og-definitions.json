@@ -1,6 +1,6 @@
 {
-    "version": "23",
-    "date": "2022/08/29",
+    "version": "24",
+    "date": "2023/02/02",
     "migration": [
         {
             "old": "acegisecurity",
@@ -319,6 +319,11 @@
         {
             "old": "com.ibatis:ibatis-sqlmap",
             "new": "com.ibatis:ibatis2-sqlmap"
+        },
+        {
+            "old": "com.indeed:java-dogstatsd-client",
+            "new": "com.datadoghq:java-dogstatsd-client",
+            "context": "This project has merged with datadog/java-dogstatsd-client and now lives in a new home at: http://datadog/java-dogstatsd-client"
         },
         {
             "old": "com.jayway.maven.plugins.android.generation2:maven-android-plugin",
