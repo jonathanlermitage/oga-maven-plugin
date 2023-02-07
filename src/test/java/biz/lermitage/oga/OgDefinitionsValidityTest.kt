@@ -12,7 +12,7 @@ class OgDefinitionsValidityTest {
     @Throws(Exception::class)
     @Test
     fun migrations_should_not_be_mutually_exclusive() {
-        val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"))
+        val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"), Charsets.UTF_8)
         val ogDefs = GsonBuilder().create().fromJson(definitionsAsString, Definitions::class.java).migration
         val errors = ArrayList<String>()
         ogDefs?.forEach { mig1 ->
@@ -36,8 +36,8 @@ class OgDefinitionsValidityTest {
     @Throws(Exception::class)
     @Test
     fun migrations_should_not_be_official_and_unofficial_simultaneously() {
-        val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"))
-        val unofficialDefinitionsAsString = FileUtils.readFileToString(File("uc/og-unofficial-definitions.json"))
+        val definitionsAsString = FileUtils.readFileToString(File("uc/og-definitions.json"), Charsets.UTF_8)
+        val unofficialDefinitionsAsString = FileUtils.readFileToString(File("uc/og-unofficial-definitions.json"), Charsets.UTF_8)
         val ogDefs = GsonBuilder().create()
             .fromJson(definitionsAsString, Definitions::class.java)
             .migration!!.map { definitionMigration -> definitionMigration.old }.toList()

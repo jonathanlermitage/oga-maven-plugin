@@ -46,19 +46,20 @@
     </prerequisites>
 
     <properties>
-        <kotlin.version>1.7.10</kotlin.version>
+        <kotlin.version>1.8.10</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- dependencies -->
-        <gson.version>2.9.1</gson.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <gson.version>2.10.1</gson.version>
         <jsoup.version>1.12.1</jsoup.version>
-        <maven.version>3.8.6</maven.version>
-        <maven-plugin-annotations.version>3.6.4</maven-plugin-annotations.version>
+        <maven.version>3.9.0</maven.version>
+        <maven-plugin-annotations.version>3.7.1</maven-plugin-annotations.version>
 
         <!-- test dependencies -->
         <junit.version>4.13.2</junit.version>
-        <mockserver.version>5.13.2</mockserver.version>
+        <mockserver.version>5.15.0</mockserver.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <!-- FIXME maven-verifier 1.8.0 breaks some unit tests: can't find local files beside the pom.xml.
               Per example, testProjectWithAdditionalDefinitionFiles can't find local-og-definitions.json.
@@ -68,11 +69,11 @@
         <!-- plugins -->
         <!--dokka-maven-plugin-version>1.4.20</dokka-maven-plugin-version-->
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-install-plugin.version>3.0.1</maven-install-plugin.version>
-        <maven-invoker-plugin.version>3.3.0</maven-invoker-plugin.version>
-        <maven-plugin-plugin.version>3.6.4</maven-plugin-plugin.version>
+        <maven-install-plugin.version>3.1.0</maven-install-plugin.version>
+        <maven-invoker-plugin.version>3.4.0</maven-invoker-plugin.version>
+        <maven-plugin-plugin.version>3.7.1</maven-plugin-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.14.2</versions-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -98,6 +99,12 @@
             <artifactId>maven-plugin-annotations</artifactId>
             <version>${maven-plugin-annotations.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
 
         <!-- json parser: used to read definitions file -->

@@ -34,7 +34,7 @@ object IOTools {
 
     @Throws(IOException::class)
     fun readIgnoreList(file: File): IgnoreList {
-        val ignoreListAsString = FileUtils.readFileToString(file)
+        val ignoreListAsString = FileUtils.readFileToString(file, Charsets.UTF_8)
         return GSON.fromJson(ignoreListAsString, IgnoreList::class.java)
     }
 
@@ -44,13 +44,13 @@ object IOTools {
         val asString = if (uriRx.matcher(location).matches()) {
             readContent(URL(location))
         } else {
-            FileUtils.readFileToString(File(location))
+            FileUtils.readFileToString(File(location), Charsets.UTF_8)
         }
         return GSON.fromJson(asString, clazz)
     }
 
     @Throws(IOException::class)
-    fun readContent(url: URL): String {
+    private fun readContent(url: URL): String {
         val content = StringBuilder()
         val conn = url.openConnection() as HttpURLConnection
         conn.requestMethod = "GET"
