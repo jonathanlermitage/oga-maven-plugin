@@ -1,6 +1,6 @@
 {
-    "version": "24",
-    "date": "2023/02/02",
+    "version": "25",
+    "date": "2023/05/22",
     "migration": [
         {
             "old": "acegisecurity",
@@ -198,6 +198,10 @@
         {
             "old": "com.github.fge:uri-template",
             "new": "com.github.java-json-tools:uri-template"
+        },
+        {
+            "old": "com.github.nayuki:qrcodegen",
+            "new": "io.nayuki:qrcodegen"
         },
         {
             "old": "com.github.s4u:jfatek",
