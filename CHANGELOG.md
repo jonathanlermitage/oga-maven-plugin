@@ -1,7 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
-### 1.8.1 (WIP)
+### 1.8.1 (2023/05/25)
 * upgrade plugin's dependencies.
+* fix warning compatibility message for Maven 3.9.2+.
 
 ### 1.8.0 (2022/08/12)
 * support addition of definitions with the new `additionalDefinitionFiles` property.
