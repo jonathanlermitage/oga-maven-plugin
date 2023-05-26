@@ -72,7 +72,7 @@
         <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <maven-invoker-plugin.version>3.5.1</maven-invoker-plugin.version>
         <maven-plugin-plugin.version>3.9.0</maven-plugin-plugin.version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version> <!-- FIXME stick to 3.2.1. 3.3 fails the release:perform saying we're attaching sources twice -->
         <versions-maven-plugin.version>2.15.0</versions-maven-plugin.version>
     </properties>
 
