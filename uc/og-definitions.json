@@ -1,6 +1,6 @@
 {
-    "version": "25",
-    "date": "2023/05/22",
+    "version": "26",
+    "date": "2023/06/05",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1292,6 +1292,10 @@
         {
             "old": "net.simonvt:android-menudrawer-sample",
             "new": "net.simonvt.menudrawer.sample:samples"
+        },
+        {
+            "old": "net.sourceforge.htmlunit:htmlunit",
+            "new": "org.htmlunit:htmlunit"
         },
         {
             "old": "ninja.leaping.configurate:configurate-core",
