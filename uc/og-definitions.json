@@ -1965,6 +1965,241 @@
             "old": "org.codehaus.mojo:dependency-maven-plugin",
             "new": "org.apache.maven.plugins:maven-dependency-plugin",
             "context": "relocated from Mojo to Apache, see https://maven.apache.org/plugins/maven-dependency-plugin/faq.html#plugin_name"
+        },
+        {
+            "old": "org.eclipse.jetty.fcgi:fcgi-client",
+            "new": "org.eclipse.jetty.http2:jetty-fcgi-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.fcgi:fcgi-server",
+            "new": "org.eclipse.jetty.http2:jetty-fcgi-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http2:http2-client",
+            "new": "org.eclipse.jetty.http2:jetty-http2-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http2:http2-common",
+            "new": "org.eclipse.jetty.http2:jetty-http2-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http2:http2-hpack",
+            "new": "org.eclipse.jetty.http2:jetty-http2-hpack",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http2:http2-http-client-transport",
+            "new": "org.eclipse.jetty.http2:jetty-http2-client-transport",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http2:http2-server",
+            "new": "org.eclipse.jetty.http2:jetty-http2-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http3:http3-client",
+            "new": "org.eclipse.jetty.http3:jetty-http3-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http3:http3-common",
+            "new": "org.eclipse.jetty.http3:jetty-http3-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http3:http3-http-client-transport",
+            "new": "org.eclipse.jetty.http3:jetty-http3-client-transport",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http3:http3-qpack",
+            "new": "org.eclipse.jetty.http3:jetty-http3-qpack",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.http3:http3-server",
+            "new": "org.eclipse.jetty.http3:jetty-http3-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.quic:quic-client",
+            "new": "org.eclipse.jetty.quic:jetty-quic-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.quic:quic-common",
+            "new": "org.eclipse.jetty.quic:jetty-quic-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.quic:quic-quiche",
+            "new": "org.eclipse.jetty.quic:jetty-quic-quiche",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.quic:quic-server",
+            "new": "org.eclipse.jetty.quic:jetty-quic-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-core-client",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-core-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-core-common",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-core-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-core-server",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-core-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jetty-api",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-jetty-api",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jetty-client",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-jetty-client, otherwise org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jetty-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jetty-common",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-jetty-common, otherwise org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jetty-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jetty-server",
+            "new": "org.eclipse.jetty.websocket:jetty-websocket-jetty-server, otherwise org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jetty-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jakarta-client",
+            "new": "org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jakarta-client",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jakarta-common",
+            "new": "org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jakarta-common",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-jakarta-server",
+            "new": "org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-jakarta-server",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty.websocket:websocket-servlet",
+            "new": "org.eclipse.jetty.ee{8,9,10}.websocket:jetty-ee{8,9,10}-websocket-servlet",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:apache-jsp",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-apache-jsp",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-annotations",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-annotations",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-ant",
+            "new": "!! Removed - No Replacement !!",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-cdi",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-cdi",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:glassfish-jstl",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-glassfish-jstl",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-jaspi",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-jaspi",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-jndi",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-jndi",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-jspc-maven-plugin",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-jspc-maven-plugin",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-maven-plugin",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-maven-plugin",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-plus",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-plus",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-quickstart",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-quickstart",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-runner",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-runner",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-servlet",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-servlet",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-servlets",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-servlets",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-webapp",
+            "new": "org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-jetty-webapp",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-unixsocket",
+            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-unixsocket-server",
+            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-unixsocket-common",
+            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-osgi-boot",
+            "new": "org.eclipse.jetty:jetty-osgi, otherwise org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-osgi-*",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "org.eclipse.jetty:jetty-osgi-alpn",
+            "new": "org.eclipse.jetty:jetty-osgi, otherwise org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-osgi-*",
+            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
         }
     ]
 }
