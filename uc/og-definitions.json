@@ -1,5 +1,5 @@
 {
-    "version": "27",
+    "version": "28",
     "date": "2023/09/09",
     "migration": [
         {
@@ -2113,8 +2113,8 @@
         },
         {
             "old": "org.eclipse.jetty:jetty-ant",
-            "new": "!! Removed - No Replacement !!",
-            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+            "new": "removed:removed",
+            "context": "!! Removed - No Replacement !! Migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
         },
         {
             "old": "org.eclipse.jetty:jetty-cdi",
@@ -2178,18 +2178,18 @@
         },
         {
             "old": "org.eclipse.jetty:jetty-unixsocket",
-            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
-            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+            "new": "removed:removed",
+            "context": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !! Migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
         },
         {
             "old": "org.eclipse.jetty:jetty-unixsocket-server",
-            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
-            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+            "new": "removed:removed",
+            "context": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !! Migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
         },
         {
             "old": "org.eclipse.jetty:jetty-unixsocket-common",
-            "new": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !!",
-            "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+            "new": "removed:removed",
+            "context": "!! Removed - Use org.eclipse.jetty:jetty-unixdomain-server !! Migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
         },
         {
             "old": "org.eclipse.jetty:jetty-osgi-boot",
