@@ -1,6 +1,6 @@
 {
-    "version": "28",
-    "date": "2023/09/09",
+    "version": "29",
+    "date": "2023/10/15",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2200,6 +2200,11 @@
             "old": "org.eclipse.jetty:jetty-osgi-alpn",
             "new": "org.eclipse.jetty:jetty-osgi, otherwise org.eclipse.jetty.ee{8,9,10}:jetty-ee{8,9,10}-osgi-*",
             "context": "migrating from Jetty 11.0.x to Jetty 12.0.x, see https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#pg-migration-11-to-12"
+        },
+        {
+            "old": "com.github.tomakehurst:wiremock",
+            "new": "org.wiremock:wiremock",
+            "context": "See v3 breaking changes: https://github.com/wiremock/wiremock/releases/tag/3.0.0-beta-11"
         }
     ]
 }
