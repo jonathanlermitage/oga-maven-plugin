@@ -1,5 +1,5 @@
 {
-    "version": "31",
+    "version": "32",
     "date": "2023/11/07",
     "migration": [
         {
@@ -1714,6 +1714,11 @@
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb23-plugin",
             "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+        },
+        {
+            "old": "org.jvnet.jax-ws-commons:jaxws-maven-plugin",
+            "new": "org.codehaus.mojo:jaxws-maven-plugin",
+            "context": "The original code was developed in the Codehaus Mojo project, then as of March 2007, the project moved to jax-ws-commons with version 1.x in org.codehaus.mojo groupId and version 2.x in org.jvnet.jax-ws-commons groupId."
         },
         {
             "old": "org.kitesdk:kite-data-hcatalog",
