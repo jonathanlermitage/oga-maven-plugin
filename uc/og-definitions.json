@@ -1717,8 +1717,8 @@
         },
         {
             "old": "org.jvnet.jax-ws-commons:jaxws-maven-plugin",
-            "new": "org.codehaus.mojo:jaxws-maven-plugin",
-            "context": "The original code was developed in the Codehaus Mojo project, then as of March 2007, the project moved to jax-ws-commons with version 1.x in org.codehaus.mojo groupId and version 2.x in org.jvnet.jax-ws-commons groupId."
+            "new": "com.sun.xml.ws:jaxws-maven-plugin",
+            "context": "The original version of this was developed in the codehaus mojo project, in March 2007, the project was moved to jax-ws-commons, but as of December 2018, the project is moved to Eclipse Foundation and plugin's group id is changed to com.sun.xml.ws."
         },
         {
             "old": "org.kitesdk:kite-data-hcatalog",
