@@ -1,6 +1,6 @@
 {
-    "version": "30",
-    "date": "2023/10/21",
+    "version": "31",
+    "date": "2023/11/07",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1694,6 +1694,26 @@
         {
             "old": "org.jszip.jruby:sass-gems",
             "new": "org.jszip.gems:sass-lang"
+        },
+        {
+            "old": "org.jvnet.jaxb2.maven2:maven-jaxb2-plugin",
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+        },
+        {
+            "old": "org.jvnet.jaxb2.maven2:maven-jaxb20-plugin",
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+        },
+        {
+            "old": "org.jvnet.jaxb2.maven2:maven-jaxb21-plugin",
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+        },
+        {
+            "old": "org.jvnet.jaxb2.maven2:maven-jaxb22-plugin",
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+        },
+        {
+            "old": "org.jvnet.jaxb2.maven2:maven-jaxb23-plugin",
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
         },
         {
             "old": "org.kitesdk:kite-data-hcatalog",
