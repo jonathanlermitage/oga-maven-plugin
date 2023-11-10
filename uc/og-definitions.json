@@ -1,6 +1,6 @@
 {
-    "version": "32",
-    "date": "2023/11/07",
+    "version": "33",
+    "date": "2023/11/10",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1402,6 +1402,16 @@
         {
             "old": "org.apache.velocity:velocity",
             "new": "org.apache.velocity:velocity-engine-core"
+        },
+        {
+            "old": "org.avaje.ebeanorm",
+            "new": "org.avaje.ebean",
+            "context": "Past versions of Ebean artifacts where released using the groupId: org.avaje.ebean and prior to that org.avaje.ebeanorm"
+        },
+        {
+            "old": "org.avaje.ebean",
+            "new": "io.ebean",
+            "context": "Past versions of Ebean artifacts where released using the groupId: org.avaje.ebean and prior to that org.avaje.ebeanorm"
         },
         {
             "old": "org.codehaus.groovy",
