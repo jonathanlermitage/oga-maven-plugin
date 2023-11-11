@@ -1,6 +1,6 @@
 {
-    "version": "33",
-    "date": "2023/11/10",
+    "version": "34",
+    "date": "2023/11/11",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1492,6 +1492,10 @@
         {
             "old": "org.flowable:flowable-spring-boot-starter-rest-api",
             "new": "org.flowable:flowable-spring-boot-starter-process-rest"
+        },
+        {
+            "old": "org.glassfish:jakarta.json",
+            "new": "org.eclipse.parsson:parsson"
         },
         {
             "old": "org.glassfish:javax.el",
