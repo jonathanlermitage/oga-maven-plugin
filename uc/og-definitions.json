@@ -1,6 +1,6 @@
 {
-    "version": "33",
-    "date": "2023/11/10",
+    "version": "34",
+    "date": "2023/11/11",
     "migration": [
         {
             "old": "acegisecurity",
@@ -519,6 +519,10 @@
             "old": "com.squareup.retrofit",
             "new": "com.squareup.retrofit2",
             "context": "The Maven group ID is now com.squareup.retrofit2, see https://github.com/square/retrofit/blob/master/CHANGELOG.md"
+        },
+        {
+            "old": "com.sun.jersey",
+            "new": "org.glassfish.jersey.core"
         },
         {
             "old": "com.sun.mail:javax.mail",
