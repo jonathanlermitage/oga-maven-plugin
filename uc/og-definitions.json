@@ -521,6 +521,10 @@
             "context": "The Maven group ID is now com.squareup.retrofit2, see https://github.com/square/retrofit/blob/master/CHANGELOG.md"
         },
         {
+            "old": "com.sun.jersey",
+            "new": "org.glassfish.jersey.core"
+        },
+        {
             "old": "com.sun.mail:javax.mail",
             "new": "com.sun.mail:jakarta.mail"
         },
