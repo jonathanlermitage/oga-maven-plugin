@@ -1,6 +1,6 @@
 {
-    "version": "34",
-    "date": "2023/11/11",
+    "version": "35",
+    "date": "2023/11/14",
     "migration": [
         {
             "old": "acegisecurity",
@@ -539,6 +539,10 @@
         {
             "old": "com.typesafe:slick-testkit_2.10",
             "new": "com.typesafe.slick:slick-testkit_2.10"
+        },
+        {
+            "old": "com.vladmihalcea",
+            "new": "io.hypersistence"
         },
         {
             "old": "com.wandrell.archetypes:library",
