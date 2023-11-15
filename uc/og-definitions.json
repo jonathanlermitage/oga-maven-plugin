@@ -1,5 +1,5 @@
 {
-    "version": "36",
+    "version": "37",
     "date": "2023/11/15",
     "migration": [
         {
@@ -2267,6 +2267,11 @@
             "old": "com.apollographql.apollo",
             "new": "com.apollographql.apollo3",
             "context": "See https://www.apollographql.com/docs/kotlin/migration/3.0/#package-name--group-id--plugin-id"
+        },
+        {
+            "old": "com.graphql-java-generator:graphql-java-runtime",
+            "new": "com.graphql-java-generator:graphql-java-client-runtime or com.graphql-java-generator:graphql-java-server-runtime",
+            "context": "See https://github.com/graphql-java-generator/graphql-maven-plugin-project/blob/master_2.x/CHANGELOG.md#1181"
         }
     ]
 }
