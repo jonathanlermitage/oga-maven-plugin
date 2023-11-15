@@ -1,6 +1,6 @@
 {
-    "version": "35",
-    "date": "2023/11/14",
+    "version": "36",
+    "date": "2023/11/15",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2262,6 +2262,11 @@
             "old": "io.reactivex.rxjava2",
             "new": "io.reactivex.rxjava3",
             "context": "See https://github.com/ReactiveX/RxJava/wiki/What's-different-in-3.0 and https://github.com/ReactiveX/RxJava/pull/6421"
+        },
+        {
+            "old": "com.apollographql.apollo",
+            "new": "com.apollographql.apollo3",
+            "context": "See https://www.apollographql.com/docs/kotlin/migration/3.0/#package-name--group-id--plugin-id"
         }
     ]
 }
