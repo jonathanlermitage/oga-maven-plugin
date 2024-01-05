@@ -1,6 +1,6 @@
 {
-    "version": "37",
-    "date": "2023/11/15",
+    "version": "38",
+    "date": "2024/12/05",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1865,6 +1865,10 @@
         {
             "old": "org.smartdeveloperhub.harvesters.scm:scm-harvester-container-ldp4j",
             "new": "org.smartdeveloperhub.harvesters.scm:scm-harvester-container"
+        },
+        {
+            "old": "org.sonarsource.sonarqube:sonar-plugin-api",
+            "new": "org.sonarsource.api.plugin:sonar-plugin-api"
         },
         {
             "old": "org.specsy:specsy-junit5",
