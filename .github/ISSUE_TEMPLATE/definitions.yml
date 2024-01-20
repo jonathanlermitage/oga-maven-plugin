@@ -1,6 +1,6 @@
 name: Add a new migration definition
 description: Request a new migration definition be added to the list of supported migrations.
-title: "Migration definition `groupId:artifactId`"
+title: "Migration definition `groupId:artifactId` to `groupId:artifactId`"
 labels: [enhancement]
 body:
   - type: markdown

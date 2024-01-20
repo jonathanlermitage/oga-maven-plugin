@@ -136,7 +136,7 @@ Please reformat new code only: do not reformat the whole project or entire exist
 
 ### Definitions file
 
-The list of deprecated *groupId + artifactId* couples is stored in [og-definitions.json](uc/og-definitions.json) file. To remove/update/add entries, you can open an issue, submit a merge request, or simply send an email (<jonathan.lermitage@gmail.com>).  
+The list of deprecated *groupId + artifactId* couples is stored in [og-definitions.json](uc/og-definitions.json) file. To remove/update/add entries, you can [open an issue](https://github.com/jonathanlermitage/oga-maven-plugin/issues/new?assignees=&labels=enhancement&projects=&template=definitions.yml&title=Migration+definition+%60groupId%3AartifactId%60+to+%60groupId%3AartifactId%60), submit a merge request, or simply send an email (<jonathan.lermitage@gmail.com>).  
 
 ### Find new entries for definitions file
 
