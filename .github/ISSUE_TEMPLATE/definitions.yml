@@ -1,0 +1,68 @@
+name: Add a new migration definition
+description: Request a new migration definition be added to the list of supported migrations.
+title: "Migration definition `groupId:artifactId`"
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The list of deprecated groupId + artifactId couples is stored in [og-definitions.json](https://github.com/jonathanlermitage/oga-maven-plugin/blob/master/uc/og-definitions.json).
+        To remove/update/add entries, you can open an issue, submit a merge request, or simply send an email (jonathan.lermitage@gmail.com).
+
+  - type: input
+    id: oldGroupId
+    attributes:
+      label: Old groupId
+      description: The groupId of the deprecated artifact.
+      placeholder: e.g., org.codehaus.groovy
+    validations:
+      required: true
+  - type: input
+    id: oldArtifactId
+    attributes:
+      label: Old artifactId
+      description: The artifactId of the deprecated artifact. (Optional)
+      placeholder: groovy-all
+
+  - type: input
+    id: newGroupId
+    attributes:
+      label: New groupId
+      description: The groupId of the migrated artifact.
+      placeholder: e.g., org.apache.groovy
+    validations:
+      required: true
+  - type: input
+    id: newArtifactId
+    attributes:
+      label: New artifactId
+      description: The artifactId of the migrated artifact. (Optional)
+      placeholder: groovy-all
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: The context of the migration to display to the user.
+      placeholder: e.g., The Groovy project has moved from CodeHaus to the Apache Software Foundation.
+
+  - type: textarea
+    id: additionalInfo
+    attributes:
+      label: Additional information
+      description: Any additional information you'd like to provide for this change.
+      placeholder: e.g., Should replace the existing migration definition for `org.codehaus.groovy:groovy-all`.
+
+  - type: checkboxes
+    attributes:
+      label: Is this an official migration by the same team?
+      description: A fork of a discontinued project would be considered unofficial.
+      options:
+        - label: Official
+        - label: Unofficial
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Next steps
+        Thanks for taking the time to fill out this request. We'll review it and get back to you as soon as possible.
