@@ -1233,6 +1233,10 @@
             "new": "org.netbeans:lib"
         },
         {
+            "old": "mysql:mysql-connector-java",
+            "new": "com.mysql:mysql-connector-j"
+        },
+        {
             "old": "net.htmlparser:jericho-html",
             "new": "net.htmlparser.jericho:jericho-html"
         },
