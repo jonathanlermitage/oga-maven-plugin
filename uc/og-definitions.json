@@ -1,5 +1,5 @@
 {
-    "date": "2024/01/05",
+    "date": "2024/04/16",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1722,23 +1722,73 @@
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb2-plugin",
-            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb20-plugin",
-            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb21-plugin",
-            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb22-plugin",
-            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb23-plugin",
-            "new": "org.jvnet.jaxb:jaxb-maven-plugin"
+            "new": "org.jvnet.jaxb:jaxb-maven-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.jaxb2_commons:jaxb2-basics",
+            "new": "org.jvnet.jaxb:jaxb2-basics",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.jaxb2_commons:jaxb2-basics-runtime",
+            "new": "org.jvnet.jaxb:jaxb2-basics-runtime",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.annox:annox",
+            "new": "org.jvnet.jaxb:annox",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.jaxb2_commons:jaxb2-basics-annotate",
+            "new": "org.jvnet.jaxb:jaxb-basics-annotate",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.hyperjaxb3:hyperjaxb3-ejb-plugin",
+            "new": "org.jvnet.jaxb:hyperjaxb3-ejb-plugin",
+            "context": "Migration from previous version (0.x / 1.x) to v2 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-previous-version-0x--1x-to-v2"
+        },
+        {
+            "old": "org.jvnet.jaxb:jaxb2-basics",
+            "new": "org.jvnet.jaxb:jaxb-plugins",
+            "context": "Migration from v2 to v3 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-v2-to-v3"
+        },
+        {
+            "old": "org.jvnet.jaxb:jaxb2-basics-runtime",
+            "new": "org.jvnet.jaxb:jaxb-plugins-runtime",
+            "context": "Migration from v2 to v3 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-v2-to-v3"
+        },
+        {
+            "old": "org.jvnet.jaxb:jaxb2-basics-tools",
+            "new": "org.jvnet.jaxb:jaxb-plugins-tools",
+            "context": "Migration from v2 to v3 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-v2-to-v3"
+        },
+        {
+            "old": "org.jvnet.jaxb:jaxb-basics-annotate",
+            "new": "org.jvnet.jaxb:jaxb-plugin-annotate",
+            "context": "Migration from v2 to v3 https://github.com/highsource/jaxb-tools/wiki/JAXB-Tools-Migration-Guide#migration-from-v2-to-v3"
         },
         {
             "old": "org.jvnet.jax-ws-commons:jaxws-maven-plugin",
