@@ -1,5 +1,5 @@
 {
-    "date": "2024/04/16",
+    "date": "2024/04/23",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1858,6 +1858,10 @@
         {
             "old": "org.scalatest:scalatest",
             "new": "org.scala-tools.testing:scalatest"
+        },
+        {
+            "old": "org.scribe",
+            "new": "com.github.scribejava"
         },
         {
             "old": "org.semanticweb.vlog4j:vlog4j-base",
