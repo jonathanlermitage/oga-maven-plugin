@@ -1,5 +1,5 @@
 {
-    "date": "2024/04/23",
+    "date": "2024/04/24",
     "migration": [
         {
             "old": "acegisecurity",
@@ -327,6 +327,10 @@
             "old": "com.indeed:java-dogstatsd-client",
             "new": "com.datadoghq:java-dogstatsd-client",
             "context": "This project has merged with datadog/java-dogstatsd-client and now lives in a new home at: http://datadog/java-dogstatsd-client"
+        },
+        {
+            "old": "com.javaslang",
+            "new": "io.javaslang"
         },
         {
             "old": "com.jayway.maven.plugins.android.generation2:maven-android-plugin",
@@ -766,6 +770,10 @@
         {
             "old": "io.github.openfeign:feign-java8",
             "new": "io.github.openfeign:feign-core"
+        },
+        {
+            "old": "io.javaslang",
+            "new": "io.vavr"
         },
         {
             "old": "io.jenkins.tools:git-changelist-maven-extension",
