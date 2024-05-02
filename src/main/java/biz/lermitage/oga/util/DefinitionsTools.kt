@@ -4,6 +4,7 @@ import biz.lermitage.oga.Dependency
 import biz.lermitage.oga.DependencyType
 import biz.lermitage.oga.cfg.Definitions
 import org.apache.maven.plugin.logging.Log
+import org.codehaus.plexus.resource.ResourceManager
 
 /**
  * Definitions tools.
@@ -12,9 +13,9 @@ import org.apache.maven.plugin.logging.Log
  */
 object DefinitionsTools {
 
-    fun loadDefinitionsFromUrl(url: String, log: Log): Definitions {
+    fun loadDefinitionsFromUrl(url: String, log: Log, locator: ResourceManager): Definitions {
         log.info("Loading definitions from $url")
-        val definitions = IOTools.readDefinitions(url)
+        val definitions = IOTools.readDefinitions(url, locator, log)
 
         val nbDefinitions = definitions.migration?.size
         var welcomeMsg = "Loaded $nbDefinitions definitions from '$url'"

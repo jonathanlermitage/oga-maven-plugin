@@ -5,15 +5,17 @@ import biz.lermitage.oga.cfg.IgnoreList
 import biz.lermitage.oga.util.DefinitionsTools
 import biz.lermitage.oga.util.IOTools
 import biz.lermitage.oga.util.IgnoreListTools
+import org.apache.maven.execution.MavenSession
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugin.MojoExecutionException
+import org.apache.maven.plugins.annotations.Component
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
 import org.apache.maven.project.MavenProject
+import org.codehaus.plexus.resource.ResourceManager
+import org.codehaus.plexus.resource.loader.FileResourceLoader
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException
-import java.io.File
 import java.io.IOException
-import java.net.URL
 import java.util.Optional
 
 /**
@@ -60,6 +62,12 @@ class CheckMojo : AbstractMojo() {
     @Parameter(property = "project", readonly = true)
     var project: MavenProject? = null
 
+    @Parameter(defaultValue = "\${session}", required = true, readonly = true)
+    private var session: MavenSession? = null
+
+    @Component
+    private val locator: ResourceManager? = null
+
     /**
      * Execute goal.
      */
@@ -72,22 +80,25 @@ class CheckMojo : AbstractMojo() {
             return
         }
 
+        setUpLocator(locator!!)
+
         try {
-            val allDefinitions = mutableListOf(DefinitionsTools.loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL, log))
+            val allDefinitions = mutableListOf(DefinitionsTools.loadDefinitionsFromUrl(ogDefinitionsUrl ?: DEFINITIONS_URL, log, locator))
             if (!ignoreUnofficialMigrations) {
-                allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(ogUnofficialDefinitionsUrl ?: UNOFFICIAL_DEFINITIONS_URL, log)
+                allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(ogUnofficialDefinitionsUrl ?: UNOFFICIAL_DEFINITIONS_URL, log, locator)
             }
 
             // Load additional definitions if defined
-            additionalDefinitionFiles!!.forEach { allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(it, log) }
+            additionalDefinitionFiles!!.forEach { allDefinitions += DefinitionsTools.loadDefinitionsFromUrl(it, log, locator) }
 
             var ignoreList = Optional.empty<IgnoreList>()
             if (!ignoreListFile.isNullOrEmpty()) {
                 log.info("Loading ignore list from file $ignoreListFile")
-                ignoreList = Optional.of(IOTools.readIgnoreList(File(ignoreListFile)))
+                // TODO given that we now support loading a file from classpath, file and URL we could consolidate configuration to definitions and suppressions (like PMD/Checkstyle)
+                ignoreList = Optional.of(IOTools.readIgnoreList(ignoreListFile, locator, log))
             } else if (!ignoreListUrl.isNullOrEmpty()) {
                 log.info("Loading ignore list from url $ignoreListUrl")
-                ignoreList = Optional.of(IOTools.readIgnoreList(URL(ignoreListUrl)))
+                ignoreList = Optional.of(IOTools.readIgnoreList(ignoreListUrl, locator, log))
             }
 
             val dependencies = DefinitionsTools.mapDependenciesToOgaDependencies(project!!.dependencies!!)
@@ -160,6 +171,19 @@ class CheckMojo : AbstractMojo() {
         } catch (e: XmlPullParserException) {
             throw MojoExecutionException("Plugin failure, please report it to $GITHUB_ISSUES_URL", e)
         }
+    }
+
+    private fun setUpLocator(locator: ResourceManager) {
+        val searchPaths = listOf(
+            // 0. The locator will read from classpath and URL locations
+            // 1. in the directory of the current project's pom file - note: extensions might replace the pom file on the fly
+            project!!.file.parentFile.absolutePath,
+            // 2. in the current project's directory
+            project!!.basedir.absolutePath,
+            // 3. in the base directory - that's the directory of the initial pom requested to build, e.g. the root of a multi-module build
+            session!!.request!!.baseDirectory
+        )
+        searchPaths.forEach { searchPath -> locator.addSearchPath(FileResourceLoader.ID, searchPath) }
     }
 
     companion object {
