@@ -16,6 +16,28 @@ class CheckMojoITest {
     @JvmField
     var mockServerRule: MockServerRule = MockServerRule(this)
 
+    @Test
+    fun testProjectWithClasspathDefinitionFiles() {
+        // GIVEN a project that contains our definition file
+        val classpathResourcesDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/classpath_build_config")
+        val classpathVerifier = Verifier(classpathResourcesDir.absolutePath)
+        classpathVerifier.deleteArtifact("biz.lermitage.oga", "classpath-build-config", "1.0.0-SNAPSHOT", "jar")
+        classpathVerifier.executeGoal("install")
+
+        // AND a project which uses the definition file as a classpath resource
+        val testDir = ResourceExtractor.simpleExtractResources(javaClass, "/biz/lermitage/oga/ko_classpath_definitions")
+        val verifier = Verifier(testDir.absolutePath)
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom")
+
+        // WHEN checking the projects dependencies
+        // THEN the build fails
+        assertThrows(VerificationException::class.java) { verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check") }
+
+        // AND the build contains a failure message from the classpath definition file
+        verifier.verifyTextInLog("[ERROR] (dependency) 'org.mock-server' groupId should be replaced by 'com.example.classpath.dependency'")
+    }
+
     @Throws(Exception::class)
     @Test
     fun testProjectWithAdditionalDefinitionFiles() {
