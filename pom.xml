@@ -104,6 +104,12 @@
             <version>${gson.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-resources</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
         <!-- fix maven 3.9.2+ warnings:
         Plugin should declare these Maven artifacts in `provided` scope: [org.apache.maven:maven-settings-builder:3.9.2, org.apache.maven:maven-builder-support:3.9.2, org.apache.maven:maven-artifact:3.9.2, org.apache.maven:maven-resolver-provider:3.9.2, org.apache.maven:maven-plugin-api:3.9.2, org.apache.maven:maven-core:3.9.2, org.apache.maven:maven-repository-metadata:3.9.2, org.apache.maven:maven-settings:3.9.2, org.apache.maven:maven-model-builder:3.9.2, org.apache.maven:maven-model:3.9.2]
         -->

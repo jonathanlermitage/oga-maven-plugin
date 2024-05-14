@@ -103,6 +103,28 @@ However, if you would like to get the benefit of the community maintained defini
 </plugin>
 ```
 
+In some cases your definition file might be shared across many projects.
+As an alternative to copying and pasting this file into each build, you can package your definitions into a JAR and reference it like so:
+```xml
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <configuration>
+        <additionalDefinitionFiles>
+            <additionalDefinitionFile>classpath-og-definitions.json</additionalDefinitionFile>
+        </additionalDefinitionFiles>
+    </configuration>
+    <dependencies>
+        <!-- Dependency contains /classpath-og-definitions.json -->
+        <dependency>
+            <groupId>com.example.oga</groupId>
+            <artifactId>build-config</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+</plugin>
+```
+
 #### Ignoring definitions
 
 You can also provide a JSON ignore-list in order to exclude some *groupIds* or *groupId + artifactIds*:

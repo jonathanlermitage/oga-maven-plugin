@@ -4,13 +4,15 @@ import biz.lermitage.oga.cfg.Definitions
 import biz.lermitage.oga.cfg.IgnoreList
 import com.google.gson.GsonBuilder
 import org.apache.commons.io.FileUtils
-import java.io.BufferedReader
+import org.apache.maven.plugin.MojoExecutionException
+import org.apache.maven.plugin.logging.Log
+import org.codehaus.plexus.resource.ResourceManager
+import org.codehaus.plexus.resource.loader.FileResourceCreationException
+import org.codehaus.plexus.resource.loader.ResourceNotFoundException
 import java.io.File
 import java.io.IOException
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.URL
-import java.util.regex.Pattern
+import java.nio.file.Files
+import kotlin.io.path.pathString
 
 /**
  * IO tools.
@@ -22,45 +24,33 @@ object IOTools {
     private val GSON = GsonBuilder().create()
 
     @Throws(IOException::class)
-    fun readDefinitions(url: String): Definitions {
-        return readFromLocation(url, Definitions::class.java)
+    fun readDefinitions(location: String, locator: ResourceManager, log: Log): Definitions {
+        return readFromLocation(location, locator, log, Definitions::class.java)
     }
 
     @Throws(IOException::class)
-    fun readIgnoreList(url: URL): IgnoreList {
-        val ignoreListAsString = readContent(url)
-        return GSON.fromJson(ignoreListAsString, IgnoreList::class.java)
+    fun readIgnoreList(location: String, locator: ResourceManager, log: Log): IgnoreList {
+        return readFromLocation(location, locator, log, IgnoreList::class.java)
     }
 
     @Throws(IOException::class)
-    fun readIgnoreList(file: File): IgnoreList {
-        val ignoreListAsString = FileUtils.readFileToString(file, Charsets.UTF_8)
-        return GSON.fromJson(ignoreListAsString, IgnoreList::class.java)
-    }
-
-    @Throws(IOException::class)
-    private fun <T> readFromLocation(location: String, clazz: Class<T>): T {
-        val uriRx: Pattern = Pattern.compile("^https?:.*", Pattern.CASE_INSENSITIVE)
-        val asString = if (uriRx.matcher(location).matches()) {
-            readContent(URL(location))
-        } else {
-            FileUtils.readFileToString(File(location), Charsets.UTF_8)
-        }
+    private fun <T> readFromLocation(location: String, locator: ResourceManager, log: Log, clazz: Class<T>): T {
+        val file = locationToFile(location, locator, log)
+        val asString = FileUtils.readFileToString(file, Charsets.UTF_8)
         return GSON.fromJson(asString, clazz)
     }
 
-    @Throws(IOException::class)
-    private fun readContent(url: URL): String {
-        val content = StringBuilder()
-        val conn = url.openConnection() as HttpURLConnection
-        conn.requestMethod = "GET"
-        BufferedReader(InputStreamReader(conn.inputStream)).use { rd ->
-            var line: String? = rd.readLine()
-            while (line != null) {
-                content.append(line)
-                line = rd.readLine()
-            }
+    @Throws(MojoExecutionException::class)
+    private fun locationToFile(location: String, locator: ResourceManager, log: Log): File {
+        try {
+            val resolvedLocation = Files.createTempFile("oga-", ".json")
+            log.debug("Resolved file from '$location' to '$resolvedLocation'")
+            return locator.getResourceAsFile(location, resolvedLocation.pathString)
+                ?: throw MojoExecutionException("Could not resolve $location")
+        } catch (e: ResourceNotFoundException) {
+            throw MojoExecutionException(e.message, e)
+        } catch (e: FileResourceCreationException) {
+            throw MojoExecutionException(e.message, e)
         }
-        return content.toString()
     }
 }
