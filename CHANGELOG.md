@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.9.0 (2024/05/19)
+* merge [pull request #80](https://github.com/jonathanlermitage/oga-maven-plugin/pull/80): use plexus to support classpath resources.
+
 ### 1.8.1 (2023/05/25)
 * upgrade plugin's dependencies.
 * fix warning compatibility message for Maven 3.9.2+.
