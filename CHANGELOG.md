@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.9.1 (2024/05/24)
+* strictly identical to 1.9.0. I had some problems with my Maven setup (again ^_^), which refused to publish the 1.9.0 plugin release. I was using Maven 3.9.6. I had to revert to 3.9.0 (and I updated my deployment script to use the Maven wrapper, finally), and I cleared my m2 cache (to fix a weir error about a missing class in a Maven plugin). After that, I have been able to prepare and publish the 1.9.1 release.
+
 ### 1.9.0 (2024/05/19)
 * merge [pull request #80](https://github.com/jonathanlermitage/oga-maven-plugin/pull/80): use plexus to support classpath resources.
 
