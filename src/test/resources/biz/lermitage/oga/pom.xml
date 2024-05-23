@@ -13,7 +13,7 @@
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
                 <artifactId>oga-maven-plugin</artifactId>
-                <version>1.8.2-SNAPSHOT</version>
+                <version>1.9.1-SNAPSHOT</version>
             </plugin>
         </plugins>
     </build>
