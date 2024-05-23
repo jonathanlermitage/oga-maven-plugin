@@ -39,10 +39,10 @@ if [%1] == [dt] (
 if [%1] == [prepare] (
   echo DON'T FORGET TO USE JDK8
   pause
-  mvn clean release:prepare
+  mvnw clean release:prepare
 )
 if [%1] == [pub] (
   echo DON'T FORGET TO USE JDK8
   pause
-  mvn release:perform -P ossrh
+  mvnw release:perform -P ossrh
 )
