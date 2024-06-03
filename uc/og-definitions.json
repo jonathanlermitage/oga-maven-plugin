@@ -1,5 +1,5 @@
 {
-    "date": "2024/04/24",
+    "date": "2024/06/03",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1719,6 +1719,10 @@
         {
             "old": "org.jdtaus.core.monitor:jdtaus-core-server-monitoring",
             "new": "org.jdtaus.core.monitor:jdtaus-core-task-monitor"
+        },
+        {
+            "old": "org.jetbrains.kotlin:kotlin-stdlib-common",
+            "new": "org.jetbrains.kotlin:kotlin-stdlib"
         },
         {
             "old": "org.jooby",
