@@ -260,6 +260,10 @@
             "new": "com.openpojo:openpojo"
         },
         {
+            "old": "com.google.code.maven-replacer-plugin:maven-replacer-plugin",
+            "new": "com.google.code.maven-replacer-plugin:replacer"
+        },
+        {
             "old": "com.google.code.reflection-utils:reflection-utils",
             "new": "com.github.ekryd.reflection-utils:reflection-utils"
         },
