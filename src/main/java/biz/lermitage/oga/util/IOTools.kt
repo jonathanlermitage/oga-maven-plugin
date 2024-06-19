@@ -44,6 +44,7 @@ object IOTools {
     private fun locationToFile(location: String, locator: ResourceManager, log: Log): File {
         try {
             val resolvedLocation = Files.createTempFile("oga-", ".json")
+            resolvedLocation.toFile().deleteOnExit()
             log.debug("Resolved file from '$location' to '$resolvedLocation'")
             return locator.getResourceAsFile(location, resolvedLocation.pathString)
                 ?: throw MojoExecutionException("Could not resolve $location")

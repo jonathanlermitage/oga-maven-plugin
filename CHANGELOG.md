@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.9.3 (WIP)
+* delete temporary files created by the plugin.
+
 ### 1.9.2 (2024/05/24)
 * strictly identical to 1.9.0. I had some problems with my Maven setup (again ^_^), which refused to publish the 1.9.0 plugin release. I was using Maven 3.9.6. I had to revert to 3.9.0 (and I updated my deployment script to use the Maven wrapper, finally), and I cleared my m2 cache (to fix a weird error about a missing class in a Maven plugin). After that, I have been able to prepare and publish the 1.9.2 release.
 
