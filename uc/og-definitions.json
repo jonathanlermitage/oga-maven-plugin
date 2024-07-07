@@ -1,5 +1,5 @@
 {
-    "date": "2024/06/03",
+    "date": "2024/07/07",
     "migration": [
         {
             "old": "acegisecurity",
@@ -450,6 +450,10 @@
         {
             "old": "com.microsoft.windowsazure.storage:microsoft-windowsazure-storage-sdk",
             "new": "com.microsoft.azure:azure-storage"
+        },
+        {
+            "old": "commons-dbcp:commons-dbcp",
+            "new": "org.apache.commons:commons-dbcp2"
         },
         {
             "old": "commons-collections:commons-collections",
