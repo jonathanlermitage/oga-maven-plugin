@@ -1,5 +1,5 @@
 {
-    "date": "2024/06/03",
+    "date": "2024/07/07",
     "migration": [
         {
             "old": "acegisecurity",
@@ -480,6 +480,10 @@
             "old": "commons-math:commons-math",
             "new": "org.apache.commons:commons-math",
             "context": "Check https://issues.apache.org/jira/browse/MATH-339 for more details"
+        },
+        {
+            "old": "commons-pool:commons-pool",
+            "new": "org.apache.commons:commons-pool2"
         },
         {
             "old": "com.mtvi.plateng.maven:maven-hudson-plugin",
