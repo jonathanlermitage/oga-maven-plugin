@@ -486,6 +486,10 @@
             "context": "Check https://issues.apache.org/jira/browse/MATH-339 for more details"
         },
         {
+            "old": "commons-pool:commons-pool",
+            "new": "org.apache.commons:commons-pool2"
+        },
+        {
             "old": "com.mtvi.plateng.maven:maven-hudson-plugin",
             "new": "org.jvnet.hudson.tools:maven-hudson-plugin"
         },
