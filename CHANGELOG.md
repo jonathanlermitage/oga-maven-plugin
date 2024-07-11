@@ -1,7 +1,10 @@
 ## Old GroupIds Alerter - Change Log
 
-### 1.9.3 (2024/06/19)
+### 1.9.4 (2024/07/11)
 * delete temporary files created by the plugin.
+
+### 1.9.3
+* not published due to Maven artifact publishing issues. I was stuck in a migration from OSSRH (the legacy Central portal) to the new Central portal. This is now fixed. Big thanks to the Sonatype support team, they helped me a lot with this migration.
 
 ### 1.9.2 (2024/05/24)
 * strictly identical to 1.9.0. I had some problems with my Maven setup (again ^_^), which refused to publish the 1.9.0 plugin release. I was using Maven 3.9.6. I had to revert to 3.9.0 (and I updated my deployment script to use the Maven wrapper, finally), and I cleared my m2 cache (to fix a weird error about a missing class in a Maven plugin). After that, I have been able to prepare and publish the 1.9.2 release.
