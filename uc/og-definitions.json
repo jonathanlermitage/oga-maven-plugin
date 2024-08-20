@@ -1,5 +1,5 @@
 {
-    "date": "2024/07/07",
+    "date": "2024/08/20",
     "migration": [
         {
             "old": "acegisecurity",
@@ -314,6 +314,11 @@
         {
             "old": "com.hotels.beans:bean-utils-library",
             "new": "com.hotels.beans:bull-bean-transformer"
+        },
+        {
+            "old": "com.hp.hpl.jena",
+            "new": "org.apache.jena",
+            "context": "Jena was originally developed by researchers in HP Labs. (...) The project team successfully applied to have Jena adopted by the Apache Software Foundation in November 2010"
         },
         {
             "old": "com.ibatis:ibatis-common",
