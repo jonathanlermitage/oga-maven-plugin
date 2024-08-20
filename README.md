@@ -34,9 +34,11 @@ You may see something like `[ERROR] 'com.graphql-java:graphql-spring-boot-starte
 Maven coordinates ([Nexus](https://oss.sonatype.org/#nexus-search;quick~oga-maven-plugin)):
 
 ```xml
-<groupId>biz.lermitage.oga</groupId>
-<artifactId>oga-maven-plugin</artifactId>
-<version>1.9.4</version>
+<plugin>
+    <groupId>biz.lermitage.oga</groupId>
+    <artifactId>oga-maven-plugin</artifactId>
+    <version>1.9.4</version>
+</plugin>
 ```
 
 ### Configuration
@@ -164,7 +166,7 @@ The list of deprecated *groupId + artifactId* couples is stored in [og-definitio
 
 Go to [maven-index-search-suspect-coordinates](maven-index-search-suspect-coordinates/): this project downloads Maven Central indexes and looks for potential entries, then saves it to a file; i.e. artifactIds that exists for two different groupIds (keep in mind that 90~99% are false-positive).  
 You can view resulting file here: [suspiciousCoordinates.txt](maven-index-search-suspect-coordinates/suspiciousCoordinates.txt) (warning, it's a ~3 MB file).  
-A filtered version is available here: [suspiciousCoordinates-filtered.txt](maven-index-search-suspect-coordinates/suspiciousCoordinates-filtered.txt) (~500 KB). In this file, we keep only dependency couples where a groupId is a part of the other groupdId, like `com.graphql-java` and `com.graphql-java-kickstart`.
+A filtered version is available here: [suspiciousCoordinates-filtered.txt](maven-index-search-suspect-coordinates/suspiciousCoordinates-filtered.txt) (~500 KB). In this file, we keep only dependency couples where a groupId is a part of the other groupId, like `com.graphql-java` and `com.graphql-java-kickstart`.
 
 ## License
 
