@@ -566,6 +566,11 @@
             "new": "com.typesafe.slick:slick-testkit_2.10"
         },
         {
+            "old": "com.typesafe.play",
+            "new": "org.playframework",
+            "context": "With Play 3.0, we changed the groupId from com.typesafe.play to org.playframework to emphasize that Play is fully community-driven."
+        },
+        {
             "old": "com.vladmihalcea",
             "new": "io.hypersistence"
         },
