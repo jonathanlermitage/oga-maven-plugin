@@ -1,5 +1,5 @@
 {
-    "date": "2024/08/20",
+    "date": "2024/09/10",
     "migration": [
         {
             "old": "acegisecurity",
@@ -559,6 +559,11 @@
         {
             "old": "com.typesafe:slick-testkit_2.10",
             "new": "com.typesafe.slick:slick-testkit_2.10"
+        },
+        {
+            "old": "com.typesafe.play",
+            "new": "org.playframework",
+            "context": "With Play 3.0, we changed the groupId from com.typesafe.play to org.playframework to emphasize that Play is fully community-driven."
         },
         {
             "old": "com.vladmihalcea",
