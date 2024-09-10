@@ -1,5 +1,5 @@
 {
-    "date": "2024/08/20",
+    "date": "2024/09/10",
     "migration": [
         {
             "old": "acegisecurity",
@@ -49,6 +49,11 @@
         {
             "old": "cactus:cactus-ant",
             "new": "cactus:cactus-ant-13"
+        },
+        {
+            "old": "ch.qos.logback:logback-access",
+            "new": "ch.qos.logback.access:common",
+            "context": "The 1.5.x continues the 1.4.x series but with logback-access relocated to its own repository."
         },
         {
             "old": "clover:clover",
