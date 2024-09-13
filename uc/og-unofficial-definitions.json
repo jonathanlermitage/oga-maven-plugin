@@ -1,5 +1,5 @@
 {
-    "date": "2024/01/12",
+    "date": "2024/09/13",
     "migration": [
         {
             "old": "com.jcraft:jsch",
@@ -21,6 +21,14 @@
                 "de.focus-shift:jollyday"
             ],
             "context": "The old jollyday project is no longer maintained. This is a modern fork with jakarta dependencies and based on java 11."
+        },
+
+        {
+            "old": "com.google.code.findbugs",
+            "proposal": [
+                "com.github.spotbugs"
+            ],
+            "context": "SpotBugs is a fork of FindBugs (which is now an abandoned project), carrying on from the point where it left off with support of its community."
         }
     ]
 }
