@@ -343,6 +343,11 @@
             "context": "This project has merged with datadog/java-dogstatsd-client and now lives in a new home at: http://datadog/java-dogstatsd-client"
         },
         {
+            "old": "com.intuit.karate",
+            "new": "io.karatelabs",
+            "context": "Since version v1.5.0 the groupId has changed, see https://github.com/karatelabs/karate/releases/tag/v1.5.0"
+        },
+        {
             "old": "com.javaslang",
             "new": "io.javaslang"
         },
