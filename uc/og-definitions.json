@@ -1,5 +1,5 @@
 {
-    "date": "2024/09/10",
+    "date": "2024/09/13",
     "migration": [
         {
             "old": "acegisecurity",
@@ -921,6 +921,10 @@
         {
             "old": "io.smallrye:smallrye-config-release",
             "new": "io.smallrye.config:smallrye-config-release"
+        },
+        {
+            "old": "io.swagger",
+            "new": "io.swagger.core.v3"
         },
         {
             "old": "io.wcm:io.wcm.testing.aem-mock",
