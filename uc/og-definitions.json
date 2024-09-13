@@ -933,6 +933,10 @@
             "new": "io.smallrye.config:smallrye-config-release"
         },
         {
+            "old": "io.swagger",
+            "new": "io.swagger.core.v3"
+        },
+        {
             "old": "io.wcm:io.wcm.testing.aem-mock",
             "new": "io.wcm:io.wcm.testing.aem-mock.junit4"
         },
