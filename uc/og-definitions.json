@@ -1,5 +1,5 @@
 {
-    "date": "2024/09/10",
+    "date": "2024/09/13",
     "migration": [
         {
             "old": "acegisecurity",
@@ -810,6 +810,11 @@
         {
             "old": "io.jenkins.tools:git-changelist-maven-extension",
             "new": "io.jenkins.tools.incrementals:git-changelist-maven-extension"
+        },
+        {
+            "old": "io.opentelemetry:opentelemetry-extension-annotations",
+            "new": "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations",
+            "context": "Deprecated with v1.17.0 and moved to new coordinates"
         },
         {
             "old": "io.quee.ktx.framework.dependencies:ktx-business-dependencies",
