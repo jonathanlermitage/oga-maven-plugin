@@ -1,5 +1,5 @@
 {
-    "date": "2024/09/13",
+    "date": "2024/10/15",
     "migration": [
         {
             "old": "acegisecurity",
@@ -106,6 +106,14 @@
         {
             "old": "com.coronaide.lockdown",
             "new": "org.starchartlabs.lockdown"
+        },
+        {
+            "old": "com.datadoghq:dd-trace-annotations",
+            "new": "com.datadoghq:dd-trace-api"
+        },
+        {
+            "old": "com.datadoghq:dd-trace",
+            "new": "com.datadoghq:dd-trace-ot"
         },
         {
             "old": "com.datastax.cassandra:cassandra-driver-core",
