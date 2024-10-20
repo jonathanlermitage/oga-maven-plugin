@@ -1,5 +1,5 @@
 {
-    "date": "2024/10/15",
+    "date": "2024/10/21",
     "migration": [
         {
             "old": "acegisecurity",
@@ -528,6 +528,12 @@
             "old": "com.nanohttpd",
             "new": "org.nanohttpd"
         },
+        {
+            "old": "com.ning.maven.plugins:maven-duplicate-finder-plugin",
+            "new": "org.basepom.maven:duplicate-finder-maven-plugin",
+            "context": "Starting with version 1.1.0, the duplicate finder plugin has moved."
+        },
+
         {
             "old": "com.opentable.components:otj-metrics",
             "new": "com.opentable.components:otj-metrics-jaxrs"
