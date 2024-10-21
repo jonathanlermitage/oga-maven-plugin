@@ -799,6 +799,10 @@
             "context": "This project has been rebranded to https://github.com/eclipse-jkube/jkube."
         },
         {
+            "old": "io.fabric8:maven-model-interpreter",
+            "new": "io.fabric8:maven-model-helper"
+        },
+        {
             "old": "io.github.benas:random-beans",
             "new": "org.jeasy:easy-random-core"
         },
