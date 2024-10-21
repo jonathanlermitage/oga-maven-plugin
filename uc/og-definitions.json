@@ -794,6 +794,15 @@
             "new": "io.cucumber"
         },
         {
+            "old": "io.fabric8:fabric8-maven-plugin",
+            "new": "org.eclipse.jkube:kubernetes-maven-plugin",
+            "context": "This project has been rebranded to https://github.com/eclipse-jkube/jkube."
+        },
+        {
+            "old": "io.fabric8:maven-model-interpreter",
+            "new": "io.fabric8:maven-model-helper"
+        },
+        {
             "old": "io.github.benas:random-beans",
             "new": "org.jeasy:easy-random-core"
         },
@@ -1542,6 +1551,10 @@
         {
             "old": "org.eclipse.jetty.websocket:javax-websocket-client-impl",
             "new": "org.eclipse.jetty.websocket:websocket-javax-client"
+        },
+        {
+            "old": "org.eclipse.jkube:k8s-maven-plugin",
+            "new": "org.eclipse.jkube:kubernetes-maven-plugin"
         },
         {
             "old": "org.eu.acolyte:acolyte-core",
