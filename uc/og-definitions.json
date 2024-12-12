@@ -1,5 +1,5 @@
 {
-    "date": "2024/10/21",
+    "date": "2024/12/12",
     "migration": [
         {
             "old": "acegisecurity",
@@ -158,6 +158,10 @@
         {
             "old": "com.facebook.android:facebook-marketing",
             "new": "com.facebook.android:facebook-core"
+        },
+        {
+            "old": "com.github.containersolutions",
+            "new": "io.javaoperatorsdk"
         },
         {
             "old": "com.github.dblock:oshi-core",
