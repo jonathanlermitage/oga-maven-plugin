@@ -1,5 +1,5 @@
 {
-    "date": "2024/12/12",
+    "date": "2024/12/13",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1433,6 +1433,10 @@
             "new": "org.opensymphony.quartz:quartz-weblogic"
         },
         {
+            "old": "org.agrona:Agrona",
+            "new": "org.agrona:agrona"
+        },
+        {
             "old": "org.akashihi.osm:parallelpbf",
             "new": "com.wolt:parallelpbf"
         },
@@ -2099,6 +2103,10 @@
         {
             "old": "tonic:jarjar",
             "new": "com.tonicsystems:jarjar"
+        },
+        {
+            "old": "uk.co.real-logic:Agrona",
+            "new": "org.agrona:Agrona"
         },
         {
             "old": "uk.org.retep.microkernel:core",
