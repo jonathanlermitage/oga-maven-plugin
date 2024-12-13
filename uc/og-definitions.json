@@ -2004,6 +2004,11 @@
             "new": "org.slf4j:jcl-over-slf4j"
         },
         {
+            "old": "org.slf4j:slf4j-log4j12",
+            "new": "org.slf4j:slf4j-reload4j",
+            "context": "As of SLF4J version 1.7.36, declaring a dependency on org.slf4j:slf4j-log4j12 redirects to org.slf4j:slf4j-reload4j by virtue of Maven <relocation> directive"
+        },
+        {
             "old": "org.smartdeveloperhub.harvesters.scm.ldp4j:scm-harvester-ldp4j",
             "new": "org.smartdeveloperhub.harvesters.scm:scm-harvester-frontend"
         },
