@@ -1,5 +1,5 @@
 {
-    "date": "2024/12/13",
+    "date": "2024/12/28",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2100,6 +2100,14 @@
         {
             "old": "tagsoup:tagsoup",
             "new": "org.ccil.cowan.tagsoup:tagsoup"
+        },
+        {
+            "old": "tec.units",
+            "new": "tech.units"
+        },
+        {
+            "old": "tec.uom",
+            "new": "tech.uom"
         },
         {
             "old": "tk.labyrinth:java-pig",
