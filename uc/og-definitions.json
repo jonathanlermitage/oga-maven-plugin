@@ -1,5 +1,5 @@
 {
-    "date": "2024/12/28",
+    "date": "2024/12/30",
     "migration": [
         {
             "old": "acegisecurity",
@@ -66,6 +66,10 @@
         {
             "old": "com.actionbarsherlock:library",
             "new": "com.actionbarsherlock:actionbarsherlock"
+        },
+        {
+            "old": "com.alibaba:fastjson",
+            "new": "com.alibaba.fastjson2:fastjson2"
         },
         {
             "old": "com.aoindustries:ao-web-page",
