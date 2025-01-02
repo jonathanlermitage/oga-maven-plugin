@@ -1,5 +1,5 @@
 {
-    "date": "2024/12/30",
+    "date": "2025/01/02",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1811,6 +1811,10 @@
         {
             "old": "org.jszip.jruby:sass-gems",
             "new": "org.jszip.gems:sass-lang"
+        },
+        {
+            "old": "org.jusecase:jte",
+            "new": "gg.jte:jte"
         },
         {
             "old": "org.jvnet.jaxb2.maven2:maven-jaxb2-plugin",
