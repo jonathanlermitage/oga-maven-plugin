@@ -1,5 +1,5 @@
 {
-    "date": "2025/01/02",
+    "date": "2025/01/14",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1435,6 +1435,10 @@
         {
             "old": "opensymphony:quartz-weblogic",
             "new": "org.opensymphony.quartz:quartz-weblogic"
+        },
+        {
+            "old": "org.acegisecurity",
+            "new": "org.springframework.security"
         },
         {
             "old": "org.agrona:Agrona",
