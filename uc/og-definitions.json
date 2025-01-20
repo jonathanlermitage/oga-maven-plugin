@@ -1,5 +1,5 @@
 {
-    "date": "2025/01/14",
+    "date": "2025/01/20",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2450,6 +2450,15 @@
             "old": "com.graphql-java-generator:graphql-java-runtime",
             "new": "com.graphql-java-generator:graphql-java-client-runtime or com.graphql-java-generator:graphql-java-server-runtime",
             "context": "See https://github.com/graphql-java-generator/graphql-maven-plugin-project/blob/master_2.x/CHANGELOG.md#1181"
+        },
+        {
+            "old": "log4j:log4j",
+            "new": "org.apache.logging.log4j:log4j-core or ch.qos.reload4j:reload4j",
+            "context": "log4j-core (Log4j 2) introduces many breaking changes to its predecessor, while reload4j is a unofficial drop-in replacement for Log4j version 1.2.17. See https://logging.apache.org/log4j/2.x/migrate-from-log4j1.html or https://reload4j.qos.ch"
+        },
+        {
+            "old": "org.apache.logging.log4j:log4j-slf4j-impl",
+            "new": "org.apache.logging.log4j:log4j-slf4j2-impl"
         }
     ]
 }
