@@ -1,5 +1,5 @@
 {
-    "date": "2025/01/20",
+    "date": "2025/03/06",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1958,6 +1958,10 @@
         {
             "old": "org.scalatest:scalatest",
             "new": "org.scala-tools.testing:scalatest"
+        },
+        {
+            "old": "org.scala-tools:maven-scala-plugin",
+            "new": "net.alchim31.maven:scala-maven-plugin"
         },
         {
             "old": "org.scribe",
