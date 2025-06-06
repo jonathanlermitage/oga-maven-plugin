@@ -2463,6 +2463,10 @@
         {
             "old": "org.apache.logging.log4j:log4j-slf4j-impl",
             "new": "org.apache.logging.log4j:log4j-slf4j2-impl"
+        },
+        {
+            "old": "org.apache.commons:commons-beanutils",
+            "new": "org.apache.commons:commons-beanutils2"
         }
     ]
 }
