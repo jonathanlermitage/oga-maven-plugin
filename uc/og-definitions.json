@@ -2463,6 +2463,16 @@
         {
             "old": "org.apache.logging.log4j:log4j-slf4j-impl",
             "new": "org.apache.logging.log4j:log4j-slf4j2-impl"
+        },
+        {
+            "old": "io.github.openfeign.form:feign-form",
+            "new": "io.github.openfeign:feign-form",
+            "context": "feign-form was merged with the main feign project: https://github.com/OpenFeign/feign/issues/2598"
+        },
+        {
+            "old": "io.github.openfeign.form:feign-form-spring",
+            "new": "io.github.openfeign:feign-form-spring",
+            "context": "feign-form was merged with the main feign project: https://github.com/OpenFeign/feign/issues/2598"
         }
     ]
 }
