@@ -1,5 +1,5 @@
 {
-    "date": "2025/06/11",
+    "date": "2025/06/26",
     "migration": [
         {
             "old": "acegisecurity",
@@ -267,6 +267,10 @@
             "old": "com.google.inject.extensions:guice-multibindings",
             "new": "com.google.inject:guice",
             "context": "Since Guice 4.2, multibindings support has moved to Guice core, see https://github.com/google/guice/wiki/Multibindings"
+        },
+        {
+            "old": "com.google.mockwebserver:mockwebserver",
+            "new": "com.squareup.okhttp:mockwebserver"
         },
         {
             "old": "com.googlecode.flyway:flyway-core",
