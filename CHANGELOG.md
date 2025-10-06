@@ -1,5 +1,8 @@
 ## Old GroupIds Alerter - Change Log
 
+### 1.9.5 (WIP)
+* upgrade plugin's dependencies.
+
 ### 1.9.4 (2024/07/11)
 * delete temporary files created by the plugin.
 
