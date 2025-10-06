@@ -2,6 +2,7 @@
 
 ### 1.9.5 (WIP)
 * upgrade plugin's dependencies.
+* I'll see if I have time to implement #69, but I can't promise anything.
 
 ### 1.9.4 (2024/07/11)
 * delete temporary files created by the plugin.
