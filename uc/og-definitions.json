@@ -1,5 +1,5 @@
 {
-    "date": "2025/06/26",
+    "date": "2025/10/06",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2477,6 +2477,51 @@
             "old": "io.github.openfeign.form:feign-form-spring",
             "new": "io.github.openfeign:feign-form-spring",
             "context": "feign-form was merged with the main feign project: https://github.com/OpenFeign/feign/issues/2598"
+        },
+        {
+            "old": "com.fasterxml.jackson",
+            "new": "tools.jackson",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.core:jackson-core",
+            "new": "tools.jackson.core:jackson-core",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.core:jackson-databind",
+            "new": "tools.jackson.core:jackson-databind",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.dataformat",
+            "new": "tools.jackson.dataformat",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.datatype",
+            "new": "tools.jackson.datatype",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.jakarta.rs",
+            "new": "tools.jackson.jakarta.rs",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.jaxrs",
+            "new": "tools.jackson.jaxrs",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.jr",
+            "new": "tools.jackson.jr",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
+        },
+        {
+            "old": "com.fasterxml.jackson.module",
+            "new": "tools.jackson.module",
+            "context": "See https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0"
         }
     ]
 }
