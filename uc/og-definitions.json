@@ -1,5 +1,5 @@
 {
-    "date": "2025/10/06",
+    "date": "2025/10/07",
     "migration": [
         {
             "old": "acegisecurity",
@@ -485,6 +485,10 @@
         {
             "old": "com.microsoft.windowsazure.storage:microsoft-windowsazure-storage-sdk",
             "new": "com.microsoft.azure:azure-storage"
+        },
+        {
+            "old": "com.rabbitmq:rabbitmq-client",
+            "new": "com.rabbitmq:amqp-client"
         },
         {
             "old": "commons-dbcp:commons-dbcp",
