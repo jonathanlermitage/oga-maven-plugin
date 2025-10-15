@@ -1,5 +1,5 @@
 {
-    "date": "2025/10/07",
+    "date": "2025/10/15",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2047,6 +2047,250 @@
         {
             "old": "org.specsy:specsy-junit5",
             "new": "org.specsy:specsy-junit"
+        },
+        {
+            "old": "org.testcontainers:activemq",
+            "new": "org.testcontainers:testcontainers-activemq"
+        },
+        {
+            "old": "org.testcontainers:azure",
+            "new": "org.testcontainers:testcontainers-azure"
+        },
+        {
+            "old": "org.testcontainers:cassandra",
+            "new": "org.testcontainers:testcontainers-cassandra"
+        },
+        {
+            "old": "org.testcontainers:chromadb",
+            "new": "org.testcontainers:testcontainers-chromadb"
+        },
+        {
+            "old": "org.testcontainers:clickhouse",
+            "new": "org.testcontainers:testcontainers-clickhouse"
+        },
+        {
+            "old": "org.testcontainers:cockroachdb",
+            "new": "org.testcontainers:testcontainers-cockroachdb"
+        },
+        {
+            "old": "org.testcontainers:consul",
+            "new": "org.testcontainers:testcontainers-consul"
+        },
+        {
+            "old": "org.testcontainers:couchbase",
+            "new": "org.testcontainers:testcontainers-couchbase"
+        },
+        {
+            "old": "org.testcontainers:cratedb",
+            "new": "org.testcontainers:testcontainers-cratedb"
+        },
+        {
+            "old": "org.testcontainers:database-commons",
+            "new": "org.testcontainers:testcontainers-database-commons"
+        },
+        {
+            "old": "org.testcontainers:databend",
+            "new": "org.testcontainers:testcontainers-databend"
+        },
+        {
+            "old": "org.testcontainers:db2",
+            "new": "org.testcontainers:testcontainers-db2"
+        },
+        {
+            "old": "org.testcontainers:elasticsearch",
+            "new": "org.testcontainers:testcontainers-elasticsearch"
+        },
+        {
+            "old": "org.testcontainers:gcloud",
+            "new": "org.testcontainers:testcontainers-gcloud"
+        },
+        {
+            "old": "org.testcontainers:grafana",
+            "new": "org.testcontainers:testcontainers-grafana"
+        },
+        {
+            "old": "org.testcontainers:hivemq",
+            "new": "org.testcontainers:testcontainers-hivemq"
+        },
+        {
+            "old": "org.testcontainers:influxdb",
+            "new": "org.testcontainers:testcontainers-influxdb"
+        },
+        {
+            "old": "org.testcontainers:jdbc",
+            "new": "org.testcontainers:testcontainers-jdbc"
+        },
+        {
+            "old": "org.testcontainers:junit-jupiter",
+            "new": "org.testcontainers:testcontainers-junit-jupiter"
+        },
+        {
+            "old": "org.testcontainers:k3s",
+            "new": "org.testcontainers:testcontainers-k3s"
+        },
+        {
+            "old": "org.testcontainers:k6",
+            "new": "org.testcontainers:testcontainers-k6"
+        },
+        {
+            "old": "org.testcontainers:kafka",
+            "new": "org.testcontainers:testcontainers-kafka"
+        },
+        {
+            "old": "org.testcontainers:ldap",
+            "new": "org.testcontainers:testcontainers-ldap"
+        },
+        {
+            "old": "org.testcontainers:localstack",
+            "new": "org.testcontainers:testcontainers-localstack"
+        },
+        {
+            "old": "org.testcontainers:mariadb",
+            "new": "org.testcontainers:testcontainers-mariadb"
+        },
+        {
+            "old": "org.testcontainers:milvus",
+            "new": "org.testcontainers:testcontainers-milvus"
+        },
+        {
+            "old": "org.testcontainers:minio",
+            "new": "org.testcontainers:testcontainers-minio"
+        },
+        {
+            "old": "org.testcontainers:mockserver",
+            "new": "org.testcontainers:testcontainers-mockserver"
+        },
+        {
+            "old": "org.testcontainers:mongodb",
+            "new": "org.testcontainers:testcontainers-mongodb"
+        },
+        {
+            "old": "org.testcontainers:mssqlserver",
+            "new": "org.testcontainers:testcontainers-mssqlserver"
+        },
+        {
+            "old": "org.testcontainers:mysql",
+            "new": "org.testcontainers:testcontainers-mysql"
+        },
+        {
+            "old": "org.testcontainers:neo4j",
+            "new": "org.testcontainers:testcontainers-neo4j"
+        },
+        {
+            "old": "org.testcontainers:nginx",
+            "new": "org.testcontainers:testcontainers-nginx"
+        },
+        {
+            "old": "org.testcontainers:oceanbase",
+            "new": "org.testcontainers:testcontainers-oceanbase"
+        },
+        {
+            "old": "org.testcontainers:ollama",
+            "new": "org.testcontainers:testcontainers-ollama"
+        },
+        {
+            "old": "org.testcontainers:openfga",
+            "new": "org.testcontainers:testcontainers-openfga"
+        },
+        {
+            "old": "org.testcontainers:oracle-free",
+            "new": "org.testcontainers:testcontainers-oracle-free"
+        },
+        {
+            "old": "org.testcontainers:oracle-xe",
+            "new": "org.testcontainers:testcontainers-oracle-xe"
+        },
+        {
+            "old": "org.testcontainers:orientdb",
+            "new": "org.testcontainers:testcontainers-orientdb"
+        },
+        {
+            "old": "org.testcontainers:pinecone",
+            "new": "org.testcontainers:testcontainers-pinecone"
+        },
+        {
+            "old": "org.testcontainers:postgresql",
+            "new": "org.testcontainers:testcontainers-postgresql"
+        },
+        {
+            "old": "org.testcontainers:presto",
+            "new": "org.testcontainers:testcontainers-presto"
+        },
+        {
+            "old": "org.testcontainers:pulsar",
+            "new": "org.testcontainers:testcontainers-pulsar"
+        },
+        {
+            "old": "org.testcontainers:qdrant",
+            "new": "org.testcontainers:testcontainers-qdrant"
+        },
+        {
+            "old": "org.testcontainers:questdb",
+            "new": "org.testcontainers:testcontainers-questdb"
+        },
+        {
+            "old": "org.testcontainers:r2dbc",
+            "new": "org.testcontainers:testcontainers-r2dbc"
+        },
+        {
+            "old": "org.testcontainers:rabbitmq",
+            "new": "org.testcontainers:testcontainers-rabbitmq"
+        },
+        {
+            "old": "org.testcontainers:redpanda",
+            "new": "org.testcontainers:testcontainers-redpanda"
+        },
+        {
+            "old": "org.testcontainers:scylladb",
+            "new": "org.testcontainers:testcontainers-scylladb"
+        },
+        {
+            "old": "org.testcontainers:selenium",
+            "new": "org.testcontainers:testcontainers-selenium"
+        },
+        {
+            "old": "org.testcontainers:solace",
+            "new": "org.testcontainers:testcontainers-solace"
+        },
+        {
+            "old": "org.testcontainers:solr",
+            "new": "org.testcontainers:testcontainers-solr"
+        },
+        {
+            "old": "org.testcontainers:spock",
+            "new": "org.testcontainers:testcontainers-spock"
+        },
+        {
+            "old": "org.testcontainers:tidb",
+            "new": "org.testcontainers:testcontainers-tidb"
+        },
+        {
+            "old": "org.testcontainers:timeplus",
+            "new": "org.testcontainers:testcontainers-timeplus"
+        },
+        {
+            "old": "org.testcontainers:toxiproxy",
+            "new": "org.testcontainers:testcontainers-toxiproxy"
+        },
+        {
+            "old": "org.testcontainers:trino",
+            "new": "org.testcontainers:testcontainers-trino"
+        },
+        {
+            "old": "org.testcontainers:typesense",
+            "new": "org.testcontainers:testcontainers-typesense"
+        },
+        {
+            "old": "org.testcontainers:vault",
+            "new": "org.testcontainers:testcontainers-vault"
+        },
+        {
+            "old": "org.testcontainers:weaviate",
+            "new": "org.testcontainers:testcontainers-weaviate"
+        },
+        {
+            "old": "org.testcontainers:yugabytedb",
+            "new": "org.testcontainers:testcontainers-yugabytedb"
         },
         {
             "old": "org.truth0:truth",
