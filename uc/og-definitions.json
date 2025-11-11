@@ -1,5 +1,5 @@
 {
-    "date": "2025/10/15",
+    "date": "2025/11/11",
     "migration": [
         {
             "old": "acegisecurity",
@@ -2432,6 +2432,10 @@
         {
             "old": "xmlbeans:xmlbeans",
             "new": "org.apache.xmlbeans:xmlbeans"
+        },
+        {
+            "old": "xmlrpc",
+            "new": "org.apache.xmlrpc"
         },
         {
             "old": "xstream:xstream",
