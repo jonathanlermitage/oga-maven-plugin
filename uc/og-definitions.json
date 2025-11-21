@@ -1,5 +1,5 @@
 {
-    "date": "2025/11/11",
+    "date": "2025/11/21",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1922,6 +1922,11 @@
         {
             "old": "org.mapstruct:mapstruct-jdk8",
             "new": "org.mapstruct:mapstruct"
+        },
+        {
+            "old": "org.mockito:mockito-all",
+            "new": "org.mockito:mockito-core",
+            "context": "mockito-all is a legacy of old dependency management. mockito-core should be used instead. See https://github.com/mockito/mockito/issues/153 ."
         },
         {
             "old": "org.mortbay.jetty",
