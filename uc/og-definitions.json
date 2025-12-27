@@ -1,5 +1,5 @@
 {
-    "date": "2025/11/21",
+    "date": "2025/11/24",
     "migration": [
         {
             "old": "acegisecurity",
@@ -384,6 +384,10 @@
             "new": "com.kakawait:spring-security-cas-extension"
         },
         {
+            "old": "com.konghq:unirest-java",
+            "new": "com.konghq:unirest-java-core"
+        },
+        {
             "old": "com.lowagie:itext",
             "new": "com.itextpdf:itextpdf"
         }, {
@@ -397,6 +401,10 @@
         {
             "old": "com.marklogic:java-client-api",
             "new": "com.marklogic:marklogic-client-api"
+        },
+        {
+            "old": "com.mashape.unirest:unirest-java",
+            "new": "com.konghq:unirest-java"
         },
         {
             "old": "com.mattprovis:fluentmatcher-core",
@@ -841,6 +849,10 @@
         {
             "old": "io.github.openfeign:feign-java8",
             "new": "io.github.openfeign:feign-core"
+        },
+        {
+            "old": "io.github.openunirest:unirest-java",
+            "new": "com.konghq:unirest-java"
         },
         {
             "old": "io.javaslang",
