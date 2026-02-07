@@ -1,5 +1,5 @@
 {
-    "date": "2024/11/10",
+    "date": "2026/02/07",
     "migration": [
         {
             "old": "com.jcraft:jsch",
@@ -35,6 +35,13 @@
                 "org.assertj:assertj-core"
             ],
             "context": "AssertJ is a fork of Fest and there are very few breaking changes."
+        },
+        {
+            "old": "com.bettercloud:vault-java-driver",
+            "proposal": [
+                "io.github.jopenlibs:vault-java-driver"
+            ],
+            "context": "BetterCloud's vault-java-driver is one of the most commonly used Java clients for Hashicorp, but has had no activity or releases since December 2019. The project is not maintaining by author."
         }
     ]
 }
