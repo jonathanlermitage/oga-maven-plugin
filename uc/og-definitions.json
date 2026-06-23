@@ -2375,6 +2375,11 @@
             "new": "javax.servlet:servlet-api"
         },
         {
+            "old": "software.amazon.ion:ion-java",
+            "new": "com.amazon.ion:ion-java",
+            "context": "From version 1.4.0 onward, Amazon Ion for Java moved to the new group id and Java package name \"com.amazon.ion\". The legacy \"software.amazon.ion\" group id is deprecated. See https://amazon-ion.github.io/ion-docs/news/2020/01/15/software.amazon.ion-deprecated.html"
+        },
+        {
             "old": "springframework",
             "new": "org.springframework"
         },
