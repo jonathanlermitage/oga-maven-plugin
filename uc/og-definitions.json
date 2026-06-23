@@ -1,5 +1,5 @@
 {
-    "date": "2025/11/24",
+    "date": "2026/06/23",
     "migration": [
         {
             "old": "acegisecurity",
@@ -1467,6 +1467,286 @@
         {
             "old": "org.akashihi.osm:parallelpbf",
             "new": "com.wolt:parallelpbf"
+        },
+        {
+            "old": "org.apache.activemq:artemis-amqp-protocol",
+            "new": "org.apache.artemis:artemis-amqp-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-bom",
+            "new": "org.apache.artemis:artemis-bom",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-boot",
+            "new": "org.apache.artemis:artemis-boot",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-cdi-client",
+            "new": "org.apache.artemis:artemis-cdi-client",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-cli",
+            "new": "org.apache.artemis:artemis-cli",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-commons",
+            "new": "org.apache.artemis:artemis-commons",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-console",
+            "new": "org.apache.artemis:artemis-console",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-console-extension",
+            "new": "org.apache.artemis:artemis-console-extension",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-console-project",
+            "new": "org.apache.artemis:artemis-console-project",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-console-war",
+            "new": "org.apache.artemis:artemis-console-war",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-core-client",
+            "new": "org.apache.artemis:artemis-core-client",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-core-client-all",
+            "new": "org.apache.artemis:artemis-core-client-all",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-core-client-osgi",
+            "new": "org.apache.artemis:artemis-core-client-osgi",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-dto",
+            "new": "org.apache.artemis:artemis-dto",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-features",
+            "new": "org.apache.artemis:artemis-features",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-hornetq-protocol",
+            "new": "org.apache.artemis:artemis-hornetq-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-hqclient-protocol",
+            "new": "org.apache.artemis:artemis-hqclient-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-image",
+            "new": "org.apache.artemis:artemis-image",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-image-examples",
+            "new": "org.apache.artemis:artemis-image-examples",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-cdi-client",
+            "new": "org.apache.artemis:artemis-jakarta-cdi-client",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-client",
+            "new": "org.apache.artemis:artemis-jakarta-client",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-client-all",
+            "new": "org.apache.artemis:artemis-jakarta-client-all",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-client-osgi",
+            "new": "org.apache.artemis:artemis-jakarta-client-osgi",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-openwire-protocol",
+            "new": "org.apache.artemis:artemis-jakarta-openwire-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-ra",
+            "new": "org.apache.artemis:artemis-jakarta-ra",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-server",
+            "new": "org.apache.artemis:artemis-jakarta-server",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jakarta-service-extensions",
+            "new": "org.apache.artemis:artemis-jakarta-service-extensions",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jdbc-store",
+            "new": "org.apache.artemis:artemis-jdbc-store",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jms-client",
+            "new": "org.apache.artemis:artemis-jms-client",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jms-client-all",
+            "new": "org.apache.artemis:artemis-jms-client-all",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jms-client-osgi",
+            "new": "org.apache.artemis:artemis-jms-client-osgi",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-jms-server",
+            "new": "org.apache.artemis:artemis-jms-server",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-journal",
+            "new": "org.apache.artemis:artemis-journal",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-junit",
+            "new": "org.apache.artemis:artemis-junit",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-junit-5",
+            "new": "org.apache.artemis:artemis-junit-5",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-junit-commons",
+            "new": "org.apache.artemis:artemis-junit-commons",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-junit-parent",
+            "new": "org.apache.artemis:artemis-junit-parent",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-lockmanager",
+            "new": "org.apache.artemis:artemis-lockmanager",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-lockmanager-api",
+            "new": "org.apache.artemis:artemis-lockmanager-api",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-lockmanager-ri",
+            "new": "org.apache.artemis:artemis-lockmanager-ri",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-log-annotation-processor",
+            "new": "org.apache.artemis:artemis-log-annotation-processor",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-maven-plugin",
+            "new": "org.apache.artemis:artemis-maven-plugin",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-mqtt-protocol",
+            "new": "org.apache.artemis:artemis-mqtt-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-openwire-protocol",
+            "new": "org.apache.artemis:artemis-openwire-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-pom",
+            "new": "org.apache.artemis:artemis-pom",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-project",
+            "new": "org.apache.artemis:artemis-project",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-protocols",
+            "new": "org.apache.artemis:artemis-protocols",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-ra",
+            "new": "org.apache.artemis:artemis-ra",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-selector",
+            "new": "org.apache.artemis:artemis-selector",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-server",
+            "new": "org.apache.artemis:artemis-server",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-server-osgi",
+            "new": "org.apache.artemis:artemis-server-osgi",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-service-extensions",
+            "new": "org.apache.artemis:artemis-service-extensions",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-stomp-protocol",
+            "new": "org.apache.artemis:artemis-stomp-protocol",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-unit-test-support",
+            "new": "org.apache.artemis:artemis-unit-test-support",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-web",
+            "new": "org.apache.artemis:artemis-web",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
+        },
+        {
+            "old": "org.apache.activemq:artemis-website",
+            "new": "org.apache.artemis:artemis-website",
+            "context": "Artemis has moved to being an independent Apache project, switching groupId from org.apache.activemq to org.apache.artemis. See https://artemis.apache.org/artemis-tlp-groupid-migration"
         },
         {
             "old": "org.apache.axis:axis",
