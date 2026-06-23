@@ -13,6 +13,8 @@ Works with Maven 3.3+ and JDK8+.
 
 *Looking for a Gradle plugin? Check [oga-gradle-plugin](https://github.com/jonathanlermitage/oga-gradle-plugin).*
 
+This project also is used by the [OpenRewrite / Find relocated dependencies recipe](https://docs.openrewrite.org/recipes/java/dependencies/relocateddependencycheck). Meanwhile, the Maven plugin offers more configuration options.
+
 ## Author
 
 Jonathan Lermitage (<jonathan.lermitage@gmail.com>)  
