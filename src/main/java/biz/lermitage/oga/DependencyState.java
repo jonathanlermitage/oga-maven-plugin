@@ -1,6 +1,9 @@
-package biz.lermitage.oga
+package biz.lermitage.oga;
 
-enum class DependencyState {
+/**
+ * Dependency state.
+ */
+public enum DependencyState {
 
     /** Dependency officially migrated to new coordinates. */
     MIGRATED,
