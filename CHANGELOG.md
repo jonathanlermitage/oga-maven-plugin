@@ -2,7 +2,7 @@
 
 ### 1.9.5 (WIP)
 * upgrade plugin's dependencies.
-* I'll see if I have time to implement [#69](https://github.com/jonathanlermitage/oga-maven-plugin/issues/69) (add a way to exclude some artifacts from a groupid migration), but I can't promise anything.
+* migrate from Kotlin to Java, which could help the Gradle plugin to achieve feature parity with the Maven plugin.
 
 ### 1.9.4 (2024/07/11)
 * delete temporary files created by the plugin.
