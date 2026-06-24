@@ -1,6 +1,6 @@
 ## Old GroupIds Alerter - Change Log
 
-### 2.0.0 (WIP)
+### 2.0.0 (2026/06/24)
 * upgrade plugin's dependencies.
 * migrate from Kotlin to Java, which could help the Gradle plugin to achieve feature parity with the Maven plugin.
 

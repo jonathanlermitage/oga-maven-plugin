@@ -34,7 +34,7 @@
         <connection>scm:git:https://github.com/jonathanlermitage/oga-maven-plugin.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/jonathanlermitage/oga-maven-plugin.git</developerConnection>
         <url>https://github.com/jonathanlermitage/oga-maven-plugin/tree/${project.scm.tag}</url>
-        <tag>oga-maven-plugin-1.8.1</tag>
+        <tag>oga-maven-plugin-2.0.0</tag>
     </scm>
     <issueManagement>
         <system>github</system>
