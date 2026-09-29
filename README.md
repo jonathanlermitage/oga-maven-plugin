@@ -90,6 +90,25 @@ If you would like to use **only** your own definitions you can override the loca
 
 Your custom definitions file can mix official and unofficial migrations. See the structure of `og-definitions.json` and `og-unofficial-definitions.json` files for details.
 
+##### Migration kind
+
+Every migration can declare a `kind`:
+
+* `relocation` (default): the same artifact moved to new coordinates. Versions continue, so the new coordinates can generally be used as a drop-in replacement. Example: `ant:ant` to `org.apache.ant:ant`.
+* `successor`: a different artifact supersedes the old one. The new artifact has its own versioning (and probably its own API), so your current version must **not** be reused. Example: `commons-collections:commons-collections` to `org.apache.commons:commons-collections4`. An optional `newVersion` can advertise the new version line:
+
+```json
+{
+    "old": "commons-collections:commons-collections",
+    "new": "org.apache.commons:commons-collections4",
+    "kind": "successor",
+    "newVersion": "4.x"
+}
+```
+
+Migrations that omit `kind` are treated as `relocation`, so existing custom files keep working unchanged.
+
+
 However, if you would like to get the benefit of the community maintained definitions **and** maintain your own definitions you can define additional files:
 ```xml
 <plugin>
@@ -144,6 +163,8 @@ You can also provide a JSON ignore-list in order to exclude some *groupIds* or *
 </plugin>
 ```
 Please see the sample [ignore-list file](sample/sample_ignore_list.json). For each of your dependencies or proposed migrations, the plugin will ignore it if it finds its coordinates in the ignore-list. So, by ignoring "foo:bar" (or "foo"), you will ignore this coordinate from your project dependencies and from the definitions file.
+
+Ignore-list entries may also be version-qualified with `groupId:artifactId:version`. Such an entry only ignores the exact version, which is useful when a successor migration is legitimate for some versions but not for the one you use. For example, `commons-collections:commons-collections:3.2.2` only excludes that specific version. Entries without a version keep ignoring every version.
 
 You can skip check (useful in multi-branch pipeline) by using the `oga.maven.skip` property.
 

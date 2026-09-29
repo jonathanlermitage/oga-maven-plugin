@@ -1,0 +1,12 @@
+{
+    "version": "2",
+    "date": "2026/01/01",
+    "migration": [
+        {
+            "old": "commons-collections:commons-collections",
+            "new": "org.apache.commons:commons-collections4",
+            "kind": "successor",
+            "newVersion": "4.x"
+        }
+    ]
+}

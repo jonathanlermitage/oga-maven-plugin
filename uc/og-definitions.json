@@ -69,7 +69,9 @@
         },
         {
             "old": "com.alibaba:fastjson",
-            "new": "com.alibaba.fastjson2:fastjson2"
+            "new": "com.alibaba.fastjson2:fastjson2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "com.aoindustries:ao-web-page",
@@ -500,11 +502,15 @@
         },
         {
             "old": "commons-dbcp:commons-dbcp",
-            "new": "org.apache.commons:commons-dbcp2"
+            "new": "org.apache.commons:commons-dbcp2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "commons-collections:commons-collections",
-            "new": "org.apache.commons:commons-collections4"
+            "new": "org.apache.commons:commons-collections4",
+            "kind": "successor",
+            "newVersion": "4.x"
         },
         {
             "old": "commons-compress:commons-compress",
@@ -512,7 +518,9 @@
         },
         {
             "old": "commons-configuration:commons-configuration",
-            "new": "org.apache.commons:commons-configuration2"
+            "new": "org.apache.commons:commons-configuration2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "commons-email:commons-email",
@@ -525,7 +533,9 @@
         },
         {
             "old": "commons-lang:commons-lang",
-            "new": "org.apache.commons:commons-lang3"
+            "new": "org.apache.commons:commons-lang3",
+            "kind": "successor",
+            "newVersion": "3.x"
         },
         {
             "old": "commons-math:commons-math",
@@ -534,7 +544,9 @@
         },
         {
             "old": "commons-pool:commons-pool",
-            "new": "org.apache.commons:commons-pool2"
+            "new": "org.apache.commons:commons-pool2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "com.mtvi.plateng.maven:maven-hudson-plugin",
@@ -581,11 +593,15 @@
         {
             "old": "com.squareup.okhttp",
             "new": "com.squareup.okhttp3",
+            "kind": "successor",
+            "newVersion": "3.x",
             "context": "The Maven group ID is now com.squareup.okhttp3, see https://square.github.io/okhttp/changelog_3x/#version-300-rc1"
         },
         {
             "old": "com.squareup.retrofit",
             "new": "com.squareup.retrofit2",
+            "kind": "successor",
+            "newVersion": "2.x",
             "context": "The Maven group ID is now com.squareup.retrofit2, see https://github.com/square/retrofit/blob/master/CHANGELOG.md"
         },
         {
@@ -1326,7 +1342,9 @@
         },
         {
             "old": "kxml:kxml",
-            "new": "net.sf.kxml:kxml2"
+            "new": "net.sf.kxml:kxml2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "netbeans:cvslib",
@@ -1759,11 +1777,15 @@
         {
             "old": "org.apache.commons:commons-math",
             "new": "org.apache.commons:commons-math3",
+            "kind": "successor",
+            "newVersion": "3.x",
             "context": "Check https://issues.apache.org/jira/browse/MATH-444 for more details"
         },
         {
             "old": "org.apache.httpcomponents:httpclient",
             "new": "org.apache.httpcomponents.client5:httpclient5",
+            "kind": "successor",
+            "newVersion": "5.x",
             "context": "Maven group id changed to ‘org.apache.httpcomponents.client5’."
         },
         {
@@ -2094,7 +2116,9 @@
         },
         {
             "old": "org.jdom:jdom",
-            "new": "org.jdom:jdom2"
+            "new": "org.jdom:jdom2",
+            "kind": "successor",
+            "newVersion": "2.x"
         },
         {
             "old": "org.jdtaus.core.monitor:jdtaus-core-client-monitoring",
@@ -2996,16 +3020,22 @@
         {
             "old": "io.reactivex",
             "new": "io.reactivex.rxjava2",
+            "kind": "successor",
+            "newVersion": "2.x",
             "context": "See https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0 and https://github.com/ReactiveX/RxJava/pull/4031"
         },
         {
             "old": "io.reactivex.rxjava2",
             "new": "io.reactivex.rxjava3",
+            "kind": "successor",
+            "newVersion": "3.x",
             "context": "See https://github.com/ReactiveX/RxJava/wiki/What's-different-in-3.0 and https://github.com/ReactiveX/RxJava/pull/6421"
         },
         {
             "old": "com.apollographql.apollo",
             "new": "com.apollographql.apollo3",
+            "kind": "successor",
+            "newVersion": "3.x",
             "context": "See https://www.apollographql.com/docs/kotlin/migration/3.0/#package-name--group-id--plugin-id"
         },
         {

@@ -6,11 +6,17 @@ public class Dependency {
 
     private final String groupId;
     private final String artifactId;
+    private final String version;
     private final DependencyType type;
 
     public Dependency(String groupId, String artifactId, DependencyType type) {
+        this(groupId, artifactId, null, type);
+    }
+
+    public Dependency(String groupId, String artifactId, String version, DependencyType type) {
         this.groupId = groupId;
         this.artifactId = artifactId;
+        this.version = version;
         this.type = type;
     }
 
@@ -20,6 +26,10 @@ public class Dependency {
 
     public String getArtifactId() {
         return artifactId;
+    }
+
+    public String getVersion() {
+        return version;
     }
 
     public DependencyType getType() {
@@ -33,12 +43,13 @@ public class Dependency {
         Dependency that = (Dependency) o;
         return Objects.equals(groupId, that.groupId) &&
             Objects.equals(artifactId, that.artifactId) &&
+            Objects.equals(version, that.version) &&
             type == that.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, artifactId, type);
+        return Objects.hash(groupId, artifactId, version, type);
     }
 
     @Override
@@ -46,6 +57,7 @@ public class Dependency {
         return "Dependency(" +
             "groupId='" + groupId + '\'' +
             ", artifactId='" + artifactId + '\'' +
+            ", version='" + version + '\'' +
             ", type=" + type +
             ')';
     }

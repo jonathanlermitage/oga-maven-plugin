@@ -66,7 +66,7 @@ public class IgnoreListTools {
                                 return true;
                             }
                         } else {
-                            if ((ignoreItem.getGroupId().equals(oldDep.getGroupId()) && ignoreItem.getArtifactId().equals(oldDep.getArtifactId()))
+                            if (matchesOldDependency(ignoreItem, oldDep)
                                 || (ignoreItem.getGroupId().equals(newDep.getNewerGroupId()) && ignoreItem.getArtifactId().equals(newDep.getNewerArtifactId()))) {
                                 return true;
                             }
@@ -82,7 +82,7 @@ public class IgnoreListTools {
                                 return true;
                             }
                         } else {
-                            if ((ignoreItem.getGroupId().equals(oldDep.getGroupId()) && ignoreItem.getArtifactId().equals(oldDep.getArtifactId())) || shouldIgnoreProposal(ignoreList, newDep)) {
+                            if (matchesOldDependency(ignoreItem, oldDep) || shouldIgnoreProposal(ignoreList, newDep)) {
                                 return true;
                             }
                         }
@@ -92,6 +92,23 @@ public class IgnoreListTools {
             }
         }
         return false;
+    }
+
+    /**
+     * Whether an ignore item explicitly targets the given project dependency. Version-qualified
+     * items ({@code groupId:artifactId:version}) only match when the version is identical.
+     */
+    private static boolean matchesOldDependency(IgnoreItem ignoreItem, Dependency oldDep) {
+        if (ignoreItem.isGroupIdOnly()) {
+            return ignoreItem.getGroupId().equals(oldDep.getGroupId());
+        }
+        if (!ignoreItem.getGroupId().equals(oldDep.getGroupId()) || !ignoreItem.getArtifactId().equals(oldDep.getArtifactId())) {
+            return false;
+        }
+        if (ignoreItem.isVersionQualified()) {
+            return ignoreItem.getVersion().equals(oldDep.getVersion());
+        }
+        return true;
     }
 
     private static boolean shouldIgnoreProposal(Optional<IgnoreList> ignoreList, DefinitionMigration newDep) {

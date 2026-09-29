@@ -39,6 +39,22 @@ body:
       description: The artifactId of the migrated artifact. (Optional)
       placeholder: groovy-all
 
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Migration kind
+      description: Relocation keeps the same version line. Successor is a different artifact with its own versioning (and API).
+      options:
+        - relocation
+        - successor
+
+  - type: input
+    id: newVersion
+    attributes:
+      label: New version line
+      description: Only for successor migrations. The version line of the new artifact, e.g. 4.x.
+      placeholder: e.g., 4.x
+
   - type: textarea
     id: context
     attributes:

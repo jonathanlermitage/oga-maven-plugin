@@ -107,6 +107,19 @@ public class CheckMojoITest {
     }
 
     @Test
+    public void testProjectWithSuccessorDependency() throws Exception {
+        File testDir = ResourceExtractor.simpleExtractResources(getClass(), "/biz/lermitage/oga/ko_successor");
+
+        Verifier verifier = new Verifier(testDir.getAbsolutePath());
+
+        verifier.deleteArtifact("biz.lermitage.oga", "project-to-test", "1.0.0-SNAPSHOT", "pom");
+
+        Assert.assertThrows(VerificationException.class, () -> verifier.executeGoal("biz.lermitage.oga:oga-maven-plugin:check"));
+
+        verifier.verifyTextInLog("[ERROR] (dependency) 'commons-collections:commons-collections' should be replaced by 'org.apache.commons:commons-collections4' (successor migration, not a drop-in replacement: the new artifact has its own versioning starting at 4.x; do not reuse version 3.2.2)");
+    }
+
+    @Test
     public void testProjectWithOldDependenciesButDontFail() throws Exception {
         File testDir = ResourceExtractor.simpleExtractResources(getClass(), "/biz/lermitage/oga/ko_dont_fail");
 

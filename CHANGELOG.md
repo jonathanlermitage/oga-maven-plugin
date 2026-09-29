@@ -1,5 +1,9 @@
 ## Old GroupIds Alerter - Change Log
 
+### Unreleased
+* distinguish coordinate relocations from successor migrations with the new `kind` definition field (fix #19). Successor messages no longer invite users to reuse the old version.
+* carry dependency versions and support version-qualified ignore-list entries (`groupId:artifactId:version`).
+
 ### 2.0.0 (2026/06/24)
 * upgrade plugin's dependencies.
 * migrate from Kotlin to Java, which could help the Gradle plugin to achieve feature parity with the Maven plugin.

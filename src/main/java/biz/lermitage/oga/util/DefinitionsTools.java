@@ -40,6 +40,7 @@ public class DefinitionsTools {
             result.add(new Dependency(
                 dependency.getGroupId(),
                 dependency.getArtifactId(),
+                dependency.getVersion(),
                 DependencyType.DEPENDENCY
             ));
         }
@@ -52,6 +53,7 @@ public class DefinitionsTools {
             result.add(new Dependency(
                 artifact.getGroupId(),
                 artifact.getArtifactId(),
+                artifact.getVersion(),
                 DependencyType.PLUGIN
             ));
         }

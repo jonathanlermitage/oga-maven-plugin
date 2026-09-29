@@ -136,39 +136,22 @@ public class CheckMojo extends AbstractMojo {
 
             // compare project dependencies to definitions
             for (DefinitionMigration mig : migrations) {
-                if (mig.isGroupIdOnly()) {
-                    for (Dependency dep : projectLibs) {
-                        if (dep.getGroupId().equals(mig.getOldGroupId())) {
-                            if (IgnoreListTools.shouldIgnoreGroupId(ignoreList, dep, mig)) {
-                                String msg = "'" + dep.getGroupId() + "' groupId could be replaced by " + mig.proposedMigrationToString() +
-                                    " but this migration is excluded by ignore list";
-                                getLog().info("(" + dep.getType().getLabel() + ") " + msg);
-                            } else {
-                                String msg = "'" + dep.getGroupId() + "' groupId should be replaced by " + mig.proposedMigrationToString();
-                                if (mig.getContext() != null && !mig.getContext().isEmpty()) {
-                                    msg += " (context: " + mig.getContext() + ")";
-                                }
-                                getLog().error("(" + dep.getType().getLabel() + ") " + msg);
-                                deprecatedDependenciesFound = true;
-                            }
-                        }
+                for (Dependency dep : projectLibs) {
+                    boolean matches = mig.isGroupIdOnly()
+                        ? dep.getGroupId().equals(mig.getOldGroupId())
+                        : dep.getGroupId().equals(mig.getOldGroupId()) && dep.getArtifactId().equals(mig.getOldArtifactId());
+                    if (!matches) {
+                        continue;
                     }
-                } else {
-                    for (Dependency dep : projectLibs) {
-                        if (dep.getGroupId().equals(mig.getOldGroupId()) && dep.getArtifactId().equals(mig.getOldArtifactId())) {
-                            if (IgnoreListTools.shouldIgnoreArtifactId(ignoreList, dep, mig)) {
-                                String msg = "'" + dep.getGroupId() + ":" + dep.getArtifactId() + "' could be replaced by " + mig.proposedMigrationToString() +
-                                    " but this migration is excluded by ignore list";
-                                getLog().info("(" + dep.getType().getLabel() + ") " + msg);
-                            } else {
-                                String msg = "'" + dep.getGroupId() + ":" + dep.getArtifactId() + "' should be replaced by " + mig.proposedMigrationToString();
-                                if (mig.getContext() != null && !mig.getContext().isEmpty()) {
-                                    msg += " (context: " + mig.getContext() + ")";
-                                }
-                                getLog().error("(" + dep.getType().getLabel() + ") " + msg);
-                                deprecatedDependenciesFound = true;
-                            }
-                        }
+                    boolean ignored = mig.isGroupIdOnly()
+                        ? IgnoreListTools.shouldIgnoreGroupId(ignoreList, dep, mig)
+                        : IgnoreListTools.shouldIgnoreArtifactId(ignoreList, dep, mig);
+                    String msg = mig.buildCheckMessage(dep, ignored);
+                    if (ignored) {
+                        getLog().info("(" + dep.getType().getLabel() + ") " + msg);
+                    } else {
+                        getLog().error("(" + dep.getType().getLabel() + ") " + msg);
+                        deprecatedDependenciesFound = true;
                     }
                 }
             }
