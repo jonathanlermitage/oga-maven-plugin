@@ -1,5 +1,5 @@
 {
-    "date": "2026/06/23",
+    "date": "2026/09/29",
     "migration": [
         {
             "old": "acegisecurity",
@@ -599,6 +599,11 @@
         {
             "old": "com.sun.xml:saaj-impl",
             "new": "com.sun.xml.messaging.saaj:saaj-impl"
+        },
+        {
+            "old": "com.tngtech.archunit:archunit-junit",
+            "new": "com.tngtech.archunit:archunit-junit4",
+            "context": "archunit-junit is deprecated. use archunit-junit4 instead. See https://github.com/TNG/ArchUnit/issues/1663 for more details"
         },
         {
             "old": "com.typesafe:slick_2.10",
