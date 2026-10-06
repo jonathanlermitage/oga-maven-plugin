@@ -1,6 +1,6 @@
 ## Old GroupIds Alerter - Change Log
 
-### Unreleased
+### 2.1.0 (2026/10/06)
 * distinguish coordinate relocations from successor migrations with the new `kind` definition field (fix #19). Successor messages no longer invite users to reuse the old version.
 * carry dependency versions and support version-qualified ignore-list entries (`groupId:artifactId:version`).
 
