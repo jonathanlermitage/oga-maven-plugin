@@ -15,11 +15,6 @@ Works with Maven 3.3+ and JDK8+.
 
 This project also is used by the [OpenRewrite / Find relocated dependencies recipe](https://docs.openrewrite.org/recipes/java/dependencies/relocateddependencycheck). Meanwhile, the Maven plugin offers more configuration options.
 
-## Author
-
-Jonathan Lermitage (<jonathan.lermitage@gmail.com>)  
-Linkedin profile: [jonathan-lermitage-092711142](https://www.linkedin.com/in/jonathan-lermitage-092711142/)
-
 ## Usage
 
 ### Goal
