@@ -1049,6 +1049,10 @@
             "new": "org.javassist:javassist"
         },
         {
+            "old": "javax:javaee-api",
+            "new": "jakarta.platform:jakarta.jakartaee-api"
+        },
+        {
             "old": "javax.activation:activation",
             "new": "javax.activation:javax.activation-api"
         },
