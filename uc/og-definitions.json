@@ -1,5 +1,5 @@
 {
-    "date": "2026/10/12",
+    "date": "2026/11/02",
     "migration": [
         {
             "old": "acegisecurity",
@@ -49,6 +49,10 @@
         {
             "old": "cactus:cactus-ant",
             "new": "cactus:cactus-ant-13"
+        },
+        {
+            "old": "checkstyle:checkstyle",
+            "new": "com.puppycrawl.tools:checkstyle"
         },
         {
             "old": "ch.qos.logback:logback-access",
