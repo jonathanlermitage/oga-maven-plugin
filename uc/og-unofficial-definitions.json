@@ -1,5 +1,5 @@
 {
-    "date": "2026/02/07",
+    "date": "2026/11/07",
     "migration": [
         {
             "old": "com.jcraft:jsch",
@@ -42,6 +42,13 @@
                 "io.github.jopenlibs:vault-java-driver"
             ],
             "context": "BetterCloud's vault-java-driver is one of the most commonly used Java clients for Hashicorp, but has had no activity or releases since December 2019. The project is not maintaining by author."
+        },
+        {
+            "old": "com.openhtmltopdf",
+            "proposal": [
+                "io.github.openhtmltopdf"
+            ],
+            "context": "Original project is not maintained anymore."
         }
     ]
 }
